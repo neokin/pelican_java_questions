@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; ООП</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="oop">ООП</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="ООП"></a>_</h3>
+<ul>
+<li><a href="#Что-такое-ООП">Что такое <em>ООП</em>?</a></li>
+<li><a href="#Назовите-основные-принципы-ООП">Назовите основные принципы <em>ООП</em>.</a></li>
+<li><a href="#Что-такое-инкапсуляция">Что такое <em>«инкапсуляция»</em>?</a></li>
+<li><a href="#Что-такое-наследование">Что такое <em>«наследование»</em>?</a></li>
+<li><a href="#Что-такое-полиморфизм">Что такое <em>«полиморфизм»</em>?</a></li>
+<li><a href="#Что-такое-абстракция">Что такое <em>«абстракция»</em>?</a></li>
+<li><a href="#Что-представляет-собой-обмен-сообщениями">Что представляет собой <em>«обмен сообщениями»</em>?</a></li>
+<li><a href="#Расскажите-про-основные-понятия-ООП-класс-объект-интерфейс">Расскажите про основные понятия ООП: <em>«класс»</em>, <em>«объект»</em>, <em>«интерфейс»</em>.</a></li>
+<li><a href="#В-чем-заключаются-преимущества-и-недостатки-объектно-ориентированного-подхода-в-программировании">В чем заключаются преимущества и недостатки объектно-ориентированного подхода в программировании?</a></li>
+<li><a href="#Что-подразумевают-в-плане-принципов-ООП-выражения-является-и-имеет">Что подразумевают в плане принципов ООП выражения <em>«является»</em> и <em>«имеет»</em>?</a></li>
+<li><a href="#В-чем-разница-между-композицией-и-агрегацией">В чем разница между <em>композицией</em> и <em>агрегацией</em>?</a></li>
+<li><a href="#Что-такое-статическое-и-динамическое-связывание">Что такое <em>статическое</em> и <em>динамическое связывание</em>?</a></li>
+</ul>
+<h3 id="_1"><a name="Что-такое-ООП"></a>Что такое <em>ООП</em>?</h3>
+<p><strong>Объектно-ориентированное программирование (ООП)</strong> — методология программирования, основанная на представлении программы в виде совокупности объектов, каждый из которых является экземпляром определенного класса, а классы образуют иерархию наследования. </p>
+<ul>
+<li>объектно-ориентированное программирование использует в качестве основных логических конструктивных элементов объекты, а не алгоритмы;</li>
+<li>каждый объект является экземпляром определенного класса </li>
+<li>классы образуют иерархии. </li>
+</ul>
+<p>Программа считается объектно-ориентированной, только если выполнены все три указанных требования. В частности, программирование, не использующее наследование, называется не объектно-ориентированным, а программированием с помощью абстрактных типов данных.</p>
+<p>Согласно парадигме ООП программа состоит из объектов, обменивающихся сообщениями. Объекты могут обладать состоянием, единственный способ изменить состояние объекта - послать ему сообщение, в ответ на которое, объект может изменить собственное состояние. </p>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_2"><a name="Назовите-основные-принципы-ООП"></a>Назовите основные принципы <em>ООП</em>.</h3>
+<ul>
+<li><em>Инкапсуляция</em> - сокрытие реализации.</li>
+<li><em>Наследование</em> - создание новой сущности на базе уже существующей.</li>
+<li><em>Полиморфизм</em> - возможность иметь разные формы для одной и той же сущности.</li>
+<li><em>Абстракция</em> - набор общих характеристик.</li>
+<li><em>Посылка сообщений</em> - форма связи, взаимодействия между сущностями.</li>
+<li><em>Переиспользование</em>- все что перечислено выше работает на повторное использование кода.</li>
+</ul>
+<p>Это единственно верный порядок парадигм ООП, так как каждая последующая использует предыдущие.</p>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_3"><a name="Что-такое-инкапсуляция"></a>Что такое <em>«инкапсуляция»</em>?</h3>
+<p><strong>Инкапсуляция</strong> – это свойство системы, позволяющее объединить данные и методы, работающие с ними, в классе и скрыть детали реализации от пользователя, открыв только то, что необходимо при последующем использовании.</p>
+<p>Цель инкапсуляции — уйти от зависимости внешнего интерфейса класса (то, что могут использовать другие классы) от реализации. Чтобы малейшее изменение в классе не влекло за собой изменение внешнего поведения класса.</p>
+<blockquote>
+<p>Представим на минутку, что мы оказались в конце позапрошлого века, когда Генри Форд ещё не придумал конвейер, а первые попытки создать автомобиль сталкивались с критикой властей по поводу того, что эти коптящие монстры загрязняют воздух и пугают лошадей. Представим, что для управления первым паровым автомобилем необходимо было знать, как устроен паровой котёл, постоянно подбрасывать уголь, следить за температурой, уровнем воды. При этом для поворота колёс использовать два рычага, каждый из которых поворачивает одно колесо в отдельности. Думаю, можно согласиться с тем, что вождение автомобиля того времени было весьма неудобным и трудным занятием.</p>
+<p>Теперь вернёмся в сегодняшний день к современным чудесам автопрома с коробкой-автоматом. На самом деле, по сути, ничего не изменилось. Бензонасос всё так же поставляет бензин в двигатель, дифференциалы обеспечивают поворот колёс на различающиеся углы, коленвал превращает поступательное движение поршня во вращательное движение колёс. Прогресс в другом. Сейчас все эти действия скрыты от пользователя и позволяют ему крутить руль и нажимать на педаль газа, не задумываясь, что в это время происходит с инжектором, дроссельной заслонкой и распредвалом. Именно сокрытие внутренних процессов, происходящих в автомобиле, позволяет эффективно его использовать даже тем, кто не является профессионалом-автомехаником с двадцатилетним стажем. Это сокрытие в ООП носит название инкапсуляции.</p>
+</blockquote>
+<p>Пример:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SomePhone</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">company</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">SomePhone</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">,</span> <span class="n">String</span> <span class="n">company</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">year</span> <span class="o">=</span> <span class="n">year</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">company</span> <span class="o">=</span> <span class="n">company</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">openConnection</span><span class="p">(){</span>
+        <span class="c1">//findComutator</span>
+        <span class="c1">//openNewConnection...</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">openConnection</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Вызываю номер&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Дзынь-дзынь&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Модификатор private делает доступными поля и методы класса только внутри данного класса. Это означает, что получить доступ к private полям из вне невозможно, как и нет возможности вызвать private методы.</p>
+<p>Сокрытие доступа к методу openConnection, оставляет нам также возможность к свободному изменению внутренней реализации этого метода, так как этот метод гарантированно не используется другими объектами и не нарушит их работу.</p>
+<p>Для работы с нашим объектом мы оставляем открытыми методы call и ring с помощью модификатора public. Предоставление открытых методов для работы с объектом также является частью механизма инкапсуляции, так как если полностью закрыть доступ к объекту – он станет бесполезным.</p>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_4"><a name="Что-такое-наследование"></a>Что такое <em>«наследование»</em>?</h3>
+<p><strong>Наследование</strong> – это свойство системы, позволяющее описать новый класс на основе уже существующего с частично или полностью заимствующейся функциональностью.</p>
+<p>Класс, от которого производится наследование, называется <em>предком</em>, <em>базовым</em> или <em>родительским</em>. Новый класс – <em>потомком</em>, <em>наследником</em> или <em>производным</em> классом.</p>
+<blockquote>
+<p>Представим себя, на минуту, инженерами автомобильного завода. Нашей задачей является разработка современного автомобиля. У нас уже есть предыдущая модель, которая отлично зарекомендовала себя в течение многолетнего использования. Всё бы хорошо, но времена и технологии меняются, а наш современный завод должен стремиться повышать удобство и комфорт выпускаемой продукции и соответствовать современным стандартам.</p>
+<p>Нам необходимо выпустить целый модельный ряд автомобилей: седан, универсал и малолитражный хэтч-бэк. Очевидно, что мы не собираемся проектировать новый автомобиль с нуля, а, взяв за основу предыдущее поколение, внесём ряд конструктивных изменений. Например, добавим гидроусилитель руля и уменьшим зазоры между крыльями и крышкой капота, поставим противотуманные фонари. Кроме того, в каждой модели будет изменена форма кузова.</p>
+<p>Очевидно, что все три модификации будут иметь большинство свойств прежней модели (старый добрый двигатель 1970 года, непробиваемая ходовая часть, зарекомендовавшая себя отличным образом на отечественных дорогах, коробку передач и т.д.). При этом каждая из моделей будет реализовать некоторую новую функциональность или конструктивную особенность. В данном случае, мы имеем дело с наследованием.</p>
+</blockquote>
+<p>Пример:
+Рассмотрим пример создания класса смартфон с помощью наследования. Все беспроводные телефоны работают от аккумуляторных батарей, которые имеют определенный ресурс работы в часах. Поэтому добавим это свойство в класс беспроводных телефонов:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">WirelessPhone</span> <span class="kd">extends</span> <span class="n">AbstractPhone</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">WirelessPhone</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">year</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hour</span> <span class="o">=</span> <span class="n">hour</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Сотовые телефоны наследуют свойства беспроводного телефона, мы также добавили в этот класс реализацию методов call и ring:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CellPhone</span> <span class="kd">extends</span> <span class="n">WirelessPhone</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">CellPhone</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">hour</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="kt">int</span> <span class="n">outputNumber</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Вызываю номер &quot;</span> <span class="o">+</span> <span class="n">outputNumber</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="p">(</span><span class="kt">int</span> <span class="n">inputNumber</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Вам звонит абонент &quot;</span> <span class="o">+</span> <span class="n">inputNumber</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>И, наконец, класс смартфон, который в отличие от классических сотовых телефонов имеет полноценную операционную систему. В смартфон можно добавлять новые программы, поддерживаемые данной операционной системой, расширяя, таким образом, его функциональность. С помощью кода класс можно описать так:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Smartphone</span> <span class="kd">extends</span> <span class="n">CellPhone</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">operationSystem</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">Smartphone</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">,</span> <span class="kt">int</span> <span class="n">hour</span><span class="p">,</span> <span class="n">String</span> <span class="n">operationSystem</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">hour</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">operationSystem</span> <span class="o">=</span> <span class="n">operationSystem</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">install</span><span class="p">(</span><span class="n">String</span> <span class="n">program</span><span class="p">){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Устанавливаю &quot;</span> <span class="o">+</span> <span class="n">program</span> <span class="o">+</span> <span class="s">&quot;для&quot;</span> <span class="o">+</span> <span class="n">operationSystem</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Как видите, для описания класса Smartphone мы создали совсем немного нового кода, но получили новый класс с новой функциональностью. Использование этого принципа ООП java позволяет значительно уменьшить объем кода, а значит, и облегчить работу программисту.</p>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_5"><a name="Что-такое-полиморфизм"></a>Что такое <em>«полиморфизм»</em>?</h3>
+<p><strong>Полиморфизм</strong> – это свойство системы использовать объекты с одинаковым интерфейсом без информации о типе и внутренней структуре объекта.</p>
+<p>Преимуществом полиморфизма является то, что он помогает снижать сложность программ, разрешая использование одного и того же интерфейса для задания единого набора действий. Выбор же конкретного действия, в зависимости от ситуации, возлагается на компилятор языка программирования. Отсюда следует ключевая особенность полиморфизма - использование объекта производного класса, вместо объекта базового (потомки могут изменять родительское поведение, даже если обращение к ним будет производиться по ссылке родительского типа).</p>
+<blockquote>
+<p>Любое обучение вождению не имело бы смысла, если бы человек, научившийся водить, скажем, ВАЗ 2106 не мог потом водить ВАЗ 2110 или BMW X3. С другой стороны, трудно представить человека, который смог бы нормально управлять автомобилем, в котором педаль газа находится левее педали тормоза, а вместо руля – джойстик. </p>
+<p>Всё дело в том, что основные элементы управления автомобиля имеют одну и ту же конструкцию, и принцип действия. Водитель точно знает, что для того, чтобы повернуть налево, он должен повернуть руль, независимо от того, есть там гидроусилитель или нет. 
+Если человеку надо доехать с работы до дома, то он сядет за руль автомобиля и будет выполнять одни и те же действия, независимо от того, какой именно тип автомобиля он использует. По сути, можно сказать, что все автомобили имеют один и тот же интерфейс, а водитель, абстрагируясь от сущности автомобиля, работает именно с этим интерфейсом. Если водителю предстоит ехать по немецкому автобану, он, вероятно выберет быстрый автомобиль с низкой посадкой, а если предстоит возвращаться из отдалённого маральника в Горном Алтае после дождя, скорее всего, будет выбран УАЗ с армейскими мостами. Но, независимо от того, каким образом будет реализовываться движение и внутреннее функционирование машины, интерфейс останется прежним.</p>
+</blockquote>
+<p><em>Полиморфная переменная</em>, это переменная, которая может принимать значения разных типов, а <em>полиморфная функция</em>, это функция у которой хотя бы один аргумент является полиморфной переменной.
+Выделяют два вида полиморфных функций:</p>
+<ul>
+<li><em>ad hoc</em>, функция ведет себя по разному для разных типов аргументов (например, функция <code>draw()</code> — рисует по разному фигуры разных типов);</li>
+<li><em>параметрический</em>, функция ведет себя одинаково для аргументов разных типов (например, функция <code>add()</code> — одинаково кладет в контейнер элементы разных типов).</li>
+</ul>
+<p>Принцип в ООП, когда программа может использовать объекты с одинаковым интерфейсом без информации о внутреннем устройстве объекта, называется полиморфизмом. </p>
+<p>Пример:</p>
+<p>Давайте представим, что нам в программе нужно описать пользователя, который может пользоваться любыми моделями телефона, чтобы позвонить другому пользователю. Вот как можно это сделать:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">callAnotherUser</span><span class="p">(</span><span class="kt">int</span> <span class="n">number</span><span class="p">,</span> <span class="n">AbstractPhone</span> <span class="n">phone</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">// вот он полиморфизм - использование в коде абстактного типа AbstractPhone phone!</span>
+        <span class="n">phone</span><span class="p">.</span><span class="na">call</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Теперь опишем различные модели телефонов. Одна из первых моделей телефонов:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThomasEdisonPhone</span> <span class="kd">extends</span> <span class="n">AbstractPhone</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="nf">ThomasEdisonPhone</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">year</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="kt">int</span> <span class="n">outputNumber</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Вращайте ручку&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Сообщите номер абонента, сэр&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="p">(</span><span class="kt">int</span> <span class="n">inputNumber</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Телефон звонит&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Обычный стационарный телефон:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Phone</span> <span class="kd">extends</span> <span class="n">AbstractPhone</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="nf">Phone</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">year</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="kt">int</span> <span class="n">outputNumber</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Вызываю номер&quot;</span> <span class="o">+</span> <span class="n">outputNumber</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="p">(</span><span class="kt">int</span> <span class="n">inputNumber</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Телефон звонит&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>И, наконец, крутой видеотелефон:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VideoPhone</span> <span class="kd">extends</span> <span class="n">AbstractPhone</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="nf">VideoPhone</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">year</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="p">(</span><span class="kt">int</span> <span class="n">outputNumber</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Подключаю видеоканал для абонента &quot;</span> <span class="o">+</span> <span class="n">outputNumber</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">ring</span><span class="p">(</span><span class="kt">int</span> <span class="n">inputNumber</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;У вас входящий видеовызов...&quot;</span> <span class="o">+</span> <span class="n">inputNumber</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Создадим объекты в методе main() и протестируем метод callAnotherUser:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AbstractPhone</span> <span class="n">firstPhone</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ThomasEdisonPhone</span><span class="p">(</span><span class="mi">1879</span><span class="p">);</span>
+<span class="n">AbstractPhone</span> <span class="n">phone</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Phone</span><span class="p">(</span><span class="mi">1984</span><span class="p">);</span>
+<span class="n">AbstractPhone</span> <span class="n">videoPhone</span><span class="o">=</span><span class="k">new</span> <span class="n">VideoPhone</span><span class="p">(</span><span class="mi">2018</span><span class="p">);</span>
+<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="p">(</span><span class="s">&quot;Андрей&quot;</span><span class="p">);</span>
+<span class="n">user</span><span class="p">.</span><span class="na">callAnotherUser</span><span class="p">(</span><span class="mi">224466</span><span class="p">,</span><span class="n">firstPhone</span><span class="p">);</span>
+<span class="c1">// Вращайте ручку</span>
+<span class="c1">//Сообщите номер абонента, сэр</span>
+<span class="n">user</span><span class="p">.</span><span class="na">callAnotherUser</span><span class="p">(</span><span class="mi">224466</span><span class="p">,</span><span class="n">phone</span><span class="p">);</span>
+<span class="c1">//Вызываю номер 224466</span>
+<span class="n">user</span><span class="p">.</span><span class="na">callAnotherUser</span><span class="p">(</span><span class="mi">224466</span><span class="p">,</span><span class="n">videoPhone</span><span class="p">);</span>
+<span class="c1">//Подключаю видеоканал для абонента 224466</span>
+</code></pre></div>
+
+
+<p>Используя вызов одного и того же метода объекта user, мы получили различные результаты. Выбор конкретной реализации метода call внутри метода callAnotherUser производился динамически на основании конкретного типа вызывающего его объекта в процессе выполнения программы. В этом и заключается основное преимущество полиморфизма – выбор реализации в процессе выполнения программы.</p>
+<p>В примерах классов телефонов, приведенных выше, мы использовали переопределение методов – прием, при котором изменяется реализация метода, определенная в базовом классе, без изменения сигнатуры метода. По сути это является заменой метода, и именно новый метод, определенный в подклассе, вызывается при выполнении программы. </p>
+<p>Обычно, при переопределении метода, используется аннотация @Override, которая подсказывает компилятору о необходимости проверить сигнатуры переопределяемого и переопределяющего методов.</p>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_6"><a name="Что-такое-абстракция"></a>Что такое <em>«абстракция»</em>?</h3>
+<p><em>Абстрагирование</em> – это способ выделить набор общих характеристик объекта, исключая из рассмотрения частные и незначимые. Соответственно, <strong>абстракция</strong> – это набор всех таких характеристик.</p>
+<blockquote>
+<p>Представьте, что водитель едет в автомобиле по оживлённому участку движения. Понятно, что в этот момент он не будет задумываться о химическом составе краски автомобиля, особенностях взаимодействия шестерёнок в коробке передач или влияния формы кузова на скорость (разве что, автомобиль стоит в глухой пробке и водителю абсолютно нечем заняться). Однако, руль, педали, указатель поворота он будет использовать регулярно.</p>
+</blockquote>
+<p>Пример:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Abstract class</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="c1">// Abstract method (does not have a body)</span>
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="p">();</span>
+
+    <span class="c1">// Regular method</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sleep</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Zzz&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Subclass (inherit from Animal)</span>
+<span class="kd">class</span> <span class="nc">Pig</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">animalSound</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// The body of animalSound() is provided here</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The pig says: wee wee&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">MyMainClass</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Pig</span> <span class="n">myPig</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pig</span><span class="p">();</span> <span class="c1">// Create a Pig object</span>
+        <span class="n">myPig</span><span class="p">.</span><span class="na">animalSound</span><span class="p">();</span>
+        <span class="n">myPig</span><span class="p">.</span><span class="na">sleep</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_7"><a name="Что-представляет-собой-обмен-сообщениями"></a>Что представляет собой <em>«обмен сообщениями»</em>?</h3>
+<p>Объекты взаимодействуют, посылая и получая сообщения. Сообщение — это запрос на выполнение действия, дополненный набором аргументов, которые могут понадобиться при выполнении действия. В ООП посылка сообщения (вызов метода) — это единственный путь передать управление объекту. Если объект должен «отвечать» на это сообщение, то у него должна иметься соответствующий данному сообщению метод. Так же объекты, используя свои методы, могут и сами посылать сообщения другим объектам. Обмен сообщениями реализуется с помощью динамических вызовов, что приводит к чрезвычайно позднему связыванию (extreme late binding).</p>
+<blockquote>
+<p>Пусть требуется создать физическую модель, описывающую сталкивающиеся шары разных размеров. Традиционный подход к решению этой задачи примерно таков: определяется набор данных, описывающих каждый шар (например, его координаты, массу и ускорение); каждому шару присваивается уникальный идентификатор (например, организуется массив, значение индекса которого соответствует номеру шара), который позволит отличать каждый из шаров от всех других. Наконец, пишется подпрограмма с названием, скажем, <code>bounce</code>; эта процедура должна на основе номера шара и его начальных параметров соответствующим образом изменять данные, описывающие шар. В отличие от традиционного подхода объектно-ориентированная версия программы моделирует каждый из шаров посредством объекта. При этом объект, соответствующий конкретному шару, содержит не только его параметры, но и весь код, описывающий поведение шара при различных взаимодействиях. Так, каждый шар будет иметь собственный метод <code>bounce()</code>. Вместо того, чтобы вызывать подпрограмму <code>bounce</code> с аргументом, определяющим, скажем, шар №3, необходимо будет передать объекту «шар №3» сообщение, предписывающее ему выполнить столкновение.</p>
+</blockquote>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_8"><a name="Расскажите-про-основные-понятия-ООП-класс-объект-интерфейс"></a>Расскажите про основные понятия ООП: <em>«класс»</em>, <em>«объект»</em>, <em>«интерфейс»</em>.</h3>
+<p><strong>Класс</strong> – это способ описания сущности, определяющий состояние и поведение, зависящее от этого состояния, а также правила для взаимодействия с данной сущностью (контракт). </p>
+<p>С точки зрения программирования класс можно рассматривать как набор данных (полей, атрибутов, членов класса) и функций для работы с ними (методов).</p>
+<p>С точки зрения структуры программы, класс является сложным типом данных.</p>
+<p><strong>Объект (экземпляр)</strong> – это отдельный представитель класса, имеющий конкретное состояние и поведение, полностью определяемое классом. Каждый объект имеет конкретные значения атрибутов и методы, работающие с этими значениями на основе правил, заданных в классе.</p>
+<p><strong>Интерфейс</strong> – это набор методов класса, доступных для использования. Интерфейсом класса будет являться набор всех его публичных методов в совокупности с набором публичных атрибутов. По сути, интерфейс специфицирует класс, чётко определяя все возможные действия над ним. </p>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="-"><a name="В-чем-заключаются-преимущества-и-недостатки-объектно-ориентированного-подхода-в-программировании"></a>В чем заключаются преимущества и недостатки объектно-ориентированного подхода в программировании?</h3>
+<p>Преимущества:</p>
+<ul>
+<li>Объектная модель вполне естественна, поскольку в первую очередь ориентирована на человеческое восприятие мира, а не на компьютерную реализацию.</li>
+<li>Классы позволяют проводить конструирование из полезных компонентов, обладающих простыми инструментами, что позволяет абстрагироваться от деталей реализации.</li>
+<li>Данные и операции над ними образуют определенную сущность, и они не разносятся по всей программе, как нередко бывает в случае процедурного программирования, а описываются вместе. Локализация кода и данных улучшает наглядность и удобство сопровождения программного обеспечения.</li>
+<li>Инкапсуляция позволяет привнести свойство модульности, что облегчает распараллеливание выполнения задачи между несколькими исполнителями и обновление версий отдельных компонентов.</li>
+<li>Возможность создавать расширяемые системы.</li>
+<li>Использование полиморфизма оказывается полезным при:<ul>
+<li>Обработке разнородных структур данных. Программы могут работать, не различая вида объектов, что существенно упрощает код. Новые виды могут быть добавлены в любой момент.</li>
+<li>Изменении поведения во время исполнения. На этапе исполнения один объект может быть заменен другим, что позволяет легко, без изменения кода, адаптировать алгоритм в зависимости от того, какой используется объект.</li>
+<li>Реализации работы с наследниками. Алгоритмы можно обобщить настолько, что они уже смогут работать более чем с одним видом объектов.</li>
+<li>Возможности описать независимые от приложения части предметной области в виде набора универсальных классов, или фреймворка, который в дальнейшем будет расширен за счет добавления частей, специфичных для конкретного приложения.</li>
+</ul>
+</li>
+<li>Повторное использование кода:<ul>
+<li>Сокращается время на разработку, которое может быть отдано другим задачам.</li>
+<li>Компоненты многоразового использования обычно содержат гораздо меньше ошибок, чем вновь разработанные, ведь они уже не раз подвергались проверке.</li>
+<li>Когда некий компонент используется сразу несколькими клиентами, улучшения, вносимые в его код, одновременно оказывают положительное влияние и на множество работающих с ним программ.</li>
+<li>Если программа опирается на стандартные компоненты, ее структура и пользовательский интерфейс становятся более унифицированными, что облегчает ее понимание и упрощает использование.</li>
+</ul>
+</li>
+</ul>
+<p>Недостатки:</p>
+<ul>
+<li>В сложных иерархиях классов поля и методы обычно наследуются с разных уровней. И не всегда легко определить, какие поля и методы фактически относятся к данному классу.</li>
+<li>Код для обработки сообщения иногда «размазан» по многим методам (иначе говоря, обработка сообщения требует не одного, а многих методов, которые могут быть описаны в разных классах).</li>
+<li>Документирование классов - задача более трудная, чем это было в случае процедур и модулей. Поскольку любой метод может быть переопределен, в документации должно говориться не только о том, что делает данный метод, но и о том, в каком контексте он вызывается.</li>
+<li>Неэффективность и неэкономное распределения памяти на этапе выполнения (по причине издержек на динамическое связывание и проверки типов на этапе выполнения).</li>
+<li>Излишняя универсальность. Часто содержится больше методов, чем это реально необходимо текущей программе. А поскольку лишние методы не могут быть удалены, они становятся мертвым грузом.</li>
+</ul>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_9"><a name="Что-подразумевают-в-плане-принципов-ООП-выражения-является-и-имеет"></a>Что подразумевают в плане принципов ООП выражения <em>«является»</em> и <em>«имеет»</em>?</h3>
+<p><strong>«является»</strong> подразумевает наследование.
+<strong>«имеет»</strong> подразумевает ассоциацию (агрегацию или композицию).</p>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_10"><a name="В-чем-разница-между-композицией-и-агрегацией"></a>В чем разница между <em>композицией</em> и <em>агрегацией</em>?</h3>
+<p>Ассоциация обозначает связь между объектами. Композиция и агрегация — частные случаи ассоциации «часть-целое».</p>
+<p>Агрегация предполагает, что объекты связаны взаимоотношением «part-of» (часть). Композиция более строгий вариант агрегации. Дополнительно к требованию «part-of» накладывается условие, что экземпляр «части» может входить только в одно целое (или никуда не входить), в то время как в случае агрегации экземпляр «части» может входить в несколько целых.</p>
+<blockquote>
+<p>Например, книга состоит из страниц, и мы не можем вырвать страницу из книги и вложить в другую книгу. Страницы четко привязаны к конкретной книге, поэтому это композиция.
+В тоже время мы можем взять и перенести книгу из одной библиотеки в другую - это уже агрегация.</p>
+</blockquote>
+<p><a href="#ООП">к оглавлению</a></p>
+<h3 id="_11"><a name="Что-такое-статическое-и-динамическое-связывание"></a>Что такое <em>статическое</em> и <em>динамическое связывание</em>?</h3>
+<p>Присоединение вызова метода к телу метода называется связыванием. Если связывание проводится компилятором (компоновщиком) перед запуском программы, то оно называется <em>статическим</em> или <em>ранним связыванием (early binding)</em>.</p>
+<p>В свою очередь, <em>позднее связывание (late binding)</em> это связывание, проводимое непосредственно во время выполнения программы, в зависимости от типа объекта. Позднее связывание также называют <em>динамическим (dynamic)</em> или <em>связыванием на стадии выполнения (runtime binding)</em>. В языках, реализующих позднее связывание, должен существовать механизм определения фактического типа объекта во время работы программы, для вызова подходящего метода. Иначе говоря, компилятор не знает тип объекта, но механизм вызова методов определяет его и вызывает соответствующее тело метода. Механизм позднего связывания зависит от конкретного языка, но нетрудно предположить, что для его реализации в объекты должна включаться какая-то дополнительная информация.</p>
+<p>Для всех методов Java используется механизм позднего (динамического) связывания, если только метод не был объявлен как <code>final</code> (приватные методы являются <code>final</code> по умолчанию).</p>
+<p><a href="#ООП">к оглавлению</a></p>
+<h1 id="_12">Источники</h1>
+<ul>
+<li><a href="http://devcolibri.com/720">DevColibri</a></li>
+<li><a href="https://habrahabr.ru/post/87119/">Хабрахабр</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/Объектно-ориентированное_программирование">Википедия</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

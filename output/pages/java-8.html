@@ -1,0 +1,1081 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; Java 8</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="java-8">Java 8</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="java-8"></a>_</h3>
+<ul>
+<li><a href="#Какие-нововведения-появились-в-java-8-и-jdk-8">Какие нововведения, появились в Java 8 и JDK 8?</a></li>
+<li><a href="#Что-такое-лямбда-Какова-структура-и-особенности-использования-лямбда-выражения">Что такое <em>«лямбда»</em>? Какова структура и особенности использования лямбда-выражения?</a></li>
+<li><a href="#К-каким-переменным-есть-доступ-у-лямбда-выражений">К каким переменным есть доступ у лямбда-выражений?</a></li>
+<li><a href="#Как-отсортировать-список-строк-с-помощью-лямбда-выражения">Как отсортировать список строк с помощью лямбда-выражения?</a></li>
+<li><a href="#Что-такое-ссылка-на-метод">Что такое «ссылка на метод»?</a></li>
+<li><a href="#Какие-виды-ссылок-на-методы-вы-знаете">Какие виды ссылок на методы вы знаете?</a></li>
+<li><a href="#Объясните-выражение-systemoutprintln">Объясните выражение <code>System.out::println</code>.</a></li>
+<li><a href="#Что-такое-функциональные-интерфейсы">Что такое «функциональные интерфейсы»?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-functiontr-doublefunctionr-intfunctionr-и-longfunctionr">Для чего нужны функциональные интерфейсы <code>Function&lt;T,R&gt;</code>, <code>DoubleFunction&lt;R&gt;</code>, <code>IntFunction&lt;R&gt;</code> и <code>LongFunction&lt;R&gt;</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-unaryoperatort-doubleunaryoperator-intunaryoperator-и-longunaryoperator">Для чего нужны функциональные интерфейсы <code>UnaryOperator&lt;T&gt;</code>, <code>DoubleUnaryOperator</code>, <code>IntUnaryOperator</code> и <code>LongUnaryOperator</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-binaryoperatort-doublebinaryoperator-intbinaryoperator-и-longbinaryoperator">Для чего нужны функциональные интерфейсы <code>BinaryOperator&lt;T&gt;</code>, <code>DoubleBinaryOperator</code>, <code>IntBinaryOperator</code> и <code>LongBinaryOperator</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-predicatet-doublepredicate-intpredicate-и-longpredicate">Для чего нужны функциональные интерфейсы <code>Predicate&lt;T&gt;</code>, <code>DoublePredicate</code>, <code>IntPredicate</code> и <code>LongPredicate</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-consumert-doubleconsumer-intconsumer-и-longconsumer">Для чего нужны функциональные интерфейсы <code>Consumer&lt;T&gt;</code>, <code>DoubleConsumer</code>, <code>IntConsumer</code> и <code>LongConsumer</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-suppliert--booleansupplier-doublesupplier-intsupplier-и-longsupplier">Для чего нужны функциональные интерфейсы <code>Supplier&lt;T&gt;</code>,  <code>BooleanSupplier</code>, <code>DoubleSupplier</code>, <code>IntSupplier</code> и <code>LongSupplier</code>?</a></li>
+<li><a href="#Для-чего-нужен-функциональный-интерфейс-biconsumertu">Для чего нужен функциональный интерфейс <code>BiConsumer&lt;T,U&gt;</code>?</a></li>
+<li><a href="#Для-чего-нужен-функциональный-интерфейс-bifunctiontur">Для чего нужен функциональный интерфейс <code>BiFunction&lt;T,U,R&gt;</code>?</a></li>
+<li><a href="#Для-чего-нужен-функциональный-интерфейс-bipredicatetu">Для чего нужен функциональный интерфейс <code>BiPredicate&lt;T,U&gt;</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-вида-tofunction">Для чего нужны функциональные интерфейсы вида <code>_To_Function</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-todoublebifunctiontu-tointbifunctiontu-и-tolongbifunctiontu">Для чего нужны функциональные интерфейсы <code>ToDoubleBiFunction&lt;T,U&gt;</code>, <code>ToIntBiFunction&lt;T,U&gt;</code> и <code>ToLongBiFunction&lt;T,U&gt;</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-todoublefunctiont-tointfunctiont-и-tolongfunctiont">Для чего нужны функциональные интерфейсы <code>ToDoubleFunction&lt;T&gt;</code>, <code>ToIntFunction&lt;T&gt;</code> и <code>ToLongFunction&lt;T&gt;</code>?</a></li>
+<li><a href="#Для-чего-нужны-функциональные-интерфейсы-objdoubleconsumert-objintconsumert-и-objlongconsumert">Для чего нужны функциональные интерфейсы <code>ObjDoubleConsumer&lt;T&gt;</code>, <code>ObjIntConsumer&lt;T&gt;</code> и <code>ObjLongConsumer&lt;T&gt;</code>?</a></li>
+<li><a href="#Что-такое-stringjoiner">Что такое <code>StringJoiner</code>?</a></li>
+<li><a href="#Что-такое-default-методы-интрефейса">Что такое <code>default</code> методы интрефейса?</a></li>
+<li><a href="#Как-вызывать-default-метод-интерфейса-в-реализующем-этот-интерфейс-классе">Как вызывать <code>default</code> метод интерфейса в реализующем этот интерфейс классе?</a></li>
+<li><a href="#Что-такое-static-метод-интерфейса">Что такое <code>static</code> метод интерфейса?</a></li>
+<li><a href="#Как-вызывать-static-метод-интерфейса">Как вызывать <code>static</code> метод интерфейса?</a></li>
+<li><a href="#Что-такое-optional">Что такое <code>Optional</code>?</a></li>
+<li><a href="#Что-такое-stream">Что такое <code>Stream</code>?</a></li>
+<li><a href="#Какие-существуют-способы-создания-стрима">Какие существуют способы создания стрима?</a></li>
+<li><a href="#В-чем-разница-между-collection-и-stream">В чем разница между <code>Collection</code> и <code>Stream</code>?</a></li>
+<li><a href="#Для-чего-нужен-метод-collect-в-стримах">Для чего нужен метод <code>collect()</code> в стримах?</a></li>
+<li><a href="#Для-чего-в-стримах-применяются-методы-foreach-и-foreachordered">Для чего в стримах применяются методы <code>forEach()</code> и <code>forEachOrdered()</code>?</a></li>
+<li><a href="#Для-чего-в-стримах-предназначены-методы-map-и-maptoint-maptodouble-maptolong">Для чего в стримах предназначены методы <code>map()</code> и <code>mapToInt()</code>, <code>mapToDouble()</code>, <code>mapToLong()</code>?</a></li>
+<li><a href="#Какова-цель-метода-filter-в-стримах">Какова цель метода <code>filter()</code> в стримах?</a></li>
+<li><a href="#Для-чего-в-стримах-предназначен-метод-limit">Для чего в стримах предназначен метод <code>limit()</code>?</a></li>
+<li><a href="#Для-чего-в-стримах-предназначен-метод-sorted">Для чего в стримах предназначен метод <code>sorted()</code>?</a></li>
+<li><a href="#Для-чего-в-стримах-предназначены-методы-flatmap-flatmaptoint-flatmaptodouble-flatmaptolong">Для чего в стримах предназначены методы <code>flatMap()</code>, <code>flatMapToInt()</code>, <code>flatMapToDouble()</code>, <code>flatMapToLong()</code>?</a></li>
+<li><a href="#Расскажите-о-параллельной-обработке-в-java-8">Расскажите о параллельной обработке в Java 8.</a></li>
+<li><a href="#Какие-конечные-методы-работы-со-стримами-вы-знаете">Какие конечные методы работы со стримами вы знаете?</a></li>
+<li><a href="#Какие-промежуточные-методы-работы-со-стримами-вы-знаете">Какие промежуточные методы работы со стримами вы знаете?</a></li>
+<li><a href="#Как-вывести-на-экран-10-случайных-чисел-используя-foreach">Как вывести на экран 10 случайных чисел, используя <code>forEach()</code>?</a></li>
+<li><a href="#Как-можно-вывести-на-экран-уникальные-квадраты-чисел-используя-метод-map">Как можно вывести на экран уникальные квадраты чисел используя метод <code>map()</code>?</a></li>
+<li><a href="#Как-вывести-на-экран-количество-пустых-строк-с-помощью-метода-filter">Как вывести на экран количество пустых строк с помощью метода <code>filter()</code>?</a></li>
+<li><a href="#Как-вывести-на-экран-10-случайных-чисел-в-порядке-возрастания">Как вывести на экран 10 случайных чисел в порядке возрастания?</a></li>
+<li><a href="#Как-найти-максимальное-число-в-наборе">Как найти максимальное число в наборе?</a></li>
+<li><a href="#Как-найти-минимальное-число-в-наборе">Как найти минимальное число в наборе?</a></li>
+<li><a href="#Как-получить-сумму-всех-чисел-в-наборе">Как получить сумму всех чисел в наборе?</a></li>
+<li><a href="#Как-получить-среднее-значение-всех-чисел">Как получить среднее значение всех чисел?</a></li>
+<li><a href="#Какие-дополнительные-методы-для-работы-с-ассоциативными-массивами-maps-появились-в-java-8">Какие дополнительные методы для работы с ассоциативными массивами (maps) появились в Java 8?</a></li>
+<li><a href="#Что-такое-localdatetime">Что такое <code>LocalDateTime</code>?</a></li>
+<li><a href="#Что-такое-zoneddatetime">Что такое <code>ZonedDateTime</code>?</a></li>
+<li><a href="#Как-получить-текущую-дату-с-использованием-date-time-api-из-java-8">Как получить текущую дату с использованием Date Time API из Java 8?</a></li>
+<li><a href="#Как-добавить-1-неделю-1-месяц-1-год-10-лет-к-текущей-дате-с-использованием-date-time-api">Как добавить 1 неделю, 1 месяц, 1 год, 10 лет к текущей дате с использованием Date Time API?</a></li>
+<li><a href="#Как-получить-следующий-вторник-используя-date-time-api">Как получить следующий вторник используя Date Time API?</a></li>
+<li><a href="#Как-получить-вторую-субботу-текущего-месяца-используя-date-time-api">Как получить вторую субботу текущего месяца используя Date Time API?</a></li>
+<li><a href="#Как-получить-текущее-время-с-точностью-до-миллисекунд-используя-date-time-api">Как получить текущее время с точностью до миллисекунд используя Date Time API?</a></li>
+<li><a href="#Как-получить-текущее-время-по-местному-времени-с-точностью-до-миллисекунд-используя-date-time-api">Как получить текущее время по местному времени с точностью до миллисекунд используя Date Time API?</a></li>
+<li><a href="#Как-определить-повторяемую-аннотацию">Как определить повторяемую аннотацию?</a></li>
+<li><a href="#Что-такое-nashorn">Что такое <code>Nashorn</code>?</a></li>
+<li><a href="#Что-такое-jjs">Что такое <code>jjs</code>?</a></li>
+<li><a href="#Какой-класс-появился-в-java-8-для-кодированиядекодирования-данных">Какой класс появился в Java 8 для кодирования/декодирования данных?</a></li>
+<li><a href="#Как-создать-base64-кодировщик-и-декодировщик">Как создать Base64 кодировщик и декодировщик?</a></li>
+</ul>
+<h3 id="java-8-jdk-8"><a name="Какие-нововведения-появились-в-java-8-и-jdk-8"></a>Какие нововведения, появились в Java 8 и JDK 8?</h3>
+<ul>
+<li>Методы интерфейсов по умолчанию;</li>
+<li>Лямбда-выражения;</li>
+<li>Функциональные интерфейсы;</li>
+<li>Ссылки на методы и конструкторы;</li>
+<li>Повторяемые аннотации;</li>
+<li>Аннотации на типы данных;</li>
+<li>Рефлексия для параметров методов;</li>
+<li><em>Stream API</em> для работы с коллекциями;</li>
+<li>Параллельная сортировка массивов;</li>
+<li>Новое API для работы с датами и временем;</li>
+<li>Новый движок JavaScript <em>Nashorn</em>;</li>
+<li>Добавлено несколько новых классов для потокобезопасной работы;</li>
+<li>Добавлен новый API для <code>Calendar</code> и <code>Locale</code>;</li>
+<li>Добавлена поддержка <em>Unicode 6.2.0</em>;</li>
+<li>Добавлен стандартный класс для работы с <em>Base64</em>;</li>
+<li>Добавлена поддержка беззнаковой арифметики;</li>
+<li>Улучшена производительность конструктора <code>java.lang.String(byte[], *)</code> и метода <code>java.lang.String.getBytes()</code>;</li>
+<li>Новая реализация <code>AccessController.doPrivileged</code>, позволяющая устанавливать подмножество привилегий без необходимости проверки всех остальных уровней доступа;</li>
+<li><em>Password-based</em> алгоритмы стали более устойчивыми;</li>
+<li>Добавлена поддержка <em>SSL/TLS Server Name Indication (NSI)</em> в <em>JSSE Server</em>;</li>
+<li>Улучшено хранилище ключей (KeyStore);</li>
+<li>Добавлен алгоритм <em>SHA-224</em>;</li>
+<li>Удален мост <em>JDBC - ODBC</em>;</li>
+<li>Удален <em>PermGen</em>, изменен способ хранения мета-данных классов;</li>
+<li>Возможность создания профилей для платформы Java SE, которые включают в себя не всю платформу целиком, а некоторую ее часть;</li>
+<li>Инструментарий<ul>
+<li>Добавлена утилита <code>jjs</code> для использования <em>JavaScript Nashorn</em>;</li>
+<li>Команда <code>java</code> может запускать <em>JavaFX</em> приложения;</li>
+<li>Добавлена утилита <code>jdeps</code> для анализа <em>.class</em>-файлов.</li>
+</ul>
+</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="-"><a name="Что-такое-лямбда-Какова-структура-и-особенности-использования-лямбда-выражения"></a>Что такое <em>«лямбда»</em>? Какова структура и особенности использования лямбда-выражения?</h3>
+<p><strong>Лямбда</strong> представляет собой набор инструкций, которые можно выделить в отдельную переменную и затем многократно вызвать в различных местах программы.</p>
+<p>Основу лямбда-выражения составляет <em>лямбда-оператор</em>, который представляет стрелку <code>-&gt;</code>. Этот оператор разделяет лямбда-выражение на две части: левая часть содержит список параметров выражения, а правая собственно представляет тело лямбда-выражения, где выполняются все действия.</p>
+<p>Лямбда-выражение не выполняется само по себе, а образует реализацию метода, определенного в функциональном интерфейсе. При этом важно, что функциональный интерфейс должен содержать только один единственный метод без реализации.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Operationable</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">calculate</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Operationable</span> <span class="n">operation</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>     
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">operation</span><span class="p">.</span><span class="na">calculate</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">result</span><span class="p">);</span> <span class="c1">//30</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>По факту лямбда-выражения являются в некотором роде сокращенной формой внутренних анонимных классов, которые ранее применялись в Java.</p>
+<ul>
+<li>
+<p><em>Отложенное выполнение (deferred execution) лямбда-выражения</em>- определяется один раз в одном месте программы, вызываются при необходимости, любое количество раз и в произвольном месте программы.</p>
+</li>
+<li>
+<p><em>Параметры лямбда-выражения</em> должны соответствовать по типу параметрам метода функционального интерфейса:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">operation</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="c1">//При написании самого лямбда-выражения тип параметров разрешается не указывать:</span>
+<span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span>
+<span class="c1">//Если метод не принимает никаких параметров, то пишутся пустые скобки, например,</span>
+<span class="p">()</span> <span class="o">-&gt;</span> <span class="mi">30</span> <span class="o">+</span> <span class="mi">20</span><span class="p">;</span>
+<span class="c1">//Если метод принимает только один параметр, то скобки можно опустить:</span>
+<span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">*</span> <span class="n">n</span><span class="p">;</span>
+</code></pre></div>
+
+
+<ul>
+<li><em>Конечные лямбда-выражения</em> не обязаны возвращать какое-либо значение.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Printable</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Printable</span> <span class="n">printer</span> <span class="o">=</span> <span class="n">s</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">printer</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Hello, world&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<ul>
+<li><em>Блочные лямбда-выражения</em> обрамляются фигурными скобками. В блочных лямбда-выражениях можно использовать внутренние вложенные блоки, циклы, конструкции <code>if</code>, <code>switch</code>, создавать переменные и т.д. Если блочное лямбда-выражение должно возвращать значение, то явным образом применяется оператор <code>return</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Operationable</span> <span class="n">operation</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span>       
+    <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+
+
+<ul>
+<li><em>Передача лямбда-выражения в качестве параметра метода</em>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Condition</span> <span class="p">{</span>
+    <span class="kt">boolean</span> <span class="nf">isAppropriate</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">Condition</span> <span class="n">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">:</span> <span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">condition</span><span class="p">.</span><span class="na">isAppropriate</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">},</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">));</span>
+<span class="p">}</span> 
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="-_1"><a name="К-каким-переменным-есть-доступ-у-лямбда-выражений"></a>К каким переменным есть доступ у лямбда-выражений?</h3>
+<p>Доступ к переменным внешней области действия из лямбда-выражения очень схож к доступу из анонимных объектов. Можно ссылаться на:</p>
+<ul>
+<li>неизменяемые (<em>effectively final</em> - не обязательно помеченные как <code>final</code>) локальные переменные;</li>
+<li>поля класса;</li>
+<li>статические переменные.</li>
+</ul>
+<p>К методам по умолчанию реализуемого функционального интерфейса обращаться внутри лямбда-выражения запрещено.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="-_2"><a name="Как-отсортировать-список-строк-с-помощью-лямбда-выражения"></a>Как отсортировать список строк с помощью лямбда-выражения?</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">sort</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span><span class="p">){</span>
+    <span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">list</span><span class="p">,</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+    <span class="k">return</span> <span class="n">list</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_1"><a name="Что-такое-ссылка-на-метод"></a>Что такое «ссылка на метод»?</h3>
+<p>Если существующий в классе метод уже делает все, что необходимо, то можно воспользоваться механизмом <strong>method reference (ссылка на метод)</strong> для непосредственной передачи этого метода. Такая ссылка передается в виде:</p>
+<ul>
+<li><code>имя_класса::имя_статического_метода</code> для статического метода;</li>
+<li><code>объект_класса::имя_метода</code> для метода экземпляра;</li>
+<li><code>название_класса::new</code> для конструктора.</li>
+</ul>
+<p>Результат будет в точности таким же, как в случае определения лямбда-выражения, которое вызывает этот метод.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">interface</span> <span class="nc">Measurable</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">length</span><span class="p">(</span><span class="n">String</span> <span class="n">string</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Measurable</span> <span class="n">a</span> <span class="o">=</span> <span class="n">String</span><span class="p">::</span><span class="n">length</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">length</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Ссылки на методы потенциально более эффективны, чем использование лямбда-выражений. Кроме того, они предоставляют компилятору более качественную информацию о типе и при возможности выбора между использованием ссылки на существующий метод и использованием лямбда-выражения, следует всегда предпочитать использование ссылки на метод.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_2"><a name="Какие-виды-ссылок-на-методы-вы-знаете"></a>Какие виды ссылок на методы вы знаете?</h3>
+<ul>
+<li>на статический метод;</li>
+<li>на метод экземпляра;</li>
+<li>на конструкторе.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="systemoutprintln"><a name="Объясните-выражение-systemoutprintln"></a>Объясните выражение <code>System.out::println</code>.</h3>
+<p>Данное выражение иллюстрирует механизм <em>instance method reference</em>: передачи ссылки на метод <code>println()</code> статического поля <code>out</code> класса <code>System</code>.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_3"><a name="Что-такое-функциональные-интерфейсы"></a>Что такое «функциональные интерфейсы»?</h3>
+<p><strong>Функциональный интерфейс</strong> - это интерфейс, который определяет только один абстрактный метод. </p>
+<p>Чтобы точно определить интерфейс как функциональный, добавлена аннотация <code>@FunctionalInterface</code>, работающая по принципу <code>@Override</code>. Она обозначит замысел и не даст определить второй абстрактный метод в интерфейсе.</p>
+<p>Интерфейс может включать сколько угодно <code>default</code> методов и при этом оставаться функциональным, потому что <code>default</code> методы - не абстрактные.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="functiontr-doublefunctionr-intfunctionr-longfunctionr"><a name="Для-чего-нужны-функциональные-интерфейсы-functiontr-doublefunctionr-intfunctionr-и-longfunctionr"></a>Для чего нужны функциональные интерфейсы <code>Function&lt;T,R&gt;</code>, <code>DoubleFunction&lt;R&gt;</code>, <code>IntFunction&lt;R&gt;</code> и <code>LongFunction&lt;R&gt;</code>?</h3>
+<p><strong><code>Function&lt;T, R&gt;</code></strong> - интерфейс, с помощью которого реализуется функция, получающая на вход экземпляр класса <code>T</code> и возвращающая на выходе экземпляр класса <code>R</code>.</p>
+<p>Методы по умолчанию могут использоваться для построения цепочек вызовов (<code>compose</code>, <code>andThen</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">toInteger</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">::</span><span class="n">valueOf</span><span class="p">;</span>
+<span class="n">Function</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">backToString</span> <span class="o">=</span> <span class="n">toInteger</span><span class="p">.</span><span class="na">andThen</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">valueOf</span><span class="p">);</span>
+<span class="n">backToString</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">);</span>     <span class="c1">// &quot;123&quot;</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>DoubleFunction&lt;R&gt;</code> - функция, получающая на вход <code>Double</code> и возвращающая на выходе экземпляр класса <code>R</code>;</li>
+<li><code>IntFunction&lt;R&gt;</code> - функция, получающая на вход <code>Integer</code> и возвращающая на выходе экземпляр класса <code>R</code>;</li>
+<li><code>LongFunction&lt;R&gt;</code> - функция, получающая на вход <code>Long</code> и возвращающая на выходе экземпляр класса <code>R</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="unaryoperatort-doubleunaryoperator-intunaryoperator-longunaryoperator"><a name="Для-чего-нужны-функциональные-интерфейсы-unaryoperatort-doubleunaryoperator-intunaryoperator-и-longunaryoperator"></a>Для чего нужны функциональные интерфейсы <code>UnaryOperator&lt;T&gt;</code>, <code>DoubleUnaryOperator</code>, <code>IntUnaryOperator</code> и <code>LongUnaryOperator</code>?</h3>
+<p><strong><code>UnaryOperator&lt;T&gt;</code> (унарный оператор)</strong> принимает в качестве параметра объект типа <code>T</code>, выполняет над ними операции и возвращает результат операций в виде объекта типа <code>T</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">UnaryOperator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">operator</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-&gt;</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">operator</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span> <span class="c1">// 25</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>DoubleUnaryOperator</code> - унарный оператор, получающий на вход <code>Double</code>;</li>
+<li><code>IntUnaryOperator</code> - унарный оператор, получающий на вход <code>Integer</code>;</li>
+<li><code>LongUnaryOperator</code> - унарный оператор, получающий на вход <code>Long</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="binaryoperatort-doublebinaryoperator-intbinaryoperator-longbinaryoperator"><a name="Для-чего-нужны-функциональные-интерфейсы-binaryoperatort-doublebinaryoperator-intbinaryoperator-и-longbinaryoperator"></a>Для чего нужны функциональные интерфейсы <code>BinaryOperator&lt;T&gt;</code>, <code>DoubleBinaryOperator</code>, <code>IntBinaryOperator</code> и <code>LongBinaryOperator</code>?</h3>
+<p><strong><code>BinaryOperator&lt;T&gt;</code> (бинарный оператор)</strong> - интерфейс, с помощью которого реализуется функция, получающая на вход два экземпляра класса <code>T</code> и возвращающая на выходе экземпляр класса <code>T</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">BinaryOperator</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">operator</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">operator</span><span class="p">.</span><span class="na">apply</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span> <span class="c1">// 3</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>DoubleBinaryOperator</code> - бинарный оператор, получающий на вход <code>Double</code>;</li>
+<li><code>IntBinaryOperator</code> - бинарный оператор, получающий на вход <code>Integer</code>;</li>
+<li><code>LongBinaryOperator</code> - бинарный оператор, получающий на вход <code>Long</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="predicatet-doublepredicate-intpredicate-longpredicate"><a name="Для-чего-нужны-функциональные-интерфейсы-predicatet-doublepredicate-intpredicate-и-longpredicate"></a>Для чего нужны функциональные интерфейсы <code>Predicate&lt;T&gt;</code>, <code>DoublePredicate</code>, <code>IntPredicate</code> и <code>LongPredicate</code>?</h3>
+<p><strong><code>Predicate&lt;T&gt;</code> (предикат)</strong> - интерфейс, с помощью которого реализуется функция, получающая на вход экземпляр класса <code>T</code> и возвращающая на выходе значение типа <code>boolean</code>. </p>
+<p>Интерфейс содержит различные методы по умолчанию, позволяющие строить сложные условия (<code>and</code>, <code>or</code>, <code>negate</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="n">Predicate</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">predicate</span> <span class="o">=</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">predicate</span><span class="p">.</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="n">predicate</span><span class="p">.</span><span class="na">negate</span><span class="p">().</span><span class="na">test</span><span class="p">(</span><span class="s">&quot;foo&quot;</span><span class="p">);</span> <span class="c1">// false</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>DoublePredicate</code> - предикат, получающий на вход <code>Double</code>;</li>
+<li><code>IntPredicate</code> - предикат, получающий на вход <code>Integer</code>;</li>
+<li><code>LongPredicate</code> - предикат, получающий на вход <code>Long</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="consumert-doubleconsumer-intconsumer-longconsumer"><a name="Для-чего-нужны-функциональные-интерфейсы-consumert-doubleconsumer-intconsumer-и-longconsumer"></a>Для чего нужны функциональные интерфейсы <code>Consumer&lt;T&gt;</code>, <code>DoubleConsumer</code>, <code>IntConsumer</code> и <code>LongConsumer</code>?</h3>
+<p><strong><code>Consumer&lt;T&gt;</code> (потребитель)</strong> - интерфейс, с помощью которого реализуется функция, которая получает на вход экземпляр класса <code>T</code>, производит с ним некоторое действие и ничего не возвращает.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">hello</span> <span class="o">=</span> <span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">);</span>
+<span class="n">hello</span><span class="p">.</span><span class="na">accept</span><span class="p">(</span><span class="s">&quot;world&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>DoubleConsumer</code> - потребитель, получающий на вход <code>Double</code>;</li>
+<li><code>IntConsumer</code> - потребитель, получающий на вход <code>Integer</code>;</li>
+<li><code>LongConsumer</code> - потребитель, получающий на вход <code>Long</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="suppliert-booleansupplier-doublesupplier-intsupplier-longsupplier"><a name="Для-чего-нужны-функциональные-интерфейсы-suppliert--booleansupplier-doublesupplier-intsupplier-и-longsupplier"></a>Для чего нужны функциональные интерфейсы <code>Supplier&lt;T&gt;</code>,  <code>BooleanSupplier</code>, <code>DoubleSupplier</code>, <code>IntSupplier</code> и <code>LongSupplier</code>?</h3>
+<p><strong><code>Supplier&lt;T&gt;</code> (поставщик)</strong> - интерфейс, с помощью которого реализуется функция, ничего не принимающая на вход, но возвращающая на выход результат класса <code>T</code>;</p>
+<div class="highlight"><pre><span></span><code><span class="n">Supplier</span><span class="o">&lt;</span><span class="n">LocalDateTime</span><span class="o">&gt;</span> <span class="n">now</span> <span class="o">=</span> <span class="n">LocalDateTime</span><span class="p">::</span><span class="n">now</span><span class="p">;</span>
+<span class="n">now</span><span class="p">.</span><span class="na">get</span><span class="p">();</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>DoubleSupplier</code> - поставщик, возвращающий <code>Double</code>;</li>
+<li><code>IntSupplier</code> - поставщик, возвращающий <code>Integer</code>;</li>
+<li><code>LongSupplier</code> - поставщик, возвращающий <code>Long</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="biconsumertu"><a name="Для-чего-нужен-функциональный-интерфейс-biconsumertu"></a>Для чего нужен функциональный интерфейс <code>BiConsumer&lt;T,U&gt;</code>?</h3>
+<p><strong><code>BiConsumer&lt;T,U&gt;</code></strong> представляет собой операцию, которая принимает два аргумента классов <code>T</code> и <code>U</code> производит с ними некоторое действие и ничего не возвращает.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="bifunctiontur"><a name="Для-чего-нужен-функциональный-интерфейс-bifunctiontur"></a>Для чего нужен функциональный интерфейс <code>BiFunction&lt;T,U,R&gt;</code>?</h3>
+<p><strong><code>BiFunction&lt;T,U,R&gt;</code></strong> представляет собой операцию, которая принимает два аргумента классов <code>T</code> и <code>U</code> и возвращающая результат класса <code>R</code>.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="bipredicatetu"><a name="Для-чего-нужен-функциональный-интерфейс-bipredicatetu"></a>Для чего нужен функциональный интерфейс <code>BiPredicate&lt;T,U&gt;</code>?</h3>
+<p><strong><code>BiPredicate&lt;T,U&gt;</code></strong> представляет собой операцию, которая принимает два аргумента классов <code>T</code> и <code>U</code> и возвращающая результат типа <code>boolean</code>. </p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_to_function"><a name="Для-чего-нужны-функциональные-интерфейсы-вида-tofunction"></a>Для чего нужны функциональные интерфейсы вида <code>_To_Function</code>?</h3>
+<ul>
+<li><code>DoubleToIntFunction</code> - операция принимающая аргумент класса <code>Double</code> и возвращающая результат типа <code>Integer</code>;</li>
+<li><code>DoubleToLongFunction</code> - операция принимающая аргумент класса <code>Double</code> и возвращающая результат типа <code>Long</code>;</li>
+<li><code>IntToDoubleFunction</code> - операция принимающая аргумент класса <code>Integer</code> и возвращающая результат типа <code>Double</code>; </li>
+<li><code>IntToLongFunction</code> - операция принимающая аргумент класса <code>Integer</code> и возвращающая результат типа <code>Long</code>;</li>
+<li><code>LongToDoubleFunction</code> - операция принимающая аргумент класса <code>Long</code> и возвращающая результат типа <code>Double</code>;</li>
+<li><code>LongToIntFunction</code> - операция принимающая аргумент класса <code>Long</code> и возвращающая результат типа <code>Integer</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="todoublebifunctiontu-tointbifunctiontu-tolongbifunctiontu"><a name="Для-чего-нужны-функциональные-интерфейсы-todoublebifunctiontu-tointbifunctiontu-и-tolongbifunctiontu"></a>Для чего нужны функциональные интерфейсы <code>ToDoubleBiFunction&lt;T,U&gt;</code>, <code>ToIntBiFunction&lt;T,U&gt;</code> и <code>ToLongBiFunction&lt;T,U&gt;</code>?</h3>
+<ul>
+<li><code>ToDoubleBiFunction&lt;T,U&gt;</code> - операция принимающая два аргумента классов <code>T</code> и <code>U</code> и возвращающая результат типа <code>Double</code>;</li>
+<li><code>ToLongBiFunction&lt;T,U&gt;</code> - операция принимающая два аргумента классов <code>T</code> и <code>U</code> и возвращающая результат типа <code>Long</code>;</li>
+<li><code>ToIntBiFunction&lt;T,U&gt;</code>  - операция принимающая два аргумента классов <code>T</code> и <code>U</code> и возвращающая результат типа <code>Integer</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="todoublefunctiont-tointfunctiont-tolongfunctiont"><a name="Для-чего-нужны-функциональные-интерфейсы-todoublefunctiont-tointfunctiont-и-tolongfunctiont"></a>Для чего нужны функциональные интерфейсы <code>ToDoubleFunction&lt;T&gt;</code>, <code>ToIntFunction&lt;T&gt;</code> и <code>ToLongFunction&lt;T&gt;</code>?</h3>
+<ul>
+<li><code>ToDoubleFunction&lt;T&gt;</code> - операция принимающая аргумент класса <code>T</code> и возвращающая результат типа <code>Double</code>;</li>
+<li><code>ToLongFunction&lt;T&gt;</code> - операция принимающая аргумент класса <code>T</code> и возвращающая результат типа <code>Long</code>;</li>
+<li><code>ToIntFunction&lt;T&gt;</code> - операция принимающая аргумент класса <code>T</code> и возвращающая результат типа <code>Integer</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="objdoubleconsumert-objintconsumert-objlongconsumert"><a name="Для-чего-нужны-функциональные-интерфейсы-objdoubleconsumert-objintconsumert-и-objlongconsumert"></a>Для чего нужны функциональные интерфейсы <code>ObjDoubleConsumer&lt;T&gt;</code>, <code>ObjIntConsumer&lt;T&gt;</code> и <code>ObjLongConsumer&lt;T&gt;</code>?</h3>
+<ul>
+<li><code>ObjDoubleConsumer&lt;T&gt;</code> - операция, которая принимает два аргумента классов <code>T</code> и <code>Double</code>, производит с ними некоторое действие и ничего не возвращает;</li>
+<li><code>ObjLongConsumer&lt;T&gt;</code> - операция, которая принимает два аргумента классов <code>T</code> и <code>Long</code>, производит с ними некоторое действие и ничего не возвращает;</li>
+<li><code>ObjIntConsumer&lt;T&gt;</code> - операция, которая принимает два аргумента классов <code>T</code> и <code>Integer</code>, производит с ними некоторое действие и ничего не возвращает.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="stringjoiner"><a name="Что-такое-stringjoiner"></a>Что такое <code>StringJoiner</code>?</h3>
+<p>Класс <code>StringJoiner</code> используется, чтобы создать последовательность строк, разделенных разделителем с возможностью присоединить к полученной строке префикс и суффикс:</p>
+<div class="highlight"><pre><span></span><code><span class="n">StringJoiner</span> <span class="n">joiner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringJoiner</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">,</span> <span class="s">&quot;prefix-&quot;</span><span class="p">,</span> <span class="s">&quot;-suffix&quot;</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">s</span> <span class="p">:</span> <span class="s">&quot;Hello the brave world&quot;</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">joiner</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">joiner</span><span class="p">);</span> <span class="c1">//prefix-Hello.the.brave.world-suffix</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="default"><a name="Что-такое-default-методы-интрефейса"></a>Что такое <code>default</code> методы интрефейса?</h3>
+<p>Java 8 позволяет добавлять неабстрактные реализации методов в интерфейс, используя ключевое слово <code>default</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Example</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="nf">process</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">);</span>
+    <span class="k">default</span> <span class="kt">void</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;default show()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<ul>
+<li>Если класс реализует интерфейс, он может, но не обязан, реализовать методы по-умолчанию, уже реализованные в интерфейсе. Класс наследует реализацию по умолчанию.</li>
+<li>Если некий класс реализует несколько интерфейсов, которые имеют одинаковый метод по умолчанию, то класс должен реализовать метод с совпадающей сигнатурой самостоятельно. Ситуация аналогична, если один интерфейс имеет метод по умолчанию, а в другом этот же метод является абстрактным - никакой реализации по умолчанию классом не наследуется.</li>
+<li>Метод по умолчанию не может переопределить метод класса <code>java.lang.Object</code>.</li>
+<li>Помогают реализовывать интерфейсы без страха нарушить работу других классов.</li>
+<li>Позволяют избежать создания служебных классов, так как все необходимые методы могут быть представлены в самих интерфейсах.</li>
+<li>Дают свободу классам выбрать метод, который нужно переопределить.</li>
+<li>Одной из основных причин внедрения методов по умолчанию является возможность коллекций в Java 8 использовать лямбда-выражения.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="default_1"><a name="Как-вызывать-default-метод-интерфейса-в-реализующем-этот-интерфейс-классе"></a>Как вызывать <code>default</code> метод интерфейса в реализующем этот интерфейс классе?</h3>
+<p>Используя ключевое слово <code>super</code> вместе с именем интерфейса:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Paper</span> <span class="p">{</span>
+    <span class="k">default</span> <span class="kt">void</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;default show()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Licence</span> <span class="kd">implements</span> <span class="n">Paper</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Paper</span><span class="p">.</span><span class="na">super</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="static"><a name="Что-такое-static-метод-интерфейса"></a>Что такое <code>static</code> метод интерфейса?</h3>
+<p>Статические методы интерфейса похожи на методы по умолчанию, за исключением того, что для них отсутствует возможность переопределения в классах, реализующих интерфейс.</p>
+<ul>
+<li>Статические методы в интерфейсе являются частью интерфейса без возможности использовать их для объектов класса реализации;</li>
+<li>Методы класса <code>java.lang.Object</code> нельзя переопределить как статические;</li>
+<li>Статические методы в интерфейсе используются для обеспечения вспомогательных методов, например, проверки на null, сортировки коллекций и т.д.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="static_1"><a name="Как-вызывать-static-метод-интерфейса"></a>Как вызывать <code>static</code> метод интерфейса?</h3>
+<p>Используя имя интерфейса:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span> <span class="nc">Paper</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kt">void</span> <span class="nf">show</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;static show()&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Licence</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">showPaper</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Paper</span><span class="p">.</span><span class="na">show</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="optional"><a name="Что-такое-optional"></a>Что такое <code>Optional</code>?</h3>
+<p>Опциональное значение <code>Optional</code> — это контейнер для объекта, который может содержать или не содержать значение <code>null</code>. Такая обёртка является удобным средством предотвращения <code>NullPointerException</code>, т.к.
+имеет некоторые функции высшего порядка, избавляющие от добавления повторяющихся <code>if null/notNull</code> проверок:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">optional</span> <span class="o">=</span> <span class="n">Optional</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span>
+
+<span class="n">optional</span><span class="p">.</span><span class="na">isPresent</span><span class="p">();</span> <span class="c1">// true</span>
+<span class="n">optional</span><span class="p">.</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">()));</span> <span class="c1">// 5</span>
+<span class="n">optional</span><span class="p">.</span><span class="na">get</span><span class="p">();</span> <span class="c1">// &quot;hello&quot;</span>
+<span class="n">optional</span><span class="p">.</span><span class="na">orElse</span><span class="p">(</span><span class="s">&quot;ops...&quot;</span><span class="p">);</span> <span class="c1">// &quot;hello&quot;</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="stream"><a name="Что-такое-stream"></a>Что такое <code>Stream</code>?</h3>
+<p>Интерфейс <code>java.util.Stream</code> представляет собой последовательность элементов, над которой можно производить различные операции.</p>
+<p>Операции над стримами бывают или <em>промежуточными (intermediate)</em> или <em>конечными (terminal)</em>. Конечные операции возвращают результат определенного типа, а промежуточные операции возвращают тот же стрим. Таким образом вы можете строить цепочки из несколько операций над одним и тем же стримом. </p>
+<p>У стрима может быть сколько угодно вызовов промежуточных операций и последним вызов конечной операции. При этом все промежуточные операции выполняются лениво и пока не будет вызвана конечная операция никаких действий на самом деле не происходит (похоже на создание объекта <code>Thread</code> или <code>Runnable</code>, без вызова <code>start()</code>).</p>
+<p>Стримы создаются на основе источников каких-либо, например классов из <code>java.util.Collection</code>. </p>
+<p>Ассоциативные массивы (maps), например, <code>HashMap</code>, не поддерживаются.</p>
+<p>Операции над стримами могут выполняться как последовательно, так и параллельно.</p>
+<p>Потоки не могут быть использованы повторно. Как только была вызвана какая-нибудь конечная операция, поток закрывается.</p>
+<p>Кроме универсальных объектных существуют особые виды стримов для работы с примитивными типами данных <code>int</code>, <code>long</code> и <code>double</code>: <code>IntStream</code>, <code>LongStream</code> и <code>DoubleStream</code>. Эти примитивные стримы работают так же, как и обычные объектные, но со следующими отличиями: </p>
+<ul>
+<li>используют специализированные лямбда-выражения, например, <code>IntFunction</code> или <code>IntPredicate</code> вместо <code>Function</code> и <code>Predicate</code>; </li>
+<li>поддерживают дополнительные конечные операции <code>sum()</code>, <code>average()</code>, <code>mapToObj()</code>.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_4"><a name="Какие-существуют-способы-создания-стрима"></a>Какие существуют способы создания стрима?</h3>
+<ol>
+<li>Из коллекции:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">fromCollection</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;z&quot;</span><span class="p">).</span><span class="na">stream</span><span class="p">();</span>
+</code></pre></div>
+
+
+<ol>
+<li>Из набора значений:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">fromValues</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;z&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+
+<ol>
+<li>Из массива:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">fromArray</span> <span class="o">=</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[]</span><span class="p">{</span><span class="s">&quot;x&quot;</span><span class="p">,</span> <span class="s">&quot;y&quot;</span><span class="p">,</span> <span class="s">&quot;z&quot;</span><span class="p">});</span>
+</code></pre></div>
+
+
+<ol>
+<li>Из файла (каждая строка в файле будет отдельным элементом в стриме):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">fromFile</span> <span class="o">=</span> <span class="n">Files</span><span class="p">.</span><span class="na">lines</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;input.txt&quot;</span><span class="p">));</span>
+</code></pre></div>
+
+
+<ol>
+<li>Из строки:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">IntStream</span> <span class="n">fromString</span> <span class="o">=</span> <span class="s">&quot;0123456789&quot;</span><span class="p">.</span><span class="na">chars</span><span class="p">();</span>
+</code></pre></div>
+
+
+<ol>
+<li>С помощью <code>Stream.builder()</code>:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">fromBuilder</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">.</span><span class="na">builder</span><span class="p">().</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;z&quot;</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">).</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;z&quot;</span><span class="p">).</span><span class="na">build</span><span class="p">();</span>
+</code></pre></div>
+
+
+<ol>
+<li>С помощью <code>Stream.iterate()</code> (бесконечный):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">fromIterate</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">.</span><span class="na">iterate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>
+
+
+<ol>
+<li>С помощью <code>Stream.generate()</code> (бесконечный):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">fromGenerate</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">.</span><span class="na">generate</span><span class="p">(()</span> <span class="o">-&gt;</span> <span class="s">&quot;0&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="collection-stream"><a name="В-чем-разница-между-collection-и-stream"></a>В чем разница между <code>Collection</code> и <code>Stream</code>?</h3>
+<p>Коллекции позволяют работать с элементами по-отдельности, тогда как стримы так делать не позволяют, но вместо этого предоставляют возможность выполнять функции над данными как над одним целым.</p>
+<p>Также стоит отметить важность самой концепции сущностей: <code>Collection</code> - это прежде всего воплощение <em>Структуры Данных</em>. Например, <code>Set</code> не просто хранит в себе элементы, он реализует идею множества с уникальными элементами,
+тогда как <code>Stream</code>, это прежде всего абстракция необходимая для реализации <em>конвеера вычислений</em>, собственно поэтому, результатом работы конвеера являются те или иные <em>Структуры Данных</em> или же результаты проверок/поиска и т.п. </p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="collect"><a name="Для-чего-нужен-метод-collect-в-стримах"></a>Для чего нужен метод <code>collect()</code> в стримах?</h3>
+<p>Метод <code>collect()</code> является конечной операцией, которая используется для представление результата в виде коллекции или какой-либо другой структуры данных.</p>
+<p><code>collect()</code> принимает на вход <code>Collector&lt;Тип_источника, Тип_аккумулятора, Тип_результата&gt;</code>, который содержит четыре этапа: <em>supplier</em> - инициализация аккумулятора, <em>accumulator</em> - обработка каждого элемента, <em>combiner</em> - соединение двух аккумуляторов при параллельном выполнении, <em>[finisher]</em> - необязательный метод последней обработки аккумулятора. В Java 8 в классе <code>Collectors</code> реализовано несколько распространённых коллекторов:</p>
+<ul>
+<li><code>toList()</code>, <code>toCollection()</code>, <code>toSet()</code> - представляют стрим в виде списка, коллекции или множества;</li>
+<li><code>toConcurrentMap()</code>, <code>toMap()</code> - позволяют преобразовать стрим в <code>Map</code>;</li>
+<li><code>averagingInt()</code>, <code>averagingDouble()</code>, <code>averagingLong()</code> - возвращают среднее значение;</li>
+<li><code>summingInt()</code>, <code>summingDouble()</code>, <code>summingLong()</code> - возвращает сумму;</li>
+<li><code>summarizingInt()</code>, <code>summarizingDouble()</code>, <code>summarizingLong()</code> - возвращают <code>SummaryStatistics</code> с разными агрегатными значениями;</li>
+<li><code>partitioningBy()</code> - разделяет коллекцию на две части по соответствию условию и возвращает их как <code>Map&lt;Boolean, List&gt;</code>;</li>
+<li><code>groupingBy()</code> - разделяет коллекцию на несколько частей и возвращает <code>Map&lt;N, List&lt;T&gt;&gt;</code>;</li>
+<li><code>mapping()</code> - дополнительные преобразования значений для сложных <code>Collector</code>-ов.</li>
+</ul>
+<p>Так же существует возможность создания собственного коллектора через <code>Collector.of()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Collector</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">toList</span> <span class="o">=</span> <span class="n">Collector</span><span class="p">.</span><span class="na">of</span><span class="p">(</span>
+    <span class="n">ArrayList</span><span class="p">::</span><span class="k">new</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">::</span><span class="n">add</span><span class="p">,</span>
+    <span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">l1</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">l2</span><span class="p">);</span> <span class="k">return</span> <span class="n">l1</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="foreach-foreachordered"><a name="Для-чего-в-стримах-применяются-методы-foreach-и-foreachordered"></a>Для чего в стримах применяются методы <code>forEach()</code> и <code>forEachOrdered()</code>?</h3>
+<ul>
+<li><code>forEach()</code> применяет функцию к каждому объекту стрима, порядок при параллельном выполнении не гарантируется;</li>
+<li><code>forEachOrdered()</code> применяет функцию к каждому объекту стрима с сохранением порядка элементов.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="map-maptoint-maptodouble-maptolong"><a name="Для-чего-в-стримах-предназначены-методы-map-и-maptoint-maptodouble-maptolong"></a>Для чего в стримах предназначены методы <code>map()</code> и <code>mapToInt()</code>, <code>mapToDouble()</code>, <code>mapToLong()</code>?</h3>
+<p>Метод <code>map()</code> является промежуточной операцией, которая заданным образом преобразует каждый элемент стрима.</p>
+<p><code>mapToInt()</code>, <code>mapToDouble()</code>, <code>mapToLong()</code> - аналоги <code>map()</code>, возвращающие соответствующий числовой стрим (то есть стрим из числовых примитивов):</p>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span>
+    <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;12&quot;</span><span class="p">,</span> <span class="s">&quot;22&quot;</span><span class="p">,</span> <span class="s">&quot;4&quot;</span><span class="p">,</span> <span class="s">&quot;444&quot;</span><span class="p">,</span> <span class="s">&quot;123&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">mapToInt</span><span class="p">(</span><span class="n">Integer</span><span class="p">::</span><span class="n">parseInt</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">toArray</span><span class="p">();</span> <span class="c1">//[12, 22, 4, 444, 123]</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="filter"><a name="Какова-цель-метода-filter-в-стримах"></a>Какова цель метода <code>filter()</code> в стримах?</h3>
+<p>Метод <code>filter()</code> является промежуточной операцией принимающей предикат, который фильтрует все элементы, возвращая только те, что соответствуют условию.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="limit"><a name="Для-чего-в-стримах-предназначен-метод-limit"></a>Для чего в стримах предназначен метод <code>limit()</code>?</h3>
+<p>Метод <code>limit()</code> является промежуточной операцией, которая позволяет ограничить выборку определенным количеством первых элементов.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="sorted"><a name="Для-чего-в-стримах-предназначен-метод-sorted"></a>Для чего в стримах предназначен метод <code>sorted()</code>?</h3>
+<p>Метод <code>sorted()</code> является промежуточной операцией, которая позволяет сортировать значения либо в натуральном порядке, либо задавая <code>Comparator</code>.</p>
+<p>Порядок элементов в исходной коллекции остается нетронутым - <code>sorted()</code> всего лишь создает его отсортированное представление.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="flatmap-flatmaptoint-flatmaptodouble-flatmaptolong"><a name="Для-чего-в-стримах-предназначены-методы-flatmap-flatmaptoint-flatmaptodouble-flatmaptolong"></a>Для чего в стримах предназначены методы <code>flatMap()</code>, <code>flatMapToInt()</code>, <code>flatMapToDouble()</code>, <code>flatMapToLong()</code>?</h3>
+<p>Метод <code>flatMap()</code> похож на map, но может создавать из одного элемента несколько. Таким образом, каждый объект будет преобразован в ноль, один или несколько других объектов, поддерживаемых потоком.  Наиболее очевидный способ применения этой операции — преобразование элементов контейнера при помощи функций, которые возвращают контейнеры.</p>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span>
+    <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;H e l l o&quot;</span><span class="p">,</span> <span class="s">&quot;w o r l d !&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">flatMap</span><span class="p">((</span><span class="n">p</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">stream</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot; &quot;</span><span class="p">)))</span>
+    <span class="p">.</span><span class="na">toArray</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="p">::</span><span class="k">new</span><span class="p">);</span><span class="c1">//[&quot;H&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;, &quot;w&quot;, &quot;o&quot;, &quot;r&quot;, &quot;l&quot;, &quot;d&quot;, &quot;!&quot;]</span>
+</code></pre></div>
+
+
+<p><code>flatMapToInt()</code>, <code>flatMapToDouble()</code>, <code>flatMapToLong()</code> - это аналоги <code>flatMap()</code>, возвращающие соответствующий числовой стрим.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="java-8"><a name="Расскажите-о-параллельной-обработке-в-java-8"></a>Расскажите о параллельной обработке в Java 8.</h3>
+<p>Стримы могут быть последовательными и параллельными. Операции над последовательными стримами выполняются в одном потоке процессора, над параллельными — используя несколько потоков процессора. Параллельные стримы используют общий <code>ForkJoinPool</code> доступный через статический <code>ForkJoinPool.commonPool()</code> метод. При этом, если окружение не является многоядерным, то поток будет выполняться как последовательный. Фактически применение параллельных стримов сводится к тому, что данные в стримах будут разделены на части, каждая часть обрабатывается на отдельном ядре процессора, и в конце эти части соединяются, и над ними выполняются конечные операции.</p>
+<p>Для создания параллельного потока из коллекции можно также использовать метод <code>parallelStream()</code> интерфейса <code>Collection</code>. </p>
+<p>Чтобы сделать обычный последовательный стрим параллельным, надо вызвать у объекта <code>Stream</code> метод <code>parallel()</code>. Метод <code>isParallel()</code> позволяет узнать является ли стрим параллельным. </p>
+<p>С помощью, методов <code>parallel()</code> и <code>sequential()</code> можно определять какие операции могут быть параллельными, а какие только последовательными. Так же из любого последовательного стрима можно сделать параллельный и наоборот: </p>
+<div class="highlight"><pre><span></span><code><span class="n">collection</span>
+<span class="p">.</span><span class="na">stream</span><span class="p">()</span>
+<span class="p">.</span><span class="na">peek</span><span class="p">(...)</span> <span class="c1">// операция последовательна</span>
+<span class="p">.</span><span class="na">parallel</span><span class="p">()</span>
+<span class="p">.</span><span class="na">map</span><span class="p">(...)</span> <span class="c1">// операция может выполняться параллельно,</span>
+<span class="p">.</span><span class="na">sequential</span><span class="p">()</span>
+<span class="p">.</span><span class="na">reduce</span><span class="p">(...)</span> <span class="c1">// операция снова последовательна </span>
+</code></pre></div>
+
+
+<p>Как правило, элементы передаются в стрим в том же порядке, в котором они определены в источнике данных. При работе с параллельными стримами система сохраняет порядок следования элементов. Исключение составляет метод <code>forEach()</code>, который может выводить элементы в произвольном порядке. И чтобы сохранить порядок следования, необходимо применять метод <code>forEachOrdered()</code>.</p>
+<p>Критерии, которые могут повлиять на производительность в параллельных стримах:</p>
+<ul>
+<li>Размер данных - чем больше данных, тем сложнее сначала разделять данные, а потом их соединять.</li>
+<li>Количество ядер процессора. Теоретически, чем больше ядер в компьютере, тем быстрее программа будет работать. Если на машине одно ядро, нет смысла применять параллельные потоки.</li>
+<li>Чем проще структура данных, с которой работает поток, тем быстрее будут происходить операции. Например, данные из <code>ArrayList</code> легко использовать, так как структура данной коллекции предполагает последовательность несвязанных данных. А вот коллекция типа <code>LinkedList</code> - не лучший вариант, так как в последовательном списке все элементы связаны с предыдущими/последующими. И такие данные трудно распараллелить.</li>
+<li>Над данными примитивных типов операции будут производиться быстрее, чем над объектами классов.</li>
+<li>Крайне не рекомендуется использовать параллельные стримы для скольких-нибудь долгих операций (например, сетевых соединений), так как все параллельные стримы работают c одним ForkJoinPool, то такие долгие операции могут остановить работу всех параллельных стримов в JVM из-за отсутствия доступных потоков в пуле, т.е. параллельные стримы стоит использовать лишь для коротких операций, где счет идет на миллисекунды, но не для тех где счет может идти на секунды и минуты;</li>
+<li>Сохранение порядка в параллельных стримах увеличивает издержки при выполнении и если порядок не важен, то имеется возможность отключить его сохранение и тем самым увеличить производительность, использовав промежуточную операцию <code>unordered()</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">collection</span><span class="p">.</span><span class="na">parallelStream</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">unordered</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">collect</span><span class="p">(</span><span class="n">Collectors</span><span class="p">.</span><span class="na">toList</span><span class="p">());</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_5"><a name="Какие-конечные-методы-работы-со-стримами-вы-знаете"></a>Какие конечные методы работы со стримами вы знаете?</h3>
+<ul>
+<li><code>findFirst()</code> возвращает первый элемент;</li>
+<li><code>findAny()</code> возвращает любой подходящий элемент;</li>
+<li><code>collect()</code> представление результатов в виде коллекций и других структур данных;</li>
+<li><code>count()</code> возвращает количество элементов;</li>
+<li><code>anyMatch()</code> возвращает <code>true</code>, если условие выполняется хотя бы для одного элемента;</li>
+<li><code>noneMatch()</code> возвращает <code>true</code>, если условие не выполняется ни для одного элемента;</li>
+<li><code>allMatch()</code> возвращает <code>true</code>, если условие выполняется для всех элементов;</li>
+<li><code>min()</code> возвращает минимальный элемент, используя в качестве условия <code>Comparator</code>;</li>
+<li><code>max()</code> возвращает максимальный элемент, используя в качестве условия <code>Comparator</code>;</li>
+<li><code>forEach()</code> применяет функцию к каждому объекту (порядок при параллельном выполнении не гарантируется);</li>
+<li><code>forEachOrdered()</code> применяет функцию к каждому объекту с сохранением порядка элементов;</li>
+<li><code>toArray()</code> возвращает массив значений;</li>
+<li><code>reduce()</code>позволяет выполнять агрегатные функции и возвращать один результат.</li>
+</ul>
+<p>Для числовых стримов дополнительно доступны:</p>
+<ul>
+<li><code>sum()</code> возвращает сумму всех чисел;</li>
+<li><code>average()</code> возвращает среднее арифметическое всех чисел.</li>
+</ul>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_6"><a name="Какие-промежуточные-методы-работы-со-стримами-вы-знаете"></a>Какие промежуточные методы работы со стримами вы знаете?</h3>
+<ul>
+<li><code>filter()</code> отфильтровывает записи, возвращая только записи, соответствующие условию;</li>
+<li><code>skip()</code> позволяет пропустить определённое количество элементов в начале;</li>
+<li><code>distinct()</code> возвращает стрим без дубликатов (для метода <code>equals()</code>);</li>
+<li><code>map()</code> преобразует каждый элемент;</li>
+<li><code>peek()</code> возвращает тот же стрим, применяя к каждому элементу функцию;</li>
+<li><code>limit()</code> позволяет ограничить выборку определенным количеством первых элементов;</li>
+<li><code>sorted()</code> позволяет сортировать значения либо в натуральном порядке, либо задавая <code>Comparator</code>;</li>
+<li><code>mapToInt()</code>, <code>mapToDouble()</code>, <code>mapToLong()</code> - аналоги <code>map()</code> возвращающие стрим числовых примитивов;</li>
+<li><code>flatMap()</code>, <code>flatMapToInt()</code>, <code>flatMapToDouble()</code>, <code>flatMapToLong()</code> - похожи на <code>map()</code>, но могут создавать из одного элемента несколько.</li>
+</ul>
+<p>Для числовых стримов дополнительно доступен метод <code>mapToObj()</code>, который преобразует числовой стрим обратно в объектный.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="10-foreach"><a name="Как-вывести-на-экран-10-случайных-чисел-используя-foreach"></a>Как вывести на экран 10 случайных чисел, используя <code>forEach()</code>?</h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">new</span> <span class="n">Random</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">ints</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="map"><a name="Как-можно-вывести-на-экран-уникальные-квадраты-чисел-используя-метод-map"></a>Как можно вывести на экран уникальные квадраты чисел используя метод <code>map()</code>?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span>
+    <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">s</span> <span class="o">*</span> <span class="n">s</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">distinct</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="filter_1"><a name="Как-вывести-на-экран-количество-пустых-строк-с-помощью-метода-filter"></a>Как вывести на экран количество пустых строк с помощью метода <code>filter()</code>?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+    <span class="n">Stream</span>
+        <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span> <span class="s">&quot;, &quot;</span><span class="p">,</span> <span class="s">&quot;world&quot;</span><span class="p">,</span> <span class="s">&quot;!&quot;</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">filter</span><span class="p">(</span><span class="n">String</span><span class="p">::</span><span class="n">isEmpty</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">count</span><span class="p">());</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="10"><a name="Как-вывести-на-экран-10-случайных-чисел-в-порядке-возрастания"></a>Как вывести на экран 10 случайных чисел в порядке возрастания?</h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">new</span> <span class="n">Random</span><span class="p">())</span>
+    <span class="p">.</span><span class="na">ints</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">sorted</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_7"><a name="Как-найти-максимальное-число-в-наборе"></a>Как найти максимальное число в наборе?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span>
+    <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">mapToInt</span><span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">max</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">getAsInt</span><span class="p">();</span> <span class="c1">//55</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_8"><a name="Как-найти-минимальное-число-в-наборе"></a>Как найти минимальное число в наборе?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span>
+    <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">mapToInt</span><span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">min</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">getAsInt</span><span class="p">();</span> <span class="c1">//2</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_9"><a name="Как-получить-сумму-всех-чисел-в-наборе"></a>Как получить сумму всех чисел в наборе?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span>
+    <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">mapToInt</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">sum</span><span class="p">();</span> <span class="c1">//69</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_10"><a name="Как-получить-среднее-значение-всех-чисел"></a>Как получить среднее значение всех чисел?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">Stream</span>
+    <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">mapToInt</span><span class="p">(</span><span class="n">a</span> <span class="o">-&gt;</span> <span class="n">a</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">average</span><span class="p">()</span>
+    <span class="p">.</span><span class="na">getAsDouble</span><span class="p">();</span> <span class="c1">//13.8</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="maps-java-8"><a name="Какие-дополнительные-методы-для-работы-с-ассоциативными-массивами-maps-появились-в-java-8"></a>Какие дополнительные методы для работы с ассоциативными массивами (maps) появились в Java 8?</h3>
+<ul>
+<li><code>putIfAbsent()</code> добавляет пару «ключ-значение», только если ключ отсутствовал:</li>
+</ul>
+<p><code>map.putIfAbsent("a", "Aa");</code></p>
+<ul>
+<li><code>forEach()</code> принимает функцию, которая производит операцию над каждым элементом:</li>
+</ul>
+<p><code>map.forEach((k, v) -&gt; System.out.println(v));</code></p>
+<ul>
+<li><code>compute()</code> создаёт или обновляет текущее значение на полученное в результате вычисления (возможно использовать ключ и текущее значение):</li>
+</ul>
+<p><code>map.compute("a", (k, v) -&gt; String.valueOf(k).concat(v)); //["a", "aAa"]</code></p>
+<ul>
+<li><code>computeIfPresent()</code> если ключ существует, обновляет текущее значение на полученное в результате вычисления (возможно использовать ключ и текущее значение):</li>
+</ul>
+<p><code>map.computeIfPresent("a", (k, v) -&gt; k.concat(v));</code></p>
+<ul>
+<li><code>computeIfAbsent()</code> если ключ отсутствует, создаёт его со значением, которое вычисляется (возможно использовать ключ):</li>
+</ul>
+<p><code>map.computeIfAbsent("a", k -&gt; "A".concat(k)); //["a","Aa"]</code></p>
+<ul>
+<li><code>getOrDefault()</code> в случае отсутствия ключа, возвращает переданное значение по-умолчанию:</li>
+</ul>
+<p><code>map.getOrDefault("a", "not found");</code></p>
+<ul>
+<li><code>merge()</code> принимает ключ, значение и функцию, которая объединяет передаваемое и текущее значения. Если под заданным ключем значение отсутствует, то записывает туда передаваемое значение. </li>
+</ul>
+<p><code>map.merge("a", "z", (value, newValue) -&gt; value.concat(newValue)); //["a","Aaz"]</code></p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="localdatetime"><a name="Что-такое-localdatetime"></a>Что такое <code>LocalDateTime</code>?</h3>
+<p><code>LocalDateTime</code> объединяет вместе <code>LocaleDate</code> и <code>LocalTime</code>, содержит дату и время в календарной системе ISO-8601 без привязки к часовому поясу. Время хранится с точностью до наносекунды. Содержит множество удобных методов, таких как plusMinutes, plusHours, isAfter, toSecondOfDay и т.д.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="zoneddatetime"><a name="Что-такое-zoneddatetime"></a>Что такое <code>ZonedDateTime</code>?</h3>
+<p><code>java.time.ZonedDateTime</code> — аналог <code>java.util.Calendar</code>, класс с самым полным объемом информации о временном контексте в календарной системе ISO-8601. Включает временную зону, поэтому все операции с временными сдвигами этот класс проводит с её учётом.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="date-time-api-java-8"><a name="Как-получить-текущую-дату-с-использованием-date-time-api-из-java-8"></a>Как получить текущую дату с использованием Date Time API из Java 8?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">();</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="1-1-1-10-date-time-api"><a name="Как-добавить-1-неделю-1-месяц-1-год-10-лет-к-текущей-дате-с-использованием-date-time-api"></a>Как добавить 1 неделю, 1 месяц, 1 год, 10 лет к текущей дате с использованием Date Time API?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">plusWeeks</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">plusMonths</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">plusYears</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ChronoUnit</span><span class="p">.</span><span class="na">DECADES</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="date-time-api"><a name="Как-получить-следующий-вторник-используя-date-time-api"></a>Как получить следующий вторник используя Date Time API?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">with</span><span class="p">(</span><span class="n">TemporalAdjusters</span><span class="p">.</span><span class="na">next</span><span class="p">(</span><span class="n">DayOfWeek</span><span class="p">.</span><span class="na">TUESDAY</span><span class="p">));</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="date-time-api_1"><a name="Как-получить-вторую-субботу-текущего-месяца-используя-date-time-api"></a>Как получить вторую субботу текущего месяца используя Date Time API?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">LocalDate</span>
+    <span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">getYear</span><span class="p">(),</span> <span class="n">LocalDate</span><span class="p">.</span><span class="na">now</span><span class="p">().</span><span class="na">getMonth</span><span class="p">(),</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">.</span><span class="na">with</span><span class="p">(</span><span class="n">TemporalAdjusters</span><span class="p">.</span><span class="na">nextOrSame</span><span class="p">(</span><span class="n">DayOfWeek</span><span class="p">.</span><span class="na">SATURDAY</span><span class="p">))</span>
+    <span class="p">.</span><span class="na">with</span><span class="p">(</span><span class="n">TemporalAdjusters</span><span class="p">.</span><span class="na">next</span><span class="p">(</span><span class="n">DayOfWeek</span><span class="p">.</span><span class="na">SATURDAY</span><span class="p">));</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="date-time-api_2"><a name="Как-получить-текущее-время-с-точностью-до-миллисекунд-используя-date-time-api"></a>Как получить текущее время с точностью до миллисекунд используя Date Time API?</h3>
+<div class="highlight"><pre><span></span><code><span class="k">new</span> <span class="n">Date</span><span class="p">().</span><span class="na">toInstant</span><span class="p">();</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="date-time-api_3"><a name="Как-получить-текущее-время-по-местному-времени-с-точностью-до-миллисекунд-используя-date-time-api"></a>Как получить текущее время по местному времени с точностью до миллисекунд используя Date Time API?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">LocalDateTime</span><span class="p">.</span><span class="na">ofInstant</span><span class="p">(</span><span class="k">new</span> <span class="n">Date</span><span class="p">().</span><span class="na">toInstant</span><span class="p">(),</span> <span class="n">ZoneId</span><span class="p">.</span><span class="na">systemDefault</span><span class="p">());</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="_11"><a name="Как-определить-повторяемую-аннотацию"></a>Как определить повторяемую аннотацию?</h3>
+<p>Чтобы определить повторяемую аннотацию, необходимо создать аннотацию-контейнер для списка повторяемых аннотаций и обозначить повторяемую мета-аннотацией <code>@Repeatable</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@interface</span> <span class="n">Schedulers</span>
+<span class="p">{</span>
+    <span class="n">Scheduler</span><span class="o">[]</span> <span class="nf">value</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="nd">@Repeatable</span><span class="p">(</span><span class="n">Schedulers</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+<span class="nd">@interface</span> <span class="n">Scheduler</span>
+<span class="p">{</span>
+    <span class="n">String</span> <span class="nf">birthday</span><span class="p">()</span> <span class="k">default</span> <span class="s">&quot;Jan 8 1935&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="nashorn"><a name="Что-такое-nashorn"></a>Что такое <code>Nashorn</code>?</h3>
+<p><strong>Nashorn</strong> - это движок JavaScript, разрабатываемый на Java компанией Oracle. Призван дать возможность встраивать код JavaScript в приложения Java. В сравнении с <em>Rhino</em>, который поддерживается Mozilla Foundation, Nashorn обеспечивает от 2 до 10 раз более высокую производительность, так как он компилирует код и передает байт-код виртуальной машине Java непосредственно в памяти. Nashorn умеет компилировать код JavaScript и генерировать классы Java, которые загружаются специальным загрузчиком. Так же возможен вызов кода Java прямо из JavaScript.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="jjs"><a name="Что-такое-jjs"></a>Что такое <code>jjs</code>?</h3>
+<p><code>jjs</code> это утилита командной строки, которая позволяет исполнять программы на языке JavaScript прямо в консоли.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="java-8_1"><a name="Какой-класс-появился-в-java-8-для-кодированиядекодирования-данных"></a>Какой класс появился в Java 8 для кодирования/декодирования данных?</h3>
+<p><code>Base64</code> - потокобезопасный класс, который реализует кодировщик и декодировщик данных, используя схему кодирования base64 согласно <em>RFC 4648</em> и <em>RFC 2045</em>.</p>
+<p>Base64 содержит 6 основных методов:</p>
+<p><code>getEncoder()</code>/<code>getDecoder()</code> - возвращает кодировщик/декодировщик base64, соответствующий стандарту <em>RFC 4648</em>;
+<code>getUrlEncoder()</code>/<code>getUrlDecoder()</code> - возвращает URL-safe кодировщик/декодировщик base64, соответствующий стандарту <em>RFC 4648</em>;
+<code>getMimeEncoder()</code>/<code>getMimeDecoder()</code> - возвращает MIME кодировщик/декодировщик, соответствующий стандарту <em>RFC 2045</em>.</p>
+<p><a href="#java-8">к оглавлению</a></p>
+<h3 id="base64"><a name="Как-создать-base64-кодировщик-и-декодировщик"></a>Как создать Base64 кодировщик и декодировщик?</h3>
+<div class="highlight"><pre><span></span><code><span class="c1">// Encode</span>
+<span class="n">String</span> <span class="n">b64</span> <span class="o">=</span> <span class="n">Base64</span><span class="p">.</span><span class="na">getEncoder</span><span class="p">().</span><span class="na">encodeToString</span><span class="p">(</span><span class="s">&quot;input&quot;</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="s">&quot;utf-8&quot;</span><span class="p">));</span> <span class="c1">//aW5wdXQ==</span>
+<span class="c1">// Decode</span>
+<span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">Base64</span><span class="p">.</span><span class="na">getDecoder</span><span class="p">().</span><span class="na">decode</span><span class="p">(</span><span class="s">&quot;aW5wdXQ==&quot;</span><span class="p">),</span> <span class="s">&quot;utf-8&quot;</span><span class="p">);</span> <span class="c1">//input</span>
+</code></pre></div>
+
+
+<p><a href="#java-8">к оглавлению</a></p>
+<h1 id="_12">Источники</h1>
+<ul>
+<li><a href="https://habrahabr.ru/post/216431/">Хабрахабр - Новое в Java 8</a></li>
+<li><a href="https://habrahabr.ru/company/luxoft/blog/270383/">Хабрахабр - Шпаргалка Java программиста 4. Java Stream API</a></li>
+<li><a href="http://metanit.com/java/tutorial/9.1.php">METANIT.COM</a></li>
+<li><a href="http://javadevblog.com/interfejsy-v-java-8-staticheskie-metody-metody-po-umolchaniyu-funktsional-ny-e-interfejsy.html">javadevblog.com</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

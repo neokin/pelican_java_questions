@@ -1,0 +1,1153 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; Java Collections Framework</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="java-collections-framework">Java Collections Framework</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="java-collections-framework"></a>_</h3>
+<ul>
+<li><a href="#Что-такое-коллекция">Что такое <em>«коллекция»</em>?</a></li>
+<li><a href="#Назовите-основные-интерфейсы-jcf-и-их-реализации">Назовите основные интерфейсы JCF и их реализации.</a></li>
+<li><a href="#Расположите-в-виде-иерархии-следующие-интерфейсы-list-set-map-sortedset-sortedmap-collection-iterable-iterator-navigableset-navigablemap">Расположите в виде иерархии следующие интерфейсы: <code>List</code>, <code>Set</code>, <code>Map</code>, <code>SortedSet</code>, <code>SortedMap</code>, <code>Collection</code>, <code>Iterable</code>, <code>Iterator</code>, <code>NavigableSet</code>, <code>NavigableMap</code>.</a></li>
+<li><a href="#Почему-map--это-не-collection-в-то-время-как-list-и-set-являются-collection">Почему <code>Map</code> — это не <code>Collection</code>, в то время как <code>List</code> и <code>Set</code> являются <code>Collection</code>?</a></li>
+<li><a href="#В-чем-разница-между-классами-javautilcollection-и-javautilcollections">В чем разница между классами <code>java.util.Collection</code> и <code>java.util.Collections</code>?</a></li>
+<li><a href="#Что-такое-fail-fast-поведение">Что такое «fail-fast поведение»?</a></li>
+<li><a href="#Какая-разница-между-fail-fast-и-fail-safe">Какая разница между fail-fast и fail-safe?</a></li>
+<li><a href="#Приведите-примеры-итераторов-реализующих-поведение-fail-safe">Приведите примеры итераторов, реализующих поведение fail-safe</a></li>
+<li><a href="#Чем-различаются-enumeration-и-iterator">Чем различаются <code>Enumeration</code> и <code>Iterator</code>.</a></li>
+<li><a href="#Как-между-собой-связаны-iterable-и-iterator">Как между собой связаны <code>Iterable</code> и <code>Iterator</code>?</a></li>
+<li><a href="#Как-между-собой-связаны-iterable-iterator-и-for-each">Как между собой связаны <code>Iterable</code>, <code>Iterator</code> и «for-each»?</a></li>
+<li><a href="#Сравните-iterator-и-listiterator">Сравните <code>Iterator</code> и <code>ListIterator</code>.</a></li>
+<li><a href="#Что-произойдет-при-вызове-iteratornext-без-предварительного-вызова-iteratorhasnext">Что произойдет при вызове <code>Iterator.next()</code> без предварительного вызова <code>Iterator.hasNext()</code>?</a></li>
+<li><a href="#Сколько-элементов-будет-пропущено-если-iteratornext-будет-вызван-после-10-ти-вызовов-iteratorhasnext">Сколько элементов будет пропущено, если <code>Iterator.next()</code> будет вызван после 10-ти вызовов <code>Iterator.hasNext()</code>?</a></li>
+<li><a href="#Как-поведёт-себя-коллекция-если-вызвать-iteratorremove">Как поведёт себя коллекция, если вызвать <code>iterator.remove()</code>?</a></li>
+<li><a href="#Как-поведёт-себя-уже-инстанциированный-итератор-для-collection-если-вызвать-collectionremove">Как поведёт себя уже инстанциированный итератор для <code>collection</code>, если вызвать <code>collection.remove()</code>?</a></li>
+<li><a href="#Как-избежать-concurrentmodificationexception-во-время-перебора-коллекции">Как избежать <code>ConcurrentModificationException</code> во время перебора коллекции?</a></li>
+<li><a href="#Какая-коллекция-реализует-дисциплину-обслуживания-fifo">Какая коллекция реализует дисциплину обслуживания FIFO?</a></li>
+<li><a href="#Какая-коллекция-реализует-дисциплину-обслуживания-filo">Какая коллекция реализует дисциплину обслуживания FILO?</a></li>
+<li><a href="#Чем-отличается-arraylist-от-vector">Чем отличается <code>ArrayList</code> от <code>Vector</code>?</a></li>
+<li><a href="#Зачем-добавили-arraylist-если-уже-был-vector">Зачем добавили <code>ArrayList</code>, если уже был <code>Vector</code>?</a></li>
+<li><a href="#Чем-отличается-arraylist-от-linkedlist-В-каких-случаях-лучше-использовать-первый-а-в-каких-второй">Чем отличается <code>ArrayList</code> от <code>LinkedList</code>? В каких случаях лучше использовать первый, а в каких второй?</a></li>
+<li><a href="#Что-работает-быстрее-arraylist-или-linkedlist">Что работает быстрее <code>ArrayList</code> или <code>LinkedList</code>?</a></li>
+<li><a href="#Какое-худшее-время-работы-метода-contains-для-элемента-который-есть-в-linkedlist">Какое худшее время работы метода <code>contains()</code> для элемента, который есть в <code>LinkedList</code>?</a></li>
+<li><a href="#Какое-худшее-время-работы-метода-contains-для-элемента-который-есть-в-arraylist">Какое худшее время работы метода <code>contains()</code> для элемента, который есть в <code>ArrayList</code>?</a></li>
+<li><a href="#Какое-худшее-время-работы-метода-add-для-linkedlist">Какое худшее время работы метода <code>add()</code> для <code>LinkedList</code>?</a></li>
+<li><a href="#Какое-худшее-время-работы-метода-add-для-arraylist">Какое худшее время работы метода <code>add()</code> для <code>ArrayList</code>?</a></li>
+<li><a href="#Необходимо-добавить-1-млн-элементов-какую-структуру-вы-используете">Необходимо добавить 1 млн. элементов, какую структуру вы используете?</a></li>
+<li><a href="#Как-происходит-удаление-элементов-из-arraylist-Как-меняется-в-этом-случае-размер-arraylist">Как происходит удаление элементов из <code>ArrayList</code>? Как меняется в этом случае размер <code>ArrayList</code>?</a></li>
+<li><a href="#Предложите-эффективный-алгоритм-удаления-нескольких-рядом-стоящих-элементов-из-середины-списка-реализуемого-arraylist">Предложите эффективный алгоритм удаления нескольких рядом стоящих элементов из середины списка, реализуемого <code>ArrayList</code>.</a></li>
+<li><a href="#Сколько-необходимо-дополнительной-памяти-при-вызове-arraylistadd">Сколько необходимо дополнительной памяти при вызове <code>ArrayList.add()</code>?</a></li>
+<li><a href="#Сколько-выделяется-дополнительно-памяти-при-вызове-linkedlistadd">Сколько выделяется дополнительно памяти при вызове <code>LinkedList.add()</code>?</a></li>
+<li><a href="#Оцените-количество-памяти-на-хранение-одного-примитива-типа-byte-в-linkedlist">Оцените количество памяти на хранение одного примитива типа <code>byte</code> в <code>LinkedList</code>?</a></li>
+<li><a href="#Оцените-количество-памяти-на-хранение-одного-примитива-типа-byte-в-arraylist">Оцените количество памяти на хранение одного примитива типа <code>byte</code> в <code>ArrayList</code>?</a></li>
+<li><a href="#Для-arraylist-или-для-linkedlist-операция-добавления-элемента-в-середину-listaddlistsize2-newelement-медленнее">Для <code>ArrayList</code> или для <code>LinkedList</code> операция добавления элемента в середину (<code>list.add(list.size()/2, newElement)</code>) медленнее?</a></li>
+<li><a href="#В-реализации-класса-arraylist-есть-следующие-поля-object-elementdata-int-size-Объясните-зачем-хранить-отдельно-size-если-всегда-можно-взять-elementdatalength">В реализации класса <code>ArrayList</code> есть следующие поля: <code>Object[] elementData</code>, <code>int size</code>. Объясните, зачем хранить отдельно <code>size</code>, если всегда можно взять <code>elementData.length</code>?</a></li>
+<li><a href="#Сравните-интерфейсы-queue-и-deque">Сравните интерфейсы <code>Queue</code> и <code>Deque</code>.</a></li>
+<li><a href="#Кто-кого-расширяет-queue-расширяет-deque-или-deque-расширяет-queue">Кто кого расширяет: <code>Queue</code> расширяет <code>Deque</code>, или <code>Deque</code> расширяет <code>Queue</code>?</a></li>
+<li><a href="#Почему-linkedlist-реализует-и-list-и-deque">Почему <code>LinkedList</code> реализует и <code>List</code>, и <code>Deque</code>?</a></li>
+<li><a href="#linkedlist--это-односвязный-двусвязный-или-четырехсвязный-список"><code>LinkedList</code> — это односвязный, двусвязный или четырехсвязный список?</a></li>
+<li><a href="#Как-перебрать-элементы-linkedlist-в-обратном-порядке-не-используя-медленный-getindex">Как перебрать элементы <code>LinkedList</code> в обратном порядке, не используя медленный <code>get(index)</code>?</a></li>
+<li><a href="#Что-позволяет-сделать-priorityqueue">Что позволяет сделать <code>PriorityQueue</code>?</a></li>
+<li><a href="#stack-считается-устаревшим-Чем-его-рекомендуют-заменять-Почему"><code>Stack</code> считается «устаревшим». Чем его рекомендуют заменять? Почему?</a></li>
+<li><a href="#Зачем-нужен-hashmap-если-есть-hashtable">Зачем нужен <code>HashMap</code>, если есть <code>Hashtable</code>?</a></li>
+<li><a href="#В-чем-разница-между-hashmap-и-identityhashmap-Для-чего-нужна-identityhashmap">В чем разница между <code>HashMap</code> и <code>IdentityHashMap</code>? Для чего нужна <code>IdentityHashMap</code>?</a></li>
+<li><a href="#В-чем-разница-между-hashmap-и-weakhashmap-Для-чего-используется-weakhashmap">В чем разница между <code>HashMap</code> и <code>WeakHashMap</code>? Для чего используется <code>WeakHashMap</code>?</a></li>
+<li><a href="#В-weakhashmap-используются-weakreferences-А-почему-бы-не-создать-softhashmap-на-softreferences">В <code>WeakHashMap</code> используются WeakReferences. А почему бы не создать <code>SoftHashMap</code> на SoftReferences?</a></li>
+<li><a href="#В-weakhashmap-используются-weakreferences-А-почему-бы-не-создать-phantomhashmap-на-phantomreferences">В <code>WeakHashMap</code> используются WeakReferences. А почему бы не создать <code>PhantomHashMap</code> на PhantomReferences?</a></li>
+<li><a href="#linkedhashmap---что-в-нем-от-linkedlist-а-что-от-hashmap"><code>LinkedHashMap</code> - что в нем от <code>LinkedList</code>, а что от <code>HashMap</code>?</a></li>
+<li><a href="#В-чем-проявляется-сортированность-sortedmap-кроме-того-что-tostring-выводит-все-элементы-по-порядку">В чем проявляется «сортированность» <code>SortedMap</code>, кроме того, что <code>toString()</code> выводит все элементы по порядку?</a></li>
+<li><a href="#Как-устроен-hashmap">Как устроен <code>HashMap</code>?</a></li>
+<li><a href="#Согласно-Кнуту-и-Кормену-существует-две-основных-реализации-хэш-таблицы-на-основе-открытой-адресации-и-на-основе-метода-цепочек-Как-реализована-hashmap-Почему-по-вашему-мнению-была-выбрана-именно-эта-реализация-В-чем-плюсы-и-минусы-каждого-подхода">Согласно Кнуту и Кормену существует две основных реализации хэш-таблицы: на основе открытой адресации и на основе метода цепочек. Как реализована <code>HashMap</code>? Почему, по вашему мнению, была выбрана именно эта реализация? В чем плюсы и минусы каждого подхода?</a></li>
+<li><a href="#Как-работает-hashmap-при-попытке-сохранить-в-него-два-элемента-по-ключам-с-одинаковым-hashcode-но-для-которых-equals--false">Как работает <code>HashMap</code> при попытке сохранить в него два элемента по ключам с одинаковым <code>hashCode()</code>, но для которых <code>equals() == false</code>?</a></li>
+<li><a href="#Какое-начальное-количество-корзин-в-hashmap">Какое начальное количество корзин в <code>HashMap</code>?</a></li>
+<li><a href="#Какова-оценка-временной-сложности-операций-над-элементами-из-hashmap-Гарантирует-ли-hashmap-указанную-сложность-выборки-элемента">Какова оценка временной сложности операций над элементами из <code>HashMap</code>? Гарантирует ли <code>HashMap</code> указанную сложность выборки элемента?</a></li>
+<li><a href="#Возможна-ли-ситуация-когда-hashmap-выродится-в-список-даже-с-ключами-имеющими-разные-hashcode">Возможна ли ситуация, когда <code>HashMap</code> выродится в список даже с ключами имеющими разные <code>hashCode()</code>?</a></li>
+<li><a href="#В-каком-случае-может-быть-потерян-элемент-в-hashmap">В каком случае может быть потерян элемент в <code>HashMap</code>?</a></li>
+<li><a href="#Почему-нельзя-использовать-byte-в-качестве-ключа-в-hashmap">Почему нельзя использовать <code>byte[]</code> в качестве ключа в <code>HashMap</code>?</a></li>
+<li><a href="#Какова-роль-equals-и-hashcode-в-hashmap">Какова роль <code>equals()</code> и <code>hashCode()</code> в <code>HashMap</code>?</a></li>
+<li><a href="#Каково-максимальное-число-значений-hashcode">Каково максимальное число значений <code>hashCode()</code>?</a></li>
+<li><a href="#Какое-худшее-время-работы-метода-getkey-для-ключа-которого-нет-в-hashmap">Какое худшее время работы метода get(key) для ключа, которого нет в <code>HashMap</code>?</a></li>
+<li><a href="#Какое-худшее-время-работы-метода-getkey-для-ключа-который-есть-в-hashmap">Какое худшее время работы метода get(key) для ключа, который есть в <code>HashMap</code>?</a></li>
+<li><a href="#Сколько-переходов-происходит-в-момент-вызова-hashmapgetkey-по-ключу-который-есть-в-таблице">Сколько переходов происходит в момент вызова <code>HashMap.get(key)</code> по ключу, который есть в таблице?</a></li>
+<li><a href="#Сколько-создается-новых-объектов-когда-вы-добавляете-новый-элемент-в-hashmap">Сколько создается новых объектов, когда вы добавляете новый элемент в <code>HashMap</code>?</a></li>
+<li><a href="#Как-и-когда-происходит-увеличение-количества-корзин-в-hashmap">Как и когда происходит увеличение количества корзин в <code>HashMap</code>?</a></li>
+<li><a href="#Объясните-смысл-параметров-в-конструкторе-hashmapint-initialcapacity-float-loadfactor">Объясните смысл параметров в конструкторе <code>HashMap(int initialCapacity, float loadFactor)</code>.</a></li>
+<li><a href="#Будет-ли-работать-hashmap-если-все-добавляемые-ключи-будут-иметь-одинаковый-hashcode">Будет ли работать <code>HashMap</code>, если все добавляемые ключи будут иметь одинаковый <code>hashCode()</code>?</a></li>
+<li><a href="#Как-перебрать-все-ключи-map">Как перебрать все ключи <code>Map</code>?</a></li>
+<li><a href="#Как-перебрать-все-значения-map">Как перебрать все значения <code>Map</code>?</a></li>
+<li><a href="#Как-перебрать-все-пары-ключ-значение-в-map">Как перебрать все пары «ключ-значение» в <code>Map</code>?</a></li>
+<li><a href="#В-чем-отличия-treeset-и-hashset">В чем отличия <code>TreeSet</code> и <code>HashSet</code>?</a></li>
+<li><a href="#Что-будет-если-добавлять-элементы-в-treeset-по-возрастанию">Что будет, если добавлять элементы в <code>TreeSet</code> по возрастанию?</a></li>
+<li><a href="#Чем-linkedhashset-отличается-от-hashset">Чем <code>LinkedHashSet</code> отличается от <code>HashSet</code>?</a></li>
+<li><a href="#Для-enum-есть-специальный-класс-javautilenumset-Зачем-Чем-авторов-не-устраивал-hashset-или-treeset">Для <code>Enum</code> есть специальный класс <code>java.util.EnumSet</code>. Зачем? Чем авторов не устраивал <code>HashSet</code> или <code>TreeSet</code>?</a></li>
+<li><a href="#Какие-существуют-способы-перебирать-элементы-списка">Какие существуют способы перебирать элементы списка?</a></li>
+<li><a href="#Каким-образом-можно-получить-синхронизированные-объекты-стандартных-коллекций">Каким образом можно получить синхронизированные объекты стандартных коллекций?</a></li>
+<li><a href="#Как-получить-коллекцию-только-для-чтения">Как получить коллекцию только для чтения?</a></li>
+<li><a href="#Напишите-однопоточную-программу-которая-заставляет-коллекцию-выбросить-concurrentmodificationexception">Напишите однопоточную программу, которая заставляет коллекцию выбросить <code>ConcurrentModificationException</code>.</a></li>
+<li><a href="#Приведите-пример-когда-какая-либо-коллекция-выбрасывает-unsupportedoperationexception">Приведите пример, когда какая-либо коллекция выбрасывает <code>UnsupportedOperationException</code>.</a></li>
+<li><a href="#Реализуйте-симметрическую-разность-двух-коллекций-используя-методы-collection-addall-removeall-retainall">Реализуйте симметрическую разность двух коллекций используя методы <code>Collection</code> (<code>addAll(...)</code>, <code>removeAll(...)</code>, <code>retainAll(...)</code>).</a></li>
+<li><a href="#Как-используя-linkedhashmap-сделать-кэш-c-invalidation-policy">Как, используя LinkedHashMap, сделать кэш c «invalidation policy»?</a></li>
+<li><a href="#Как-одной-строчкой-скопировать-элементы-любой-collection-в-массив">Как одной строчкой скопировать элементы любой <code>collection</code> в массив?</a></li>
+<li><a href="#Как-одним-вызовом-из-list-получить-list-со-всеми-элементами-кроме-первых-и-последних-3-х">Как одним вызовом из <code>List</code> получить <code>List</code> со всеми элементами, кроме первых и последних 3-х?</a></li>
+<li><a href="#Как-одной-строчкой-преобразовать-hashset-в-arraylist">Как одной строчкой преобразовать <code>HashSet</code> в <code>ArrayList</code>?</a></li>
+<li><a href="#Как-одной-строчкой-преобразовать-arraylist-в-hashset">Как одной строчкой преобразовать <code>ArrayList</code> в <code>HashSet</code>?</a></li>
+<li><a href="#Сделайте-hashset-из-ключей-hashmap">Сделайте <code>HashSet</code> из ключей <code>HashMap</code>.</a></li>
+<li><a href="#Сделайте-hashmap-из-hashsetmapentryk-v">Сделайте <code>HashMap</code> из <code>HashSet&lt;Map.Entry&lt;K, V&gt;&gt;</code>.</a></li>
+</ul>
+<h3 id="_1"><a name="Что-такое-коллекция"></a>Что такое <em>«коллекция»</em>?</h3>
+<p><em>«Коллекция»</em> - это структура данных, набор каких-либо объектов. Данными (объектами в наборе) могут быть числа, строки, объекты пользовательских классов и т.п.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="jcf"><a name="Назовите-основные-интерфейсы-jcf-и-их-реализации"></a>Назовите основные интерфейсы JCF и их реализации.</h3>
+<p>На вершине иерархии в Java Collection Framework располагаются 2 интерфейса: <code>Collection</code> и <code>Map</code>. Эти интерфейсы разделяют все коллекции, входящие во фреймворк на две части по типу хранения данных: простые последовательные наборы элементов и наборы пар «ключ — значение» соответственно.</p>
+<p>Интерфейс <code>Collection</code> расширяют интерфейсы:</p>
+<ul>
+<li><code>List</code> (список) представляет собой коллекцию, в которой допустимы дублирующие значения. Элементы такой коллекции пронумерованы, начиная от нуля, к ним можно обратиться по индексу. Реализации:<ul>
+<li><code>ArrayList</code> - инкапсулирует в себе обычный массив, длина которого автоматически увеличивается при добавлении новых элементов.</li>
+<li><code>LinkedList</code> (двунаправленный связный список) - состоит из узлов, каждый из которых содержит как собственно данные, так и две ссылки на следующий и предыдущий узел.</li>
+<li><code>Vector</code> — реализация динамического массива объектов, методы которой синхронизированы.</li>
+<li><code>Stack</code> — реализация стека LIFO (last-in-first-out).</li>
+</ul>
+</li>
+<li><code>Set</code> (сет) описывает неупорядоченную коллекцию, не содержащую повторяющихся элементов. Реализации:<ul>
+<li><code>HashSet</code> - использует HashMap для хранения данных. В качестве ключа и значения используется добавляемый элемент. Из-за особенностей реализации порядок элементов не гарантируется при добавлении.</li>
+<li><code>LinkedHashSet</code> — гарантирует, что порядок элементов при обходе коллекции будет идентичен порядку добавления элементов.</li>
+<li><code>TreeSet</code> — предоставляет возможность управлять порядком элементов в коллекции при помощи объекта <code>Comparator</code>, либо сохраняет элементы с использованием «natural ordering».</li>
+</ul>
+</li>
+<li><code>Queue</code> (очередь) предназначена для хранения элементов с предопределённым способом вставки и извлечения FIFO (first-in-first-out):<ul>
+<li><code>PriorityQueue</code> — предоставляет возможность управлять порядком элементов в коллекции при помощи объекта <code>Comparator</code>, либо сохраняет элементы с использованием «natural ordering».</li>
+<li><code>ArrayDeque</code> — реализация интерфейса <code>Deque</code>, который расширяет интерфейс <code>Queue</code> методами, позволяющими реализовать конструкцию вида LIFO (last-in-first-out). </li>
+</ul>
+</li>
+</ul>
+<p>Интерфейс <code>Map</code> реализован классами:</p>
+<ul>
+<li><code>Hashtable</code> — хэш-таблица, методы которой синхронизированы. Не позволяет использовать <code>null</code> в качестве значения или ключа и не является упорядоченной.</li>
+<li><code>HashMap</code> — хэш-таблица. Позволяет использовать <code>null</code> в качестве значения или ключа и не является упорядоченной.</li>
+<li><code>LinkedHashMap</code> — упорядоченная реализация хэш-таблицы.</li>
+<li><code>TreeMap</code> — реализация, основанная на красно-чёрных деревьях. Является упорядоченной и предоставляет возможность управлять порядком элементов в коллекции при помощи объекта <code>Comparator</code>, либо сохраняет элементы с использованием «natural ordering».</li>
+<li><code>WeakHashMap</code> — реализация хэш-таблицы, которая организована с использованием <em>weak references</em> для ключей (сборщик мусора автоматически удалит элемент из коллекции при следующей сборке мусора, если на ключ этого элемента нет жёстких ссылок).</li>
+</ul>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="list-set-map-sortedset-sortedmap-collection-iterable-iterator-navigableset-navigablemap"><a name="Расположите-в-виде-иерархии-следующие-интерфейсы-list-set-map-sortedset-sortedmap-collection-iterable-iterator-navigableset-navigablemap"></a>Расположите в виде иерархии следующие интерфейсы: <code>List</code>, <code>Set</code>, <code>Map</code>, <code>SortedSet</code>, <code>SortedMap</code>, <code>Collection</code>, <code>Iterable</code>, <code>Iterator</code>, <code>NavigableSet</code>, <code>NavigableMap</code>.</h3>
+<ul>
+<li><code>Iterable</code><ul>
+<li><code>Collection</code><ul>
+<li><code>List</code></li>
+<li><code>Set</code><ul>
+<li><code>SortedSet</code><ul>
+<li><code>NavigableSet</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Map</code><ul>
+<li><code>SortedMap</code> <ul>
+<li><code>NavigableMap</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Iterator</code></li>
+</ul>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="map-collection-list-set-collection"><a name="Почему-map--это-не-collection-в-то-время-как-list-и-set-являются-collection"></a>Почему <code>Map</code> — это не <code>Collection</code>, в то время как <code>List</code> и <code>Set</code> являются <code>Collection</code>?</h3>
+<p><code>Collection</code> представляет собой совокупность некоторых элементов. <code>Map</code> - это совокупность пар «ключ-значение».</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="javautilcollection-javautilcollections"><a name="В-чем-разница-между-классами-javautilcollection-и-javautilcollections"></a>В чем разница между классами <code>java.util.Collection</code> и <code>java.util.Collections</code>?</h3>
+<p><code>java.util.Collections</code> - набор статических методов для работы с коллекциями.</p>
+<p><code>java.util.Collection</code> - один из основных интерфейсов Java Collections Framework.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="fail-fast"><a name="Что-такое-fail-fast-поведение"></a>Что такое «fail-fast поведение»?</h3>
+<p><strong>fail-fast поведение</strong> означает, что при возникновении ошибки или состояния, которое может привести к ошибке, система немедленно прекращает дальнейшую работу и уведомляет об этом. Использование fail-fast подхода позволяет избежать недетерминированного поведения программы в течение времени.</p>
+<p>В Java Collections API некоторые итераторы ведут себя как fail-fast и выбрасывают <code>ConcurrentModificationException</code>, если после его создания была произведена модификация коллекции, т.е. добавлен или удален элемент напрямую из коллекции, а не используя методы итератора. </p>
+<p>Реализация такого поведения осуществляется за счет подсчета количества модификаций коллекции (modification count):</p>
+<ul>
+<li>при изменении коллекции счетчик модификаций так же изменяется;</li>
+<li>при создании итератора ему передается текущее значение счетчика;</li>
+<li>при каждом обращении к итератору сохраненное значение счетчика сравнивается с текущим, и, если они не совпадают, возникает исключение.</li>
+</ul>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="fail-fast-fail-safe"><a name="Какая-разница-между-fail-fast-и-fail-safe"></a>Какая разница между fail-fast и fail-safe?</h3>
+<p>В противоположность fail-fast, итераторы fail-safe не вызывают никаких исключений при изменении структуры, потому что они работают с клоном коллекции вместо оригинала.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="fail-safe"><a name="Приведите-примеры-итераторов-реализующих-поведение-fail-safe"></a>Приведите примеры итераторов, реализующих поведение fail-safe</h3>
+<p>Итератор коллекции <code>CopyOnWriteArrayList</code> и итератор представления <code>keySet</code> коллекции <code>ConcurrentHashMap</code> являются примерами итераторов fail-safe.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="enumeration-iterator"><a name="Чем-различаются-enumeration-и-iterator"></a>Чем различаются <code>Enumeration</code> и <code>Iterator</code>.</h3>
+<p>Хотя оба интерфейса и предназначены для обхода коллекций между ними имеются существенные различия:</p>
+<ul>
+<li>с помощью <code>Enumeration</code> нельзя добавлять/удалять элементы;</li>
+<li>в <code>Iterator</code> исправлены имена методов для повышения читаемости кода (<code>Enumeration.hasMoreElements()</code> соответствует <code>Iterator.hasNext()</code>, <code>Enumeration.nextElement()</code> соответствует <code>Iterator.next()</code> и т.д);</li>
+<li><code>Enumeration</code> присутствуют в устаревших классах, таких как <code>Vector</code>/<code>Stack</code>, тогда как <code>Iterator</code> есть во всех современных классах-коллекциях. </li>
+</ul>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="iterable-iterator"><a name="Как-между-собой-связаны-iterable-и-iterator"></a>Как между собой связаны <code>Iterable</code> и <code>Iterator</code>?</h3>
+<p>Интерфейс <code>Iterable</code> имеет только один метод - <code>iterator()</code>, который возвращает <code>Iterator</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="iterable-iterator-for-each"><a name="Как-между-собой-связаны-iterable-iterator-и-for-each"></a>Как между собой связаны <code>Iterable</code>, <code>Iterator</code> и «for-each»?</h3>
+<p>Классы, реализующие интерфейс <code>Iterable</code>, могут применяться в конструкции <code>for-each</code>, которая использует <code>Iterator</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="iterator-listiterator"><a name="Сравните-iterator-и-listiterator"></a>Сравните <code>Iterator</code> и <code>ListIterator</code>.</h3>
+<ul>
+<li><code>ListIterator</code> расширяет интерфейс <code>Iterator</code></li>
+<li><code>ListIterator</code> может быть использован только для перебора элементов коллекции <code>List</code>;</li>
+<li><code>Iterator</code> позволяет перебирать элементы только в одном направлении, при помощи метода <code>next()</code>. Тогда как <code>ListIterator</code> позволяет перебирать список в обоих направлениях, при помощи методов <code>next()</code> и <code>previous()</code>;</li>
+<li><code>ListIterator</code> не указывает на конкретный элемент: его текущая позиция располагается между элементами, которые возвращают методы <code>previous()</code> и <code>next()</code>.</li>
+<li>При помощи <code>ListIterator</code> вы можете модифицировать список, добавляя/удаляя элементы с помощью методов <code>add()</code> и <code>remove()</code>. <code>Iterator</code> не поддерживает данного функционала.</li>
+</ul>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="iteratornext-iteratorhasnext"><a name="Что-произойдет-при-вызове-iteratornext-без-предварительного-вызова-iteratorhasnext"></a>Что произойдет при вызове <code>Iterator.next()</code> без предварительного вызова <code>Iterator.hasNext()</code>?</h3>
+<p>Если итератор указывает на последний элемент коллекции, то возникнет исключение <code>NoSuchElementException</code>, иначе будет возвращен следующий элемент.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="iteratornext-10-iteratorhasnext"><a name="Сколько-элементов-будет-пропущено-если-iteratornext-будет-вызван-после-10-ти-вызовов-iteratorhasnext"></a>Сколько элементов будет пропущено, если <code>Iterator.next()</code> будет вызван после 10-ти вызовов <code>Iterator.hasNext()</code>?</h3>
+<p>Нисколько - <code>hasNext()</code> осуществляет только проверку наличия следующего элемента.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="iteratorremove"><a name="Как-поведёт-себя-коллекция-если-вызвать-iteratorremove"></a>Как поведёт себя коллекция, если вызвать <code>iterator.remove()</code>?</h3>
+<p>Если вызову <code>iterator.remove()</code> предшествовал вызов <code>iterator.next()</code>, то <code>iterator.remove()</code> удалит элемент коллекции, на который указывает итератор, в противном случае будет выброшено <code>IllegalStateException()</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="collection-collectionremove"><a name="Как-поведёт-себя-уже-инстанциированный-итератор-для-collection-если-вызвать-collectionremove"></a>Как поведёт себя уже инстанциированный итератор для <code>collection</code>, если вызвать <code>collection.remove()</code>?</h3>
+<p>При следующем вызове методов итератора будет выброшено <code>ConcurrentModificationException</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="concurrentmodificationexception"><a name="Как-избежать-concurrentmodificationexception-во-время-перебора-коллекции"></a>Как избежать <code>ConcurrentModificationException</code> во время перебора коллекции?</h3>
+<ul>
+<li>Попробовать подобрать или реализовать самостоятельно другой итератор, работающий по принципу fail-safe.</li>
+<li>Использовать <code>ConcurrentHashMap</code> и <code>CopyOnWriteArrayList</code>.</li>
+<li>Преобразовать список в массив и перебирать массив.</li>
+<li>Блокировать изменения списка на время перебора с помощью блока <code>synchronized</code>.</li>
+</ul>
+<p>Отрицательная сторона последних двух вариантов - ухудшение производительности.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="fifo"><a name="Какая-коллекция-реализует-дисциплину-обслуживания-fifo"></a>Какая коллекция реализует дисциплину обслуживания FIFO?</h3>
+<p>FIFO, First-In-First-Out («первым пришел-первым ушел») - по этому принципу построена коллекция <code>Queue</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="filo"><a name="Какая-коллекция-реализует-дисциплину-обслуживания-filo"></a>Какая коллекция реализует дисциплину обслуживания FILO?</h3>
+<p>FILO, First-In-Last-Out («первым пришел, последним ушел») - по этому принципу построена коллекция <code>Stack</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylist-vector"><a name="Чем-отличается-arraylist-от-vector"></a>Чем отличается <code>ArrayList</code> от <code>Vector</code>?</h3>
+<h3 id="arraylist-vector_1"><a name="Зачем-добавили-arraylist-если-уже-был-vector"></a>Зачем добавили <code>ArrayList</code>, если уже был <code>Vector</code>?</h3>
+<ul>
+<li>Методы класса <code>Vector</code> синхронизированы, а <code>ArrayList</code> - нет;</li>
+<li>По умолчанию, <code>Vector</code> удваивает свой размер, когда заканчивается выделенная под элементы память. <code>ArrayList</code> же увеличивает свой размер только на половину.</li>
+</ul>
+<p><code>Vector</code> это устаревший класс и его использование не рекомендовано.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylist-linkedlist"><a name="Чем-отличается-arraylist-от-linkedlist-В-каких-случаях-лучше-использовать-первый-а-в-каких-второй"></a>Чем отличается <code>ArrayList</code> от <code>LinkedList</code>? В каких случаях лучше использовать первый, а в каких второй?</h3>
+<p><code>ArrayList</code> это список, реализованный на основе массива, а <code>LinkedList</code> — это классический двусвязный список, основанный на объектах с ссылками между ними.</p>
+<p><code>ArrayList</code>:</p>
+<ul>
+<li>доступ к произвольному элементу по индексу за <em>константное</em> время <em>O(1)</em>;</li>
+<li>доступ к элементам по значению за <em>линейное</em> время <em>O(N)</em>;</li>
+<li>вставка в конец в среднем производится за <em>константное</em> время <em>O(1)</em>;</li>
+<li>удаление произвольного элемента из списка занимает значительное время т.к. при этом все элементы, находящиеся «правее» смещаются на одну ячейку влево (реальный размер массива (capacity) не изменяется);</li>
+<li>вставка элемента в произвольное место списка занимает значительное время т.к. при этом все элементы, находящиеся «правее» смещаются на одну ячейку вправо;</li>
+<li>минимум накладных расходов при хранении.</li>
+</ul>
+<p><code>LinkedList</code>:</p>
+<ul>
+<li>на получение элемента по индексу или значению потребуется <em>линейное</em> время <em>O(N)</em>;</li>
+<li>на добавление и удаление в начало или конец списка потребуется <em>константное</em> <em>O(1)</em>;</li>
+<li>вставка или удаление в/из произвольного место <em>константное</em> <em>O(1)</em>;</li>
+<li>требует больше памяти для хранения такого же количества элементов, потому что кроме самого элемента хранятся еще указатели на следующий и предыдущий элементы списка.</li>
+</ul>
+<p>В целом, <code>LinkedList</code> в абсолютных величинах проигрывает <code>ArrayList</code> и по потребляемой памяти, и по скорости выполнения операций. <code>LinkedList</code> предпочтительно применять, когда нужны частые операции вставки/удаления или в случаях, когда необходимо гарантированное время добавления элемента в список.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylist-linkedlist_1"><a name="Что-работает-быстрее-arraylist-или-linkedlist"></a>Что работает быстрее <code>ArrayList</code> или <code>LinkedList</code>?</h3>
+<p>Смотря какие действия будут выполняться над структурой. </p>
+<p>см. <a href="#Чем-отличается-arraylist-от-linkedlist-В-каких-случаях-лучше-использовать-первый-а-в-каких-второй">Чем отличается <code>ArrayList</code> от <code>LinkedList</code></a></p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="contains-linkedlist"><a name="Какое-худшее-время-работы-метода-contains-для-элемента-который-есть-в-linkedlist"></a>Какое худшее время работы метода <code>contains()</code> для элемента, который есть в <code>LinkedList</code>?</h3>
+<p><em>O(N)</em>. Время поиска элемента линейно пропорционально количеству элементов в списке.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="contains-arraylist"><a name="Какое-худшее-время-работы-метода-contains-для-элемента-который-есть-в-arraylist"></a>Какое худшее время работы метода <code>contains()</code> для элемента, который есть в <code>ArrayList</code>?</h3>
+<p><em>O(N)</em>. Время поиска элемента линейно пропорционально количеству элементов с списке.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="add-linkedlist"><a name="Какое-худшее-время-работы-метода-add-для-linkedlist"></a>Какое худшее время работы метода <code>add()</code> для <code>LinkedList</code>?</h3>
+<p><em>O(N)</em>. Добавление в начало/конец списка осуществляется за время <em>O(1)</em>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="add-arraylist"><a name="Какое-худшее-время-работы-метода-add-для-arraylist"></a>Какое худшее время работы метода <code>add()</code> для <code>ArrayList</code>?</h3>
+<p><em>O(N)</em>. Вставка элемента в конец списка осуществляется за время <em>O(1)</em>, но если вместимость массива недостаточна, то происходит создание нового массива с увеличенным размером и копирование всех элементов из старого массива в новый.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="1"><a name="Необходимо-добавить-1-млн-элементов-какую-структуру-вы-используете"></a>Необходимо добавить 1 млн. элементов, какую структуру вы используете?</h3>
+<p>Однозначный ответ можно дать только исходя из информации о том в какую часть списка происходит добавление элементов, что потом будет происходить с элементами списка, существуют ли какие-то ограничения по памяти или скорости выполнения.</p>
+<p>см. <a href="#Чем-отличается-arraylist-от-linkedlist-В-каких-случаях-лучше-использовать-первый-а-в-каких-второй">Чем отличается <code>ArrayList</code> от <code>LinkedList</code></a></p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylist-arraylist"><a name="Как-происходит-удаление-элементов-из-arraylist-Как-меняется-в-этом-случае-размер-arraylist"></a>Как происходит удаление элементов из <code>ArrayList</code>? Как меняется в этом случае размер <code>ArrayList</code>?</h3>
+<p>При удалении произвольного элемента из списка, все элементы, находящиеся «правее» смещаются на одну ячейку влево и реальный размер массива (его емкость, capacity) не изменяется никак. Механизм автоматического «расширения» массива существует, а вот автоматического «сжатия» нет, можно только явно выполнить «сжатие» командой <code>trimToSize()</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylist"><a name="Предложите-эффективный-алгоритм-удаления-нескольких-рядом-стоящих-элементов-из-середины-списка-реализуемого-arraylist"></a>Предложите эффективный алгоритм удаления нескольких рядом стоящих элементов из середины списка, реализуемого <code>ArrayList</code>.</h3>
+<p>Допустим нужно удалить <code>n</code> элементов с позиции <code>m</code> в списке. Вместо выполнения удаления одного элемента <code>n</code> раз (каждый раз смещая на 1 позицию элементы, стоящие «правее» в списке), нужно выполнить смещение всех элементов, стоящих «правее» <code>n + m</code> позиции на <code>n</code> элементов «левее» к началу списка. Таким образом, вместо выполнения <code>n</code> итераций перемещения элементов списка, все выполняется за 1 проход. Но если говорить об общей эффективности - то самый быстрый способ будет с использованием <code>System.arraycopy()</code>, и получить к нему доступ можно через метод - <code>subList(int fromIndex, int toIndex)</code></p>
+<p>Пример:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">java.io.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="c1">//позиция с которой удаляем</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">//количество удаляемых элементов</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="c1">//количество элементов в списке</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1000000</span><span class="p">;</span>
+    <span class="c1">//основной список (для удаления вызовом remove() и его копия для удаления путём перезаписи)</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">initList</span><span class="p">,</span> <span class="n">copyList</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+
+        <span class="n">initList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">initList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Список из 1.000.000 элементов заполнен&quot;</span><span class="p">);</span>
+
+        <span class="n">copyList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">initList</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Создана копия списка\n&quot;</span><span class="p">);</span>
+
+        <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">));</span>
+        <span class="k">try</span><span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;С какой позиции удаляем? &gt; &quot;</span><span class="p">);</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Сколько удаляем? &gt; &quot;</span><span class="p">);</span>
+            <span class="n">n</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">br</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+        <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">){</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nВыполняем удаление вызовом remove()...&quot;</span><span class="p">);</span>
+        <span class="kt">long</span> <span class="n">start</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="o">+</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">initList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="kt">long</span> <span class="n">finish</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Время удаления с помощью вызова remove(): &quot;</span> <span class="o">+</span> <span class="n">finish</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Размер исходного списка после удаления: &quot;</span> <span class="o">+</span> <span class="n">initList</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nВыполняем удаление путем перезаписи...\n&quot;</span><span class="p">);</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+
+        <span class="n">removeEfficiently</span><span class="p">();</span>
+
+        <span class="n">finish</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Время удаления путём смещения: &quot;</span> <span class="o">+</span> <span class="n">finish</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Размер копии списка:&quot;</span> <span class="o">+</span> <span class="n">copyList</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nВыполняем удаление через SubList...\n&quot;</span><span class="p">);</span>
+        <span class="n">start</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
+
+        <span class="n">initList</span><span class="p">.</span><span class="na">subList</span><span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">).</span><span class="na">clear</span><span class="p">();</span>
+
+        <span class="n">finish</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Время удаления через саблист: &quot;</span> <span class="o">+</span> <span class="n">finish</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Размер копии списка:&quot;</span> <span class="o">+</span> <span class="n">copyList</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">removeEfficiently</span><span class="p">(){</span>
+        <span class="cm">/* если необходимо удалить все элементы, начиная с указанного,</span>
+<span class="cm">         * то удаляем элементы с конца до m</span>
+<span class="cm">         */</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="p">){</span>
+            <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">){</span>
+                <span class="n">copyList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                <span class="n">i</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">else</span><span class="p">{</span>
+            <span class="c1">//переменная k необходима для отсчёта сдвига начиная от места вставка m</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span>  <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+               <span class="n">copyList</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">m</span> <span class="o">+</span> <span class="n">k</span><span class="p">,</span> <span class="n">copyList</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+            <span class="p">}</span>
+
+            <span class="cm">/* удаляем ненужные элементы в конце списка</span>
+<span class="cm">             * удаляется всегда последний элемент, так как время этого действия</span>
+<span class="cm">             * фиксировано и не зависит от размера списка</span>
+<span class="cm">             */</span>
+            <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">size</span> <span class="o">-</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">){</span>
+                <span class="n">copyList</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                <span class="n">i</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="c1">//сокращаем длину списка путём удаления пустых ячеек</span>
+            <span class="n">copyList</span><span class="p">.</span><span class="na">trimToSize</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Результат выполнения:</p>
+<div class="highlight"><pre><span></span><code><span class="n">run</span><span class="o">:</span>
+<span class="err">Список</span> <span class="err">из</span> <span class="mf">1.000</span><span class="o">.</span><span class="mi">000</span> <span class="err">элементов</span> <span class="err">заполнен</span>
+<span class="err">Создана</span> <span class="err">копия</span> <span class="err">списка</span>
+
+<span class="err">С</span> <span class="err">какой</span> <span class="err">позиции</span> <span class="err">удаляем</span><span class="o">?</span> <span class="o">&gt;</span> <span class="mi">600000</span>
+<span class="err">Сколько</span> <span class="err">удаляем</span><span class="o">?</span> <span class="o">&gt;</span> <span class="mi">20000</span>
+
+<span class="err">Выполняем</span> <span class="err">удаление</span> <span class="err">вызовом</span> <span class="n">remove</span><span class="o">()...</span>
+<span class="err">Время</span> <span class="err">удаления</span> <span class="err">с</span> <span class="err">помощью</span> <span class="err">вызова</span> <span class="n">remove</span><span class="o">():</span> <span class="mi">928</span>
+<span class="err">Размер</span> <span class="err">исходного</span> <span class="err">списка</span> <span class="err">после</span> <span class="err">удаления</span><span class="o">:</span> <span class="mi">980000</span>
+
+<span class="err">Выполняем</span> <span class="err">удаление</span> <span class="err">путем</span> <span class="err">перезаписи</span><span class="o">...</span>
+
+<span class="err">Время</span> <span class="err">удаления</span> <span class="err">путём</span> <span class="err">смещения</span><span class="o">:</span> <span class="mi">17</span>
+<span class="err">Размер</span> <span class="err">копии</span> <span class="err">списка</span><span class="o">:</span><span class="mi">980000</span>
+
+<span class="err">Выполняем</span> <span class="err">удаление</span> <span class="err">через</span> <span class="n">SubList</span><span class="o">...</span>
+
+<span class="err">Время</span> <span class="err">удаления</span> <span class="err">через</span> <span class="err">саблист</span><span class="o">:</span> <span class="mi">1</span>
+<span class="err">Размер</span> <span class="err">копии</span> <span class="err">списка</span><span class="o">:</span><span class="mi">980000</span>
+<span class="err">СБОРКА</span> <span class="err">УСПЕШНО</span> <span class="err">ЗАВЕРШЕНА</span> <span class="o">(</span><span class="err">общее</span> <span class="err">время</span><span class="o">:</span> <span class="mi">33</span> <span class="err">секунды</span><span class="o">)</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylistadd"><a name="Сколько-необходимо-дополнительной-памяти-при-вызове-arraylistadd"></a>Сколько необходимо дополнительной памяти при вызове <code>ArrayList.add()</code>?</h3>
+<p>Если в массиве достаточно места для размещения нового элемента, то дополнительной памяти не требуется. Иначе происходит создание нового массива размером в 1,5 раза превышающим существующий (это верно для JDK выше 1.7, в более ранних версиях размер увеличения иной).</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="linkedlistadd"><a name="Сколько-выделяется-дополнительно-памяти-при-вызове-linkedlistadd"></a>Сколько выделяется дополнительно памяти при вызове <code>LinkedList.add()</code>?</h3>
+<p>Создается один новый экземпляр вложенного класса <code>Node</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="byte-linkedlist"><a name="Оцените-количество-памяти-на-хранение-одного-примитива-типа-byte-в-linkedlist"></a>Оцените количество памяти на хранение одного примитива типа <code>byte</code> в <code>LinkedList</code>?</h3>
+<p>Каждый элемент <code>LinkedList</code> хранит ссылку на предыдущий элемент, следующий элемент и ссылку на данные.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="n">E</span> <span class="n">item</span><span class="p">;</span>
+        <span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">next</span><span class="p">;</span>
+        <span class="n">Node</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span> <span class="n">prev</span><span class="p">;</span>
+<span class="c1">//...</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Для 32-битных систем каждая ссылка занимает 32 бита (4 байта). Сам объект (заголовок) вложенного класса <code>Node</code> занимает 8 байт. 4 + 4 + 4 + 8 = 20 байт, а т.к. размер каждого объекта в Java кратен 8, соответственно получаем 24 байта. Примитив типа <code>byte</code> занимает 1 байт памяти, но в JCF примитивы упаковываются: объект типа <code>Byte</code> занимает в памяти 16 байт (8 байт на заголовок объекта, 1 байт на поле типа <code>byte</code> и 7 байт для кратности 8). Также напомню, что значения от -128 до 127 кэшируются и для них новые объекты каждый раз не создаются. Таким образом, в x32 JVM 24 байта тратятся на хранение одного элемента в списке и 16 байт - на хранение упакованного объекта типа <code>Byte</code>. Итого 40 байт.</p>
+<p>Для 64-битной JVM каждая ссылка занимает 64 бита (8 байт), размер заголовка каждого объекта составляет 16 байт (два машинных слова). Вычисления аналогичны: 8 + 8 + 8 + 16 = 40байт и 24 байта. Итого 64 байта.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="byte-arraylist"><a name="Оцените-количество-памяти-на-хранение-одного-примитива-типа-byte-в-arraylist"></a>Оцените количество памяти на хранение одного примитива типа <code>byte</code> в <code>ArrayList</code>?</h3>
+<p><code>ArrayList</code> основан на массиве, для примитивных типов данных осуществляется автоматическая упаковка значения, поэтому 16 байт тратится на хранение упакованного объекта и 4 байта (8 для x64) - на хранение ссылки на этот объект в самой структуре данных. Таким образом, в x32 JVM 4 байта используются на хранение одного элемента и 16 байт - на хранение упакованного объекта типа <code>Byte</code>. Для x64 - 8 байт и 24 байта соотвтетсвенно.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylist-linkedlist-listaddlistsize2-newelement"><a name="Для-arraylist-или-для-linkedlist-операция-добавления-элемента-в-середину-listaddlistsize2-newelement-медленнее"></a>Для <code>ArrayList</code> или для <code>LinkedList</code> операция добавления элемента в середину (<code>list.add(list.size()/2, newElement)</code>) медленнее?</h3>
+<p>Для <code>ArrayList</code>:</p>
+<ul>
+<li>проверка массива на вместимость. Если вместимости недостаточно, то увеличение размера массива и копирование всех элементов в новый массив (<em>O(N)</em>);</li>
+<li>копирование всех элементов, расположенных правее от позиции вставки, на одну позицию вправо (<em>O(N)</em>);</li>
+<li>вставка элемента (<em>O(1)</em>).</li>
+</ul>
+<p>Для <code>LinkedList</code>:</p>
+<ul>
+<li>поиск позиции вставки (<em>O(N)</em>);</li>
+<li>вставка элемента (<em>O(1)</em>).</li>
+</ul>
+<p>В худшем случае вставка в середину списка эффективнее для <code>LinkedList</code>. В остальных - скорее всего, для <code>ArrayList</code>, поскольку копирование элементов осуществляется за счет вызова быстрого системного метода <code>System.arraycopy()</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylist-object-elementdata-int-size-size-elementdatalength"><a name="В-реализации-класса-arraylist-есть-следующие-поля-object-elementdata-int-size-Объясните-зачем-хранить-отдельно-size-если-всегда-можно-взять-elementdatalength"></a>В реализации класса <code>ArrayList</code> есть следующие поля: <code>Object[] elementData</code>, <code>int size</code>. Объясните, зачем хранить отдельно <code>size</code>, если всегда можно взять <code>elementData.length</code>?</h3>
+<p>Размер массива <code>elementData</code> представляет собой вместимость (capacity) <code>ArrayList</code>, которая всегда больше переменной <code>size</code> - реального количества хранимых элементов. При необходимости вместимость автоматически возрастает.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="queue-deque"><a name="Сравните-интерфейсы-queue-и-deque"></a>Сравните интерфейсы <code>Queue</code> и <code>Deque</code>.</h3>
+<h3 id="queue-deque-deque-queue"><a name="Кто-кого-расширяет-queue-расширяет-deque-или-deque-расширяет-queue"></a>Кто кого расширяет: <code>Queue</code> расширяет <code>Deque</code>, или <code>Deque</code> расширяет <code>Queue</code>?</h3>
+<p><code>Queue</code> - это очередь, которая обычно (но необязательно) строится по принципу FIFO (First-In-First-Out) - соответственно извлечение элемента осуществляется с начала очереди, вставка элемента - в конец очереди. Хотя этот принцип нарушает, к примеру, <code>PriorityQueue</code>, использующая «natural ordering» или переданный <code>Comparator</code> при вставке нового элемента.</p>
+<p><code>Deque</code> (Double Ended Queue) расширяет <code>Queue</code> и согласно документации, это линейная коллекция, поддерживающая вставку/извлечение элементов с обоих концов. Помимо этого, реализации интерфейса <code>Deque</code> могут строится по принципу FIFO, либо LIFO.</p>
+<p>Реализации и <code>Deque</code>, и <code>Queue</code> обычно не переопределяют методы <code>equals()</code> и <code>hashCode()</code>, вместо этого используются унаследованные методы класса Object, основанные на сравнении ссылок.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="linkedlist-list-deque"><a name="Почему-linkedlist-реализует-и-list-и-deque"></a>Почему <code>LinkedList</code> реализует и <code>List</code>, и <code>Deque</code>?</h3>
+<p><code>LinkedList</code> позволяет добавлять элементы в начало и конец списка за константное время, что хорошо согласуется с поведением интерфейса <code>Deque</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="linkedlist"><a name="linkedlist--это-односвязный-двусвязный-или-четырехсвязный-список"></a><code>LinkedList</code> — это односвязный, двусвязный или четырехсвязный список?</h3>
+<p><code>Двусвязный</code>: каждый элемент <code>LinkedList</code> хранит ссылку на предыдущий и следующий элементы.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="linkedlist-getindex"><a name="Как-перебрать-элементы-linkedlist-в-обратном-порядке-не-используя-медленный-getindex"></a>Как перебрать элементы <code>LinkedList</code> в обратном порядке, не используя медленный <code>get(index)</code>?</h3>
+<p>Для этого в <code>LinkedList</code> есть обратный итератор, который можно получить вызва метод <code>descendingIterator()</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="priorityqueue"><a name="Что-позволяет-сделать-priorityqueue"></a>Что позволяет сделать <code>PriorityQueue</code>?</h3>
+<p>Особенностью <code>PriorityQueue</code> является возможность управления порядком элементов. По-умолчанию, элементы сортируются с использованием «natural ordering», но это поведение может быть переопределено при помощи объекта <code>Comparator</code>, который задаётся при создании очереди. Данная коллекция не поддерживает null в качестве элементов.</p>
+<p>Используя <code>PriorityQueue</code>, можно, например, реализовать алгоритм Дейкстры для поиска кратчайшего пути от одной вершины графа к другой. Либо для хранения объектов согласно определённого свойства.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="stack"><a name="stack-считается-устаревшим-Чем-его-рекомендуют-заменять-Почему"></a><code>Stack</code> считается «устаревшим». Чем его рекомендуют заменять? Почему?</h3>
+<p><code>Stack</code> был добавлен в Java 1.0 как реализация стека LIFO (last-in-first-out) и является расширением коллекции <code>Vector</code>, хотя это несколько нарушает понятие стека (например, класс <code>Vector</code> предоставляет возможность обращаться к любому элементу по индексу). Является частично синхронизированной коллекцией (кроме метода добавления <code>push()</code>) с вытекающими отсюда последствиями в виде негативного воздействия на производительность. После добавления в Java 1.6 интерфейса <code>Deque</code>, рекомендуется использовать реализации именно этого интерфейса, например, <code>ArrayDeque</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap-hashtable"><a name="Зачем-нужен-hashmap-если-есть-hashtable"></a>Зачем нужен <code>HashMap</code>, если есть <code>Hashtable</code>?</h3>
+<ul>
+<li>Методы класса <code>Hashtable</code> синхронизированы, что приводит к снижению производительности, а <code>HashMap</code> - нет;</li>
+<li><code>HashTable</code> не может содержать элементы <code>null</code>, тогда как <code>HashMap</code> может содержать один ключ <code>null</code> и любое количество значений <code>null</code>;</li>
+<li>Iterator у <code>HashMap</code>, в отличие от Enumeration у <code>HashTable</code>, работает по принципу «fail-fast» (выдает исключение при любой несогласованности данных).</li>
+</ul>
+<p><code>Hashtable</code> это устаревший класс и его использование не рекомендовано.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap-identityhashmap-identityhashmap"><a name="В-чем-разница-между-hashmap-и-identityhashmap-Для-чего-нужна-identityhashmap"></a>В чем разница между <code>HashMap</code> и <code>IdentityHashMap</code>? Для чего нужна <code>IdentityHashMap</code>?</h3>
+<p><code>IdentityHashMap</code> - это структура данных, так же реализующая интерфейс <code>Map</code> и использующая при сравнении ключей (значений) сравнение ссылок, а не вызов метода <code>equals()</code>. Другими словами, в <code>IdentityHashMap</code> два ключа <code>k1</code> и <code>k2</code> будут считаться равными, если они указывают на один объект, т.е. выполняется условие <code>k1</code> == <code>k2</code>.</p>
+<p><code>IdentityHashMap</code> не использует метод <code>hashCode()</code>, вместо которого применяется метод <code>System.identityHashCode()</code>, по этой причине <code>IdentityHashMap</code> по сравнению с <code>HashMap</code> имеет более высокую производительность, особенно если последний хранит объекты с дорогостоящими методами <code>equals()</code> и <code>hashCode()</code>.</p>
+<p>Одним из основных требований к использованию <code>HashMap</code> является неизменяемость ключа, а, т.к. <code>IdentityHashMap</code> не использует методы  <code>equals()</code> и <code>hashCode()</code>, то это правило на него не распространяется.</p>
+<p><code>IdentityHashMap</code> может применяться для реализации сериализации/клонирования. При выполнении подобных алгоритмов программе необходимо обслуживать хэш-таблицу со всеми ссылками на объекты, которые уже были обработаны. Такая структура не должна рассматривать уникальные объекты как равные, даже если метод <code>equals()</code> возвращает <code>true</code>.</p>
+<p>Пример кода:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.IdentityHashMap</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Q2</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Q2</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Q2</span><span class="p">();</span>
+        <span class="n">q</span><span class="p">.</span><span class="na">testHashMapAndIdentityHashMap</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">testHashMapAndIdentityHashMap</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">CreditCard</span> <span class="n">visa</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CreditCard</span><span class="p">(</span><span class="s">&quot;VISA&quot;</span><span class="p">,</span> <span class="s">&quot;04/12/2019&quot;</span><span class="p">);</span>
+
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">CreditCard</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">cardToExpiry</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">CreditCard</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">cardToExpiryIdenity</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IdentityHashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;adding to HM&quot;</span><span class="p">);</span>
+        <span class="c1">// inserting objects to HashMap</span>
+        <span class="n">cardToExpiry</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">visa</span><span class="p">,</span> <span class="n">visa</span><span class="p">.</span><span class="na">getExpiryDate</span><span class="p">());</span>
+
+        <span class="c1">// inserting objects to IdentityHashMap</span>
+        <span class="n">cardToExpiryIdenity</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">visa</span><span class="p">,</span> <span class="n">visa</span><span class="p">.</span><span class="na">getExpiryDate</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;adding to IHM&quot;</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;before modifying keys&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">cardToExpiry</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">visa</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span> <span class="s">&quot;Yes&quot;</span> <span class="p">:</span> <span class="s">&quot;No&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Does VISA card exists in HashMap? &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">);</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cardToExpiryIdenity</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">visa</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span> <span class="s">&quot;Yes&quot;</span> <span class="p">:</span> <span class="s">&quot;No&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Does VISA card exists in IdenityHashMap? &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">);</span>
+
+        <span class="c1">// modifying value object</span>
+        <span class="n">visa</span><span class="p">.</span><span class="na">setExpiryDate</span><span class="p">(</span><span class="s">&quot;02/11/2030&quot;</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;after modifying keys&quot;</span><span class="p">);</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cardToExpiry</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">visa</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span> <span class="s">&quot;Yes&quot;</span> <span class="p">:</span> <span class="s">&quot;No&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Does VISA card exists in HashMap? &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">);</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">cardToExpiryIdenity</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">visa</span><span class="p">)</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span> <span class="s">&quot;Yes&quot;</span> <span class="p">:</span> <span class="s">&quot;No&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Does VISA card exists in IdenityHashMap? &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;cardToExpiry.containsKey&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cardToExpiry</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">visa</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;cardToExpiryIdenity.containsKey&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cardToExpiryIdenity</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">visa</span><span class="p">));</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">CreditCard</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">issuer</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">expiryDate</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">CreditCard</span><span class="p">(</span><span class="n">String</span> <span class="n">issuer</span><span class="p">,</span> <span class="n">String</span> <span class="n">expiryDate</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">issuer</span> <span class="o">=</span> <span class="n">issuer</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">expiryDate</span> <span class="o">=</span> <span class="n">expiryDate</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getIssuer</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">issuer</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getExpiryDate</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">expiryDate</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setExpiryDate</span><span class="p">(</span><span class="n">String</span> <span class="n">expiry</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">expiryDate</span> <span class="o">=</span> <span class="n">expiry</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">hashCode</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="n">prime</span> <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">prime</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="p">((</span><span class="n">expiryDate</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">expiryDate</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">prime</span> <span class="o">*</span> <span class="n">result</span> <span class="o">+</span> <span class="p">((</span><span class="n">issuer</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">issuer</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;hashCode = &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;equals !!! &quot;</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="o">==</span> <span class="n">obj</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">getClass</span><span class="p">()</span> <span class="o">!=</span> <span class="n">obj</span><span class="p">.</span><span class="na">getClass</span><span class="p">())</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="n">CreditCard</span> <span class="n">other</span> <span class="o">=</span> <span class="p">(</span><span class="n">CreditCard</span><span class="p">)</span> <span class="n">obj</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">expiryDate</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="na">expiryDate</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">expiryDate</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="na">expiryDate</span><span class="p">))</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">issuer</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="na">issuer</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">issuer</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">other</span><span class="p">.</span><span class="na">issuer</span><span class="p">))</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Результат выполнения кода:</p>
+<div class="highlight"><pre><span></span><code><span class="err">adding to HM</span>
+<span class="err">hashCode = 1285631513</span>
+<span class="err">adding to IHM</span>
+<span class="err">before modifying keys</span>
+<span class="err">hashCode = 1285631513</span>
+<span class="err">Does VISA card exists in HashMap? Yes</span>
+<span class="err">Does VISA card exists in IdenityHashMap? Yes</span>
+<span class="err">after modifying keys</span>
+<span class="err">hashCode = 791156485</span>
+<span class="err">Does VISA card exists in HashMap? No</span>
+<span class="err">Does VISA card exists in IdenityHashMap? Yes</span>
+<span class="err">cardToExpiry.containsKey</span>
+<span class="err">hashCode = 791156485</span>
+<span class="err">false</span>
+<span class="err">cardToExpiryIdenity.containsKey</span>
+<span class="err">true</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap-weakhashmap-weakhashmap"><a name="В-чем-разница-между-hashmap-и-weakhashmap-Для-чего-используется-weakhashmap"></a>В чем разница между <code>HashMap</code> и <code>WeakHashMap</code>? Для чего используется <code>WeakHashMap</code>?</h3>
+<p>В Java существует 4 типа ссылок: <em>сильные (strong reference)</em>, <em>мягкие (SoftReference)</em>, <em>слабые (WeakReference)</em> и <em>фантомные (PhantomReference)</em>. Особенности каждого типа ссылок связаны с работой Garbage Collector. Если объект можно достичь только с помощью цепочки WeakReference (то есть на него отсутствуют сильные и мягкие ссылки), то данный объект будет помечен на удаление.</p>
+<p><code>WeakHashMap</code> - это структура данных, реализующая интерфейс <code>Map</code> и основанная на использовании WeakReference для хранения ключей. Таким образом, пара «ключ-значение» будет удалена из <code>WeakHashMap</code>, если на объект-ключ более не имеется сильных ссылок.</p>
+<p>В качестве примера использования такой структуры данных можно привести следующую ситуацию: допустим имеются объекты, которые необходимо расширить дополнительной информацией, при этом изменение класса этих объектов нежелательно либо невозможно. В этом случае добавляем каждый объект в <code>WeakHashMap</code> в качестве ключа, а в качестве значения - нужную информацию. Таким образом, пока на объект имеется сильная ссылка (либо мягкая), можно проверять хэш-таблицу и извлекать информацию. Как только объект будет удален, то WeakReference для этого ключа будет помещен в ReferenceQueue и затем соответствующая запись для этой слабой ссылки будет удалена из <code>WeakHashMap</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="weakhashmap-weakreferences-softhashmap-softreferences"><a name="В-weakhashmap-используются-weakreferences-А-почему-бы-не-создать-softhashmap-на-softreferences"></a>В <code>WeakHashMap</code> используются WeakReferences. А почему бы не создать <code>SoftHashMap</code> на SoftReferences?</h3>
+<p><code>SoftHashMap</code> представлена в сторонних библиотеках, например, в <code>Apache Commons</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="weakhashmap-weakreferences-phantomhashmap-phantomreferences"><a name="В-weakhashmap-используются-weakreferences-А-почему-бы-не-создать-phantomhashmap-на-phantomreferences"></a>В <code>WeakHashMap</code> используются WeakReferences. А почему бы не создать <code>PhantomHashMap</code> на PhantomReferences?</h3>
+<p>PhantomReference при вызове метода <code>get()</code> возвращает всегда <code>null</code>, поэтому тяжело представить назначение такой структуры данных.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="linkedhashmap-linkedlist-hashmap"><a name="linkedhashmap---что-в-нем-от-linkedlist-а-что-от-hashmap"></a><code>LinkedHashMap</code> - что в нем от <code>LinkedList</code>, а что от <code>HashMap</code>?</h3>
+<p>Реализация <code>LinkedHashMap</code> отличается от <code>HashMap</code> поддержкой двухсвязанного списка, определяющего порядок итерации по элементам структуры данных. По умолчанию элементы списка упорядочены согласно их порядку добавления в <code>LinkedHashMap</code> (insertion-order). Однако порядок итерации можно изменить, установив параметр конструктора <code>accessOrder</code> в значение <code>true</code>. В этом случае доступ осуществляется по порядку последнего обращения к элементу (access-order). Это означает, что при вызове методов <code>get()</code> или <code>put()</code> элемент, к которому обращаемся, перемещается в конец списка.</p>
+<p>При добавлении элемента, который уже присутствует в <code>LinkedHashMap</code> (т.е. с одинаковым ключом), порядок итерации по элементам не изменяется.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="sortedmap-tostring"><a name="В-чем-проявляется-сортированность-sortedmap-кроме-того-что-tostring-выводит-все-элементы-по-порядку"></a>В чем проявляется «сортированность» <code>SortedMap</code>, кроме того, что <code>toString()</code> выводит все элементы по порядку?</h3>
+<p>Так же оно проявляется при итерации по коллекции.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap"><a name="Как-устроен-hashmap"></a>Как устроен <code>HashMap</code>?</h3>
+<p><code>HashMap</code> состоит из «корзин» (bucket). С технической точки зрения «корзины» — это элементы массива, которые хранят ссылки на списки элементов. При добавлении новой пары «ключ-значение», вычисляет хэш-код ключа, на основании которого вычисляется номер корзины (номер ячейки массива), в которую попадет новый элемент. Если корзина пустая, то в нее сохраняется ссылка на вновь добавляемый элемент, если же там уже есть элемент, то происходит последовательный переход по ссылкам между элементами в цепочке, в поисках последнего элемента, от которого и ставится ссылка на вновь добавленный элемент. Если в списке был найден элемент с таким же ключом, то он заменяется.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="-hashmap"><a name="Согласно-Кнуту-и-Кормену-существует-две-основных-реализации-хэш-таблицы-на-основе-открытой-адресации-и-на-основе-метода-цепочек-Как-реализована-hashmap-Почему-по-вашему-мнению-была-выбрана-именно-эта-реализация-В-чем-плюсы-и-минусы-каждого-подхода"></a>Согласно Кнуту и Кормену существует две основных реализации хэш-таблицы: на основе открытой адресации и на основе метода цепочек. Как реализована <code>HashMap</code>? Почему, по вашему мнению, была выбрана именно эта реализация? В чем плюсы и минусы каждого подхода?</h3>
+<p><code>HashMap</code> реализован с использованием метода цепочек, т.е. каждой ячейке массива (корзине) соответствует свой связный список и при возникновении коллизии осуществляется добавление нового элемента в этот список.</p>
+<p>Для метода цепочек коэффициент заполнения может быть больше 1 и с увеличением числа элементов производительность убывает линейно. Такие таблицы удобно использовать, если заранее неизвестно количество хранимых элементов, либо их может быть достаточно много, что приводит к большим значениям коэффициента заполнения.</p>
+<p>Среди методов открытой реализации различают:</p>
+<ul>
+<li>линейное пробирование;</li>
+<li>квадратичное пробирование;</li>
+<li>двойное хэширование.</li>
+</ul>
+<p>Недостатки структур с методом открытой адресации:</p>
+<ul>
+<li>Количество элементов в хэш-таблице не может превышать размера массива. По мере увеличения числа элементов и повышения коэффициента заполнения производительность структуры резко падает, поэтому необходимо проводить перехэширование.</li>
+<li>Сложно организовать удаление элемента.</li>
+<li>Первые два метода открытой адресации приводят к проблеме первичной и вторичной группировок.</li>
+</ul>
+<p>Преимущества хэш-таблицы с открытой адресацией: </p>
+<ul>
+<li>отсутствие затрат на создание и хранение объектов списка; </li>
+<li>простота организации сериализации/десериализации объекта.</li>
+</ul>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap-hashcode-equals-false"><a name="Как-работает-hashmap-при-попытке-сохранить-в-него-два-элемента-по-ключам-с-одинаковым-hashcode-но-для-которых-equals--false"></a>Как работает <code>HashMap</code> при попытке сохранить в него два элемента по ключам с одинаковым <code>hashCode()</code>, но для которых <code>equals() == false</code>?</h3>
+<p>По значению <code>hashCode()</code> вычисляется индекс ячейки массива, в список которой этот элемент будет добавлен. Перед добавлением осуществляется проверка на наличие элементов в этой ячейке. Если элементы с таким <code>hashCode()</code> уже присутствует, но их <code>equals()</code> методы не равны, то элемент будет добавлен в конец списка.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap_1"><a name="Какое-начальное-количество-корзин-в-hashmap"></a>Какое начальное количество корзин в <code>HashMap</code>?</h3>
+<p>В конструкторе по умолчанию - 16, используя конструкторы с параметрами можно задавать произвольное начальное количество корзин.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap-hashmap"><a name="Какова-оценка-временной-сложности-операций-над-элементами-из-hashmap-Гарантирует-ли-hashmap-указанную-сложность-выборки-элемента"></a>Какова оценка временной сложности операций над элементами из <code>HashMap</code>? Гарантирует ли <code>HashMap</code> указанную сложность выборки элемента?</h3>
+<p>В общем случае операции добавления, поиска и удаления элементов занимают константное время. </p>
+<p>Данная сложность не гарантируется, т.к. если хэш-функция распределяет элементы по корзинам равномерно, временная сложность станет не хуже <a href="https://ru.wikipedia.org/wiki/%D0%92%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D0%B0#%D0%9B%D0%BE%D0%B3%D0%B0%D1%80%D0%B8%D1%84%D0%BC%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D1%80%D0%B5%D0%BC%D1%8F"><em>Логарифмического времени</em> </a> O(log(N)), а в случае, когда хэш-функция постоянно возвращает одно и то же значение, <code>HashMap</code> превратится в связный список со сложностью О(n).</p>
+<p>Пример кода двоичного поиска:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Q</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Q</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Q</span><span class="p">();</span>
+        <span class="n">q</span><span class="p">.</span><span class="na">binSearch</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">binSearch</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">inpArr</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">};</span>
+        <span class="n">Integer</span> <span class="n">result</span> <span class="o">=</span> <span class="n">binSearchF</span><span class="p">(</span><span class="n">inpArr</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inpArr</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;-----------------------&quot;</span><span class="p">);</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">binSearchF</span><span class="p">(</span><span class="n">inpArr</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inpArr</span><span class="p">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Found at position &quot;</span> <span class="o">+</span> <span class="n">result</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="n">Integer</span> <span class="nf">binSearchF</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">inpArr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">searchValue</span><span class="p">,</span> <span class="kt">int</span> <span class="n">low</span><span class="p">,</span> <span class="kt">int</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Integer</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;New iteration, low = &quot;</span> <span class="o">+</span> <span class="n">low</span> <span class="o">+</span> <span class="s">&quot;, high = &quot;</span> <span class="o">+</span> <span class="n">high</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;trying mid = &quot;</span> <span class="o">+</span> <span class="n">mid</span> <span class="o">+</span> <span class="s">&quot; inpArr[mid] = &quot;</span> <span class="o">+</span> <span class="n">inpArr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">inpArr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">searchValue</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;inpArr[mid] (&quot;</span> <span class="o">+</span> <span class="n">inpArr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;) &lt; searchValue(&quot;</span> <span class="o">+</span> <span class="n">searchValue</span> <span class="o">+</span> <span class="s">&quot;), mid = &quot;</span> <span class="o">+</span> <span class="n">mid</span>
+                        <span class="o">+</span> <span class="s">&quot;, setting low = &quot;</span> <span class="o">+</span> <span class="n">low</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">inpArr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">searchValue</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;inpArr[mid] (&quot;</span> <span class="o">+</span> <span class="n">inpArr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot;) &gt; searchValue(&quot;</span> <span class="o">+</span> <span class="n">searchValue</span> <span class="o">+</span> <span class="s">&quot;), mid = &quot;</span> <span class="o">+</span> <span class="n">mid</span>
+                        <span class="o">+</span> <span class="s">&quot;, setting high = &quot;</span> <span class="o">+</span> <span class="n">high</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">inpArr</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">==</span> <span class="n">searchValue</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">index</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;found at index &quot;</span> <span class="o">+</span> <span class="n">mid</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">index</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap-hashcode"><a name="Возможна-ли-ситуация-когда-hashmap-выродится-в-список-даже-с-ключами-имеющими-разные-hashcode"></a>Возможна ли ситуация, когда <code>HashMap</code> выродится в список даже с ключами имеющими разные <code>hashCode()</code>?</h3>
+<p>Это возможно в случае, если метод, определяющий номер корзины будет возвращать одинаковые значения.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap_2"><a name="В-каком-случае-может-быть-потерян-элемент-в-hashmap"></a>В каком случае может быть потерян элемент в <code>HashMap</code>?</h3>
+<p>Допустим, в качестве ключа используется не примитив, а объект с несколькими полями. После добавления элемента в <code>HashMap</code> у объекта, который выступает в качестве ключа, изменяют одно поле, которое участвует в вычислении хэш-кода. В результате при попытке найти данный элемент по исходному ключу, будет происходить обращение к правильной корзине, а вот <code>equals</code> уже не найдет указанный ключ в списке элементов. Тем не менее, даже если <code>equals</code> реализован таким образом, что изменение данного поля объекта не влияет на результат, то после увеличения размера корзин и пересчета хэш-кодов элементов, указанный элемент, с измененным значением поля, с большой долей вероятности попадет в совершенно другую корзину и тогда уже потеряется совсем.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="byte-hashmap"><a name="Почему-нельзя-использовать-byte-в-качестве-ключа-в-hashmap"></a>Почему нельзя использовать <code>byte[]</code> в качестве ключа в <code>HashMap</code>?</h3>
+<p>Хэш-код массива не зависит от хранимых в нем элементов, а присваивается при создании массива (метод вычисления хэш-кода массива не переопределен и вычисляется по стандартному <code>Object.hashCode()</code> на основании адреса массива). Так же у массивов не переопределен <code>equals</code> и выполняется сравнение указателей. Это приводит к тому, что обратиться к сохраненному с ключом-массивом элементу не получится при использовании другого массива такого же размера и с такими же элементами, доступ можно осуществить лишь в одном случае — при использовании той же самой ссылки на массив, что использовалась для сохранения элемента.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="equals-hashcode-hashmap"><a name="Какова-роль-equals-и-hashcode-в-hashmap"></a>Какова роль <code>equals()</code> и <code>hashCode()</code> в <code>HashMap</code>?</h3>
+<p><code>hashCode</code> позволяет определить корзину для поиска элемента, а <code>equals</code> используется для сравнения ключей элементов в списке корзины и искомого ключа.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashcode"><a name="Каково-максимальное-число-значений-hashcode"></a>Каково максимальное число значений <code>hashCode()</code>?</h3>
+<p>Число значений следует из сигнатуры <code>int hashCode()</code> и равно диапазону типа <code>int</code> — <strong>2<sup>32</sup></strong>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="getkey-hashmap"><a name="Какое-худшее-время-работы-метода-getkey-для-ключа-которого-нет-в-hashmap"></a>Какое худшее время работы метода get(key) для ключа, которого нет в <code>HashMap</code>?</h3>
+<h3 id="getkey-hashmap_1"><a name="Какое-худшее-время-работы-метода-getkey-для-ключа-который-есть-в-hashmap"></a>Какое худшее время работы метода get(key) для ключа, который есть в <code>HashMap</code>?</h3>
+<p><strong><em>O(N)</em></strong>. Худший случай - это поиск ключа в <code>HashMap</code>, вырожденного в список по причине совпадения ключей по <code>hashCode()</code> и для выяснения хранится ли элемент с определённым ключом может потребоваться перебор всего списка.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmapgetkey"><a name="Сколько-переходов-происходит-в-момент-вызова-hashmapgetkey-по-ключу-который-есть-в-таблице"></a>Сколько переходов происходит в момент вызова <code>HashMap.get(key)</code> по ключу, который есть в таблице?</h3>
+<ul>
+<li>ключ равен <code>null</code>: <strong>1</strong> - выполняется единственный метод <code>getForNullKey()</code>.</li>
+<li>любой ключ отличный от <code>null</code>: <strong>4</strong> - вычисление хэш-кода ключа; определение номера корзины; поиск значения; возврат значения.</li>
+</ul>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap_3"><a name="Сколько-создается-новых-объектов-когда-вы-добавляете-новый-элемент-в-hashmap"></a>Сколько создается новых объектов, когда вы добавляете новый элемент в <code>HashMap</code>?</h3>
+<p><strong>Один</strong> новый объект статического вложенного класса <code>Entry&lt;K,V&gt;</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap_4"><a name="Как-и-когда-происходит-увеличение-количества-корзин-в-hashmap"></a>Как и когда происходит увеличение количества корзин в <code>HashMap</code>?</h3>
+<p>Помимо <code>capacity</code> у <code>HashMap</code> есть еще поле <code>loadFactor</code>, на основании которого, вычисляется предельное количество занятых корзин <code>capacity * loadFactor</code>. По умолчанию <code>loadFactor = 0.75</code>. По достижению предельного значения, число корзин увеличивается в 2 раза и для всех хранимых элементов вычисляется новое «местоположение» с учетом нового числа корзин.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmapint-initialcapacity-float-loadfactor"><a name="Объясните-смысл-параметров-в-конструкторе-hashmapint-initialcapacity-float-loadfactor"></a>Объясните смысл параметров в конструкторе <code>HashMap(int initialCapacity, float loadFactor)</code>.</h3>
+<ul>
+<li><code>initialCapacity</code> - исходный размер <code>HashMap</code>, количество корзин в хэш-таблице в момент её создания.</li>
+<li><code>loadFactor</code> - коэффициент заполнения <code>HashMap</code>, при превышении которого происходит увеличение количества корзин и автоматическое перехэширование. Равен отношению числа уже хранимых элементов в таблице к её размеру. </li>
+</ul>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap-hashcode_1"><a name="Будет-ли-работать-hashmap-если-все-добавляемые-ключи-будут-иметь-одинаковый-hashcode"></a>Будет ли работать <code>HashMap</code>, если все добавляемые ключи будут иметь одинаковый <code>hashCode()</code>?</h3>
+<p>Да, будет, но в этом случае <code>HashMap</code> вырождается в связный список и теряет свои преимущества.</p>
+<h3 id="map"><a name="Как-перебрать-все-ключи-map"></a>Как перебрать все ключи <code>Map</code>?</h3>
+<p>Использовать метод <code>keySet()</code>, который возвращает множество <code>Set&lt;K&gt;</code> ключей.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="map_1"><a name="Как-перебрать-все-значения-map"></a>Как перебрать все значения <code>Map</code>?</h3>
+<p>Использовать метод <code>values()</code>, который возвращает коллекцию <code>Collection&lt;V&gt;</code> значений.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="-map"><a name="Как-перебрать-все-пары-ключ-значение-в-map"></a>Как перебрать все пары «ключ-значение» в <code>Map</code>?</h3>
+<p>Использовать метод <code>entrySet()</code>, который возвращает множество <code>Set&lt;Map.Entry&lt;K, V&gt;</code> пар «ключ-значение».</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="treeset-hashset"><a name="В-чем-отличия-treeset-и-hashset"></a>В чем отличия <code>TreeSet</code> и <code>HashSet</code>?</h3>
+<p><code>TreeSet</code> обеспечивает упорядоченно хранение элементов в виде красно-черного дерева. Сложность выполнения основных операций не хуже <em>O(log(N))</em> (<em>Логарифмическое время</em>). </p>
+<p><code>HashSet</code> использует для хранения элементов такой же подход, что и <code>HashMap</code>, за тем отличием, что в <code>HashSet</code> в качестве ключа и значения выступает сам <code>элемент</code>, кроме того <code>HashSet</code> не поддерживает упорядоченное хранение элементов и обеспечивает временную сложность выполнения операций аналогично <code>HashMap</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="treeset"><a name="Что-будет-если-добавлять-элементы-в-treeset-по-возрастанию"></a>Что будет, если добавлять элементы в <code>TreeSet</code> по возрастанию?</h3>
+<p>В основе <code>TreeSet</code> лежит красно-черное дерево, которое умеет само себя балансировать. В итоге, <code>TreeSet</code> все равно в каком порядке вы добавляете в него элементы, преимущества этой структуры данных будут сохраняться.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="linkedhashset-hashset"><a name="Чем-linkedhashset-отличается-от-hashset"></a>Чем <code>LinkedHashSet</code> отличается от <code>HashSet</code>?</h3>
+<p><code>LinkedHashSet</code> отличается от <code>HashSet</code> только тем, что в его основе лежит <code>LinkedHashMap</code> вместо <code>HashMap</code>. Благодаря этому порядок элементов при обходе коллекции является идентичным порядку добавления элементов (insertion-order). При добавлении элемента, который уже присутствует в <code>LinkedHashSet</code> (т.е. с одинаковым ключом), порядок обхода элементов не изменяется.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="enum-javautilenumset-hashset-treeset"><a name="Для-enum-есть-специальный-класс-javautilenumset-Зачем-Чем-авторов-не-устраивал-hashset-или-treeset"></a>Для <code>Enum</code> есть специальный класс <code>java.util.EnumSet</code>. Зачем? Чем авторов не устраивал <code>HashSet</code> или <code>TreeSet</code>?</h3>
+<p><code>EnumSet</code> - это реализация интерфейса <code>Set</code> для использования с перечислениями (<code>Enum</code>). В структуре данных хранятся объекты только одного типа <code>Enum</code>, указываемого при создании. Для хранения значений <code>EnumSet</code> использует массив битов (<em>bit vector</em>), - это позволяет получить высокую компактность и эффективность. Проход по <code>EnumSet</code> осуществляется согласно порядку объявления элементов перечисления. </p>
+<p>Все основные операции выполняются за <em>O(1)</em> и обычно (но негарантированно) быстрей аналогов из <code>HashSet</code>, а пакетные операции (<em>bulk operations</em>), такие как <code>containsAll()</code> и <code>retainAll()</code> выполняются даже горазда быстрей. </p>
+<p>Помимо всего <code>EnumSet</code> предоставляет множество статических методов инициализации для упрощенного и удобного создания экземпляров.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="_2"><a name="Какие-существуют-способы-перебирать-элементы-списка"></a>Какие существуют способы перебирать элементы списка?</h3>
+<ul>
+<li>Цикл с итератором</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">iterator</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">iterator</span><span class="p">();</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">iterator</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">//iterator.next();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<ul>
+<li>Цикл <code>for</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//list.get(i);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<ul>
+<li>Цикл <code>while</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">())</span> <span class="p">{</span>
+    <span class="c1">//list.get(i);</span>
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<ul>
+<li>«for-each»</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">element</span> <span class="p">:</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//element;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="_3"><a name="Каким-образом-можно-получить-синхронизированные-объекты-стандартных-коллекций"></a>Каким образом можно получить синхронизированные объекты стандартных коллекций?</h3>
+<p>С помощью статических методов <code>synchronizedMap()</code> и <code>synchronizedList()</code> класса <code>Collections</code>. Данные методы возвращают синхронизированный декоратор переданной коллекции. При этом все равно в случае обхода по коллекции требуется ручная синхронизация. </p>
+<div class="highlight"><pre><span></span><code>  <span class="n">Map</span> <span class="n">m</span> <span class="o">=</span> <span class="n">Collections</span><span class="p">.</span><span class="na">synchronizedMap</span><span class="p">(</span><span class="k">new</span> <span class="n">HashMap</span><span class="p">());</span>
+  <span class="n">List</span> <span class="n">l</span> <span class="o">=</span> <span class="n">Collections</span><span class="p">.</span><span class="na">synchronizedList</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="p">());</span>
+</code></pre></div>
+
+
+<p>Начиная с Java 6 JCF был расширен специальными коллекциями, поддерживающими многопоточный доступ, такими как <code>CopyOnWriteArrayList</code> и <code>ConcurrentHashMap</code>.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="_4"><a name="Как-получить-коллекцию-только-для-чтения"></a>Как получить коллекцию только для чтения?</h3>
+<p>При помощи:</p>
+<ul>
+<li><code>Collections.unmodifiableList(list)</code>;</li>
+<li><code>Collections.unmodifiableSet(set)</code>;</li>
+<li><code>Collections.unmodifiableMap(map)</code>.</li>
+</ul>
+<p>Эти методы принимают коллекцию в качестве параметра, и возвращают коллекцию только для чтения с теми же элементами внутри.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="concurrentmodificationexception_1"><a name="Напишите-однопоточную-программу-которая-заставляет-коллекцию-выбросить-concurrentmodificationexception"></a>Напишите однопоточную программу, которая заставляет коллекцию выбросить <code>ConcurrentModificationException</code>.</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">integer</span> <span class="p">:</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">list</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="-unsupportedoperationexception"><a name="Приведите-пример-когда-какая-либо-коллекция-выбрасывает-unsupportedoperationexception"></a>Приведите пример, когда какая-либо коллекция выбрасывает <code>UnsupportedOperationException</code>.</h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="n">Collections</span><span class="p">.</span><span class="na">emptyList</span><span class="p">();</span>
+    <span class="n">list</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="collection-addall-removeall-retainall"><a name="Реализуйте-симметрическую-разность-двух-коллекций-используя-методы-collection-addall-removeall-retainall"></a>Реализуйте симметрическую разность двух коллекций используя методы <code>Collection</code> (<code>addAll(...)</code>, <code>removeAll(...)</code>, <code>retainAll(...)</code>).</h3>
+<p>Симметрическая разность двух коллекций - это множество элементов, одновременно не принадлежащих обоим исходным коллекциям.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">symmetricDifference</span><span class="p">(</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">,</span> <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>    
+    <span class="c1">// Объединяем коллекции.</span>
+    <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">result</span><span class="p">.</span><span class="na">addAll</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+
+    <span class="c1">// Получаем пересечение коллекций.</span>
+    <span class="n">Collection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">intersection</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">intersection</span><span class="p">.</span><span class="na">retainAll</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>
+
+    <span class="c1">// Удаляем элементы, расположенные в обоих коллекциях.</span>
+    <span class="n">result</span><span class="p">.</span><span class="na">removeAll</span><span class="p">(</span><span class="n">intersection</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="linkedhashmap-c-invalidation-policy"><a name="Как-используя-linkedhashmap-сделать-кэш-c-invalidation-policy"></a>Как, используя LinkedHashMap, сделать кэш c «invalidation policy»?</h3>
+<p>Необходимо использовать <em>LRU-алгоритм (Least Recently Used algorithm)</em> и <code>LinkedHashMap</code> с access-order. В этом случае при обращении к элементу он будет перемещаться в конец списка, а наименее используемые элементы будут постепенно группироваться в начале списка. Так же в стандартной реализации <code>LinkedHashMap</code> есть метод <code>removeEldestEntries()</code>, который возвращает <code>true</code>, если текущий объект <code>LinkedHashMap</code> должен удалить наименее используемый элемент из коллекции при использовании методов <code>put()</code> и <code>putAll()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LRUCache</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">LinkedHashMap</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">MAX_ENTRIES</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">LRUCache</span><span class="p">(</span><span class="kt">int</span> <span class="n">initialCapacity</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">initialCapacity</span><span class="p">,</span> <span class="mf">0.85f</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">boolean</span> <span class="nf">removeEldestEntry</span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="n">eldest</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">MAX_ENTRIES</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Стоит заметить, что <code>LinkedHashMap</code> не позволяет полностью реализовать LRU-алгоритм, поскольку при вставке уже имеющегося в коллекции элемента порядок итерации по элементам не меняется.</p>
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="collection"><a name="Как-одной-строчкой-скопировать-элементы-любой-collection-в-массив"></a>Как одной строчкой скопировать элементы любой <code>collection</code> в массив?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">Object</span><span class="o">[]</span> <span class="n">array</span> <span class="o">=</span> <span class="n">collection</span><span class="p">.</span><span class="na">toArray</span><span class="p">();</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="list-list-3-"><a name="Как-одним-вызовом-из-list-получить-list-со-всеми-элементами-кроме-первых-и-последних-3-х"></a>Как одним вызовом из <code>List</code> получить <code>List</code> со всеми элементами, кроме первых и последних 3-х?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">subList</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="na">subList</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">3</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashset-arraylist"><a name="Как-одной-строчкой-преобразовать-hashset-в-arraylist"></a>Как одной строчкой преобразовать <code>HashSet</code> в <code>ArrayList</code>?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">());</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="arraylist-hashset"><a name="Как-одной-строчкой-преобразовать-arraylist-в-hashset"></a>Как одной строчкой преобразовать <code>ArrayList</code> в <code>HashSet</code>?</h3>
+<div class="highlight"><pre><span></span><code><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">());</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashset-hashmap"><a name="Сделайте-hashset-из-ключей-hashmap"></a>Сделайте <code>HashSet</code> из ключей <code>HashMap</code>.</h3>
+<div class="highlight"><pre><span></span><code><span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">map</span><span class="p">.</span><span class="na">keySet</span><span class="p">());</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h3 id="hashmap-hashsetmapentryk-v"><a name="Сделайте-hashmap-из-hashsetmapentryk-v"></a>Сделайте <code>HashMap</code> из <code>HashSet&lt;Map.Entry&lt;K, V&gt;&gt;</code>.</h3>
+<div class="highlight"><pre><span></span><code><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">set</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">K</span><span class="p">,</span> <span class="n">V</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="p">:</span> <span class="n">set</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">map</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">(),</span> <span class="n">entry</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#java-collections-framework">к оглавлению</a></p>
+<h1 id="_5">Источник</h1>
+<ul>
+<li><a href="http://www.parshinpn.pro/content/voprosy-i-otvety-na-sobesedovanii-po-teme-java-collection-framework-chast-1">parshinpn.pro</a></li>
+<li><a href="https://habrahabr.ru/post/162017/">Хабрахабр</a></li>
+<li><a href="http://www.quizful.net/interview/java">Quizful</a></li>
+<li><a href="http://info.javarush.ru/">JavaRush</a></li>
+<li><a href="https://habrahabr.ru/post/237043/">Хабрахабр:Справочник по Java Collections Framework</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

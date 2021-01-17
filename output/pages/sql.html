@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; SQL</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="sql">SQL</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="sql"></a>_</h3>
+<ul>
+<li><a href="#Что-такое-sql">Что такое <em>«SQL»</em>?</a></li>
+<li><a href="#Какие-существуют-операторы-sql">Какие существуют операторы SQL?</a></li>
+<li><a href="#Что-означает-null-в-sql">Что означает <code>NULL</code> в SQL?</a></li>
+<li><a href="#Что-такое-временная-таблица-Для-чего-она-используется">Что такое <em>«временная таблица»</em>? Для чего она используется?</a></li>
+<li><a href="#Что-такое-представление-view-и-для-чего-оно-применяется">Что такое <em>«представление» (view)</em> и для чего оно применяется?</a></li>
+<li><a href="#Каков-общий-синтаксис-оператора-select">Каков общий синтаксис оператора <code>SELECT</code>?</a></li>
+<li><a href="#Что-такое-join">Что такое <code>JOIN</code>?</a></li>
+<li><a href="#Какие-существуют-типы-join">Какие существуют типы <code>JOIN</code>?</a></li>
+<li><a href="#Что-лучше-использовать-join-или-подзапросы">Что лучше использовать <code>JOIN</code> или подзапросы?</a></li>
+<li><a href="#Для-чего-используется-оператор-having">Для чего используется оператор <code>HAVING</code>?</a></li>
+<li><a href="#В-чем-различие-между-операторами-having-и-where">В чем различие между операторами <code>HAVING</code> и <code>WHERE</code>?</a></li>
+<li><a href="#Для-чего-используется-оператор-order-by">Для чего используется оператор <code>ORDER BY</code>?</a></li>
+<li><a href="#Для-чего-используется-оператор-group-by">Для чего используется оператор <code>GROUP BY</code>?</a></li>
+<li><a href="#Как-group-by-обрабатывает-значение-null">Как <code>GROUP BY</code> обрабатывает значение <code>NULL</code>?</a></li>
+<li><a href="#В-чем-разница-между-операторами-group-by-и-distinct">В чем разница между операторами <code>GROUP BY</code> и <code>DISTINCT</code>?</a></li>
+<li><a href="#Перечислите-основные-агрегатные-функции">Перечислите основные агрегатные функции.</a></li>
+<li><a href="#В-чем-разница-между-count-и-countcolumn">В чем разница между <code>COUNT(*)</code> и <code>COUNT({column})</code>?</a></li>
+<li><a href="#Что-делает-оператор-exists">Что делает оператор <code>EXISTS</code>?</a></li>
+<li><a href="#Для-чего-используются-операторы-in-between-like">Для чего используются операторы <code>IN</code>, <code>BETWEEN</code>, <code>LIKE</code>?</a></li>
+<li><a href="#Для-чего-применяется-ключевое-слово-union">Для чего применяется ключевое слово <code>UNION</code>?</a></li>
+<li><a href="#Какие-ограничения-на-целостность-данных-существуют-в-sql">Какие ограничения на целостность данных существуют в SQL?</a></li>
+<li><a href="#Какие-отличия-между-ограничениями-primary-и-unique">Какие отличия между ограничениями <code>PRIMARY</code> и <code>UNIQUE</code>?</a></li>
+<li><a href="#Может-ли-значение-в-столбце-на-который-наложено-ограничение-foreign-key-равняться-null">Может ли значение в столбце, на который наложено ограничение <code>FOREIGN KEY</code>, равняться <code>NULL</code>?</a></li>
+<li><a href="#Как-создать-индекс">Как создать индекс?</a></li>
+<li><a href="#Что-делает-оператор-merge">Что делает оператор <code>MERGE</code>?</a></li>
+<li><a href="#В-чем-отличие-между-операторами-delete-и-truncate">В чем отличие между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</a></li>
+<li><a href="#Что-такое-хранимая-процедура">Что такое <em>«хранимая процедура»</em>?</a></li>
+<li><a href="#Что-такое-триггер">Что такое <em>«триггер»</em>?</a></li>
+<li><a href="#Что-такое-курсор">Что такое <em>«курсор»</em>?</a></li>
+<li><a href="#Опишите-разницу-типов-данных-datetime-и-timestamp">Опишите разницу типов данных <code>DATETIME</code> и <code>TIMESTAMP</code>.</a></li>
+<li><a href="#Для-каких-числовых-типов-недопустимо-использовать-операции-сложениявычитания">Для каких числовых типов недопустимо использовать операции сложения/вычитания?</a></li>
+<li><a href="#Какое-назначение-у-операторов-pivot-и-unpivot-в-transact-sql">Какое назначение у операторов <code>PIVOT</code> и <code>UNPIVOT</code> в Transact-SQL?</a></li>
+<li><a href="#Расскажите-об-основных-функциях-ранжирования-в-transact-sql">Расскажите об основных функциях ранжирования в Transact-SQL.</a></li>
+<li><a href="#Для-чего-используются-операторы-intersect-except-в-transact-sql">Для чего используются операторы <code>INTERSECT</code>, <code>EXCEPT</code> в Transact-SQL?</a></li>
+<li><a href="#Напишите-запрос">Напишите запрос...</a></li>
+</ul>
+<h3 id="sql"><a name="Что-такое-sql"></a>Что такое <em>«SQL»</em>?</h3>
+<p>SQL, Structured query language («язык структурированных запросов») — формальный непроцедурный язык программирования, применяемый для создания, модификации и управления данными в произвольной реляционной базе данных, управляемой соответствующей системой управления базами данных (СУБД).</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="sql_1"><a name="Какие-существуют-операторы-sql"></a>Какие существуют операторы SQL?</h3>
+<p><strong>операторы определения данных (Data Definition Language, DDL)</strong>:</p>
+<ul>
+<li><code>CREATE</code> создает объект БД (базу, таблицу, представление, пользователя и т. д.),</li>
+<li><code>ALTER</code> изменяет объект,</li>
+<li><code>DROP</code> удаляет объект;</li>
+</ul>
+<p><strong>операторы манипуляции данными (Data Manipulation Language, DML)</strong>:</p>
+<ul>
+<li><code>SELECT</code> выбирает данные, удовлетворяющие заданным условиям,</li>
+<li><code>INSERT</code> добавляет новые данные,</li>
+<li><code>UPDATE</code> изменяет существующие данные,</li>
+<li><code>DELETE</code> удаляет данные;</li>
+</ul>
+<p><strong>операторы определения доступа к данным (Data Control Language, DCL)</strong>:</p>
+<ul>
+<li><code>GRANT</code> предоставляет пользователю (группе) разрешения на определенные операции с объектом,</li>
+<li><code>REVOKE</code> отзывает ранее выданные разрешения,</li>
+<li><code>DENY</code> задает запрет, имеющий приоритет над разрешением;</li>
+</ul>
+<p><strong>операторы управления транзакциями (Transaction Control Language, TCL)</strong>:</p>
+<ul>
+<li><code>COMMIT</code> применяет транзакцию,</li>
+<li><code>ROLLBACK</code> откатывает все изменения, сделанные в контексте текущей транзакции,</li>
+<li><code>SAVEPOINT</code> разбивает транзакцию на более мелкие.</li>
+</ul>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="null-sql"><a name="Что-означает-null-в-sql"></a>Что означает <code>NULL</code> в SQL?</h3>
+<p><code>NULL</code> - специальное значение (псевдозначение), которое может быть записано в поле таблицы базы данных. NULL соответствует понятию «пустое поле», то есть «поле, не содержащее никакого значения».</p>
+<p><code>NULL</code> означает отсутствие, неизвестность информации. Значение <code>NULL</code> не является значением в полном смысле слова: по определению оно означает отсутствие значения и не принадлежит ни одному типу данных. Поэтому <code>NULL</code> не равно ни логическому значению <code>FALSE</code>, ни <em>пустой строке</em>, ни <code>0</code>. При сравнении <code>NULL</code> с любым значением будет получен результат <code>NULL</code>, а не <code>FALSE</code> и не <code>0</code>. Более того, <code>NULL</code> не равно <code>NULL</code>!</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="_1"><a name="Что-такое-временная-таблица-Для-чего-она-используется"></a>Что такое <em>«временная таблица»</em>? Для чего она используется?</h3>
+<p><strong>Временная таблица</strong> - это объект базы данных, который хранится и управляется системой базы данных на временной основе. Они могут быть локальными или глобальными. Используется для сохранения результатов вызова хранимой процедуры, уменьшение числа строк при соединениях, агрегирование данных из различных источников или как замена курсоров и параметризованных представлений.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="view"><a name="Что-такое-представление-view-и-для-чего-оно-применяется"></a>Что такое <em>«представление» (view)</em> и для чего оно применяется?</h3>
+<p><strong>Представление</strong>, View - виртуальная таблица, представляющая данные одной или более таблиц альтернативным образом.</p>
+<p>В действительности представление – всего лишь результат выполнения оператора <code>SELECT</code>, который хранится в структуре памяти, напоминающей SQL таблицу. Они работают в запросах и операторах DML точно также как и основные таблицы, но не содержат никаких собственных данных. Представления значительно расширяют возможности управления данными. Это способ дать публичный доступ к некоторой (но не всей) информации в таблице.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="select"><a name="Каков-общий-синтаксис-оператора-select"></a>Каков общий синтаксис оператора <code>SELECT</code>?</h3>
+<p><code>SELECT</code> - оператор DML SQL, возвращающий набор данных (выборку) из базы данных, удовлетворяющих заданному условию. Имеет следующую структуру:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> 
+       <span class="p">[</span><span class="k">DISTINCT</span> <span class="o">|</span> <span class="n">DISTINCTROW</span> <span class="o">|</span> <span class="k">ALL</span><span class="p">]</span>
+       <span class="n">select_expression</span><span class="p">,...</span>
+   <span class="k">FROM</span> <span class="n">table_references</span>
+     <span class="p">[</span><span class="k">WHERE</span> <span class="n">where_definition</span><span class="p">]</span>
+     <span class="p">[</span><span class="k">GROUP</span> <span class="k">BY</span> <span class="err">{</span><span class="n">unsigned_integer</span> <span class="o">|</span> <span class="k">column</span> <span class="o">|</span> <span class="n">formula</span><span class="err">}</span><span class="p">]</span>
+     <span class="p">[</span><span class="k">HAVING</span> <span class="n">where_definition</span><span class="p">]</span>
+     <span class="p">[</span><span class="k">ORDER</span> <span class="k">BY</span> <span class="err">{</span><span class="n">unsigned_integer</span> <span class="o">|</span> <span class="k">column</span> <span class="o">|</span> <span class="n">formula</span><span class="err">}</span> <span class="p">[</span><span class="k">ASC</span> <span class="o">|</span> <span class="k">DESC</span><span class="p">],</span> <span class="p">...]</span>
+</code></pre></div>
+
+
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="join"><a name="Что-такое-join"></a>Что такое <code>JOIN</code>?</h3>
+<p><strong>JOIN</strong> - оператор языка SQL, который является реализацией операции соединения реляционной алгебры. Предназначен для обеспечения выборки данных из двух таблиц и включения этих данных в один результирующий набор. </p>
+<p>Особенностями операции соединения являются следующее:</p>
+<ul>
+<li>в схему таблицы-результата входят столбцы обеих исходных таблиц (таблиц-операндов), то есть схема результата является «сцеплением» схем операндов;</li>
+<li>каждая строка таблицы-результата является «сцеплением» строки из одной таблицы-операнда со строкой второй таблицы-операнда;</li>
+<li>при необходимости соединения не двух, а нескольких таблиц, операция соединения применяется несколько раз (последовательно).</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span>
+  <span class="n">field_name</span> <span class="p">[,...</span> <span class="n">n</span><span class="p">]</span>
+<span class="k">FROM</span>
+  <span class="n">Table1</span>
+  <span class="err">{</span><span class="k">INNER</span> <span class="o">|</span> <span class="err">{</span><span class="k">LEFT</span> <span class="o">|</span> <span class="k">RIGHT</span> <span class="o">|</span> <span class="k">FULL</span><span class="err">}</span> <span class="k">OUTER</span> <span class="o">|</span> <span class="k">CROSS</span> <span class="err">}</span> <span class="k">JOIN</span>
+  <span class="n">Table2</span>
+    <span class="err">{</span><span class="k">ON</span> <span class="o">&lt;</span><span class="n">condition</span><span class="o">&gt;</span> <span class="o">|</span> <span class="k">USING</span> <span class="p">(</span><span class="n">field_name</span> <span class="p">[,...</span> <span class="n">n</span><span class="p">])</span><span class="err">}</span>
+</code></pre></div>
+
+
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="join_1"><a name="Какие-существуют-типы-join"></a>Какие существуют типы <code>JOIN</code>?</h3>
+<p><strong>(INNER) JOIN</strong>
+Результатом объединения таблиц являются записи, общие для левой и правой таблиц. Порядок таблиц для оператора не важен, поскольку оператор является симметричным.</p>
+<p><strong>LEFT (OUTER) JOIN</strong>
+Производит выбор всех записей первой таблицы и соответствующих им записей второй таблицы. Если записи во второй таблице не найдены, то вместо них подставляется пустой результат (<code>NULL</code>). Порядок таблиц для оператора важен, поскольку оператор не является симметричным.</p>
+<p><strong>RIGHT (OUTER) JOIN</strong>
+<code>LEFT JOIN</code> с операндами, расставленными в обратном порядке. Порядок таблиц для оператора важен, поскольку оператор не является симметричным.</p>
+<p><strong>FULL (OUTER) JOIN</strong>
+Результатом объединения таблиц являются все записи, которые присутствуют в таблицах. Порядок таблиц для оператора не важен, поскольку оператор является симметричным.</p>
+<p><strong>CROSS JOIN (декартово произведение)</strong>
+При выборе каждая строка одной таблицы объединяется с каждой строкой второй таблицы, давая тем самым все возможные сочетания строк двух таблиц. Порядок таблиц для оператора не важен, поскольку оператор является симметричным.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="join_2"><a name="Что-лучше-использовать-join-или-подзапросы"></a>Что лучше использовать <code>JOIN</code> или подзапросы?</h3>
+<p>Обычно лучше использовать <code>JOIN</code>, поскольку в большинстве случаев он более понятен и лучше оптимизируется СУБД (но 100% этого гарантировать нельзя). Так же <code>JOIN</code> имеет заметное преимущество над подзапросами в случае, когда список выбора <code>SELECT</code> содержит столбцы более чем из одной таблицы.</p>
+<p>Подзапросы лучше использовать в случаях, когда нужно вычислять агрегатные значения и использовать их для сравнений во внешних запросах.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="having"><a name="Для-чего-используется-оператор-having"></a>Для чего используется оператор <code>HAVING</code>?</h3>
+<p><code>HAVING</code> используется для фильтрации результата <code>GROUP BY</code> по заданным логическим условиям.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="having-where"><a name="В-чем-различие-между-операторами-having-и-where"></a>В чем различие между операторами <code>HAVING</code> и <code>WHERE</code>?</h3>
+<p><code>HAVING</code> используется как <code>WHERE</code>, но в другой части SQL-выражения и, соответственно, на другой стадии формирования ответа.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="order-by"><a name="Для-чего-используется-оператор-order-by"></a>Для чего используется оператор <code>ORDER BY</code>?</h3>
+<p><strong>ORDER BY</strong> упорядочивает вывод запроса согласно значениям в том или ином количестве выбранных столбцов. Многочисленные столбцы упорядочиваются один внутри другого. Возможно определять возрастание <code>ASC</code> или убывание <code>DESC</code> для каждого столбца. По умолчанию установлено - возрастание.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="group-by"><a name="Для-чего-используется-оператор-group-by"></a>Для чего используется оператор <code>GROUP BY</code>?</h3>
+<p><code>GROUP BY</code> используется для агрегации записей результата по заданным признакам-атрибутам.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="group-by-null"><a name="Как-group-by-обрабатывает-значение-null"></a>Как <code>GROUP BY</code> обрабатывает значение <code>NULL</code>?</h3>
+<p>При использовании <code>GROUP BY</code> все значения <code>NULL</code> считаются равными.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="group-by-distinct"><a name="В-чем-разница-между-операторами-group-by-и-distinct"></a>В чем разница между операторами <code>GROUP BY</code> и <code>DISTINCT</code>?</h3>
+<p><code>DISTINCT</code> указывает, что для вычислений используются только уникальные значения столбца. <code>NULL</code> считается как отдельное значение. 
+<code>GROUP BY</code> создает отдельную группу для всех возможных значений (включая значение <code>NULL</code>). </p>
+<p>Если нужно удалить только дубликаты лучше использовать <code>DISTINCT</code>, <code>GROUP BY</code> лучше использовать для определения групп записей, к которым могут применяться агрегатные функции.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="_2"><a name="Перечислите-основные-агрегатные-функции"></a>Перечислите основные агрегатные функции.</h3>
+<p><strong>Агрегатных функции</strong> - функции, которые берут группы значений и сводят их к одиночному значению. </p>
+<p>SQL предоставляет несколько агрегатных функций:</p>
+<p><code>COUNT</code> - производит подсчет записей, удовлетворяющих условию запроса;
+<code>SUM</code> - вычисляет арифметическую сумму всех значений колонки;
+<code>AVG</code> - вычисляет среднее арифметическое всех значений;
+<code>MAX</code> - определяет наибольшее из всех выбранных значений;
+<code>MIN</code> - определяет наименьшее из всех выбранных значений.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="count-countcolumn"><a name="В-чем-разница-между-count-и-countcolumn"></a>В чем разница между <code>COUNT(*)</code> и <code>COUNT({column})</code>?</h3>
+<p><code>COUNT (*)</code> подсчитывает количество записей в таблице, не игнорируя значение NULL, поскольку эта функция оперирует записями, а не столбцами.</p>
+<p><code>COUNT ({column})</code> подсчитывает количество значений в <code>{column}</code>. При подсчете количества значений столбца эта форма функции <code>COUNT</code> не принимает во внимание значение <code>NULL</code>.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="exists"><a name="Что-делает-оператор-exists"></a>Что делает оператор <code>EXISTS</code>?</h3>
+<p><code>EXISTS</code> берет подзапрос, как аргумент, и оценивает его как <code>TRUE</code>, если подзапрос возвращает какие-либо записи и <code>FALSE</code>, если нет.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="in-between-like"><a name="Для-чего-используются-операторы-in-between-like"></a>Для чего используются операторы <code>IN</code>, <code>BETWEEN</code>, <code>LIKE</code>?</h3>
+<p><code>IN</code> - определяет набор значений.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Persons</span> <span class="k">WHERE</span> <span class="n">name</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Ivan&#39;</span><span class="p">,</span><span class="s1">&#39;Petr&#39;</span><span class="p">,</span><span class="s1">&#39;Pavel&#39;</span><span class="p">);</span>
+</code></pre></div>
+
+
+<p><code>BETWEEN</code> определяет диапазон значений. В отличие от <code>IN</code>, <code>BETWEEN</code> чувствителен к порядку, и первое значение в предложении должно быть первым по алфавитному или числовому порядку.</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">Persons</span> <span class="k">WHERE</span> <span class="n">age</span> <span class="k">BETWEEN</span> <span class="mi">20</span> <span class="k">AND</span> <span class="mi">25</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p><code>LIKE</code> применим только к полям типа <code>CHAR</code> или <code>VARCHAR</code>, с которыми он используется чтобы находить подстроки. В качестве условия используются <em>символы шаблонизации (wildkards</em>) - специальные символы, которые могут соответствовать чему-нибудь: </p>
+<ul>
+<li>
+<p><code>_</code> замещает любой одиночный символ. Например, <code>'b_t'</code> будет соответствовать словам <code>'bat'</code> или <code>'bit'</code>, но не будет соответствовать <code>'brat'</code>. </p>
+</li>
+<li>
+<p><code>%</code> замещает последовательность любого числа символов. Например <code>'%p%t'</code> будет соответствовать словам <code>'put'</code>, <code>'posit'</code>, или <code>'opt'</code>, но не <code>'spite'</code>.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">UNIVERSITY</span> <span class="k">WHERE</span> <span class="n">NAME</span> <span class="k">LIKE</span> <span class="s1">&#39;%o&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="union"><a name="Для-чего-применяется-ключевое-слово-union"></a>Для чего применяется ключевое слово <code>UNION</code>?</h3>
+<p>В языке SQL ключевое слово <code>UNION</code> применяется для объединения результатов двух SQL-запросов в единую таблицу, состоящую из схожих записей. Оба запроса должны возвращать одинаковое число столбцов и совместимые типы данных в соответствующих столбцах. Необходимо отметить, что <code>UNION</code> сам по себе не гарантирует порядок записей. Записи из второго запроса могут оказаться в начале, в конце или вообще перемешаться с записями из первого запроса. В случаях, когда требуется определенный порядок, необходимо использовать <code>ORDER BY</code>.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="sql_2"><a name="Какие-ограничения-на-целостность-данных-существуют-в-sql"></a>Какие ограничения на целостность данных существуют в SQL?</h3>
+<p><code>PRIMARY KEY</code> - набор полей (1 или более), значения которых образуют уникальную комбинацию и используются для однозначной идентификации записи в таблице. Для таблицы может быть создано только одно такое ограничение. Данное ограничение используется для обеспечения целостности сущности, которая описана таблицей.</p>
+<p><code>CHECK</code> используется для ограничения множества значений, которые могут быть помещены в данный столбец. Это ограничение используется для обеспечения целостности предметной области, которую описывают таблицы в базе.</p>
+<p><code>UNIQUE</code> обеспечивает отсутствие дубликатов в столбце или наборе столбцов.</p>
+<p><code>FOREIGN KEY</code> защищает от действий, которые могут нарушить связи между таблицами. <code>FOREIGN KEY</code> в одной таблице указывает на <code>PRIMARY KEY</code> в другой. Поэтому данное ограничение нацелено на то, чтобы не было записей <code>FOREIGN KEY</code>, которым не отвечают записи <code>PRIMARY KEY</code>.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="primary-unique"><a name="Какие-отличия-между-ограничениями-primary-и-unique"></a>Какие отличия между ограничениями <code>PRIMARY</code> и <code>UNIQUE</code>?</h3>
+<p>По умолчанию ограничение <code>PRIMARY</code> создает кластерный индекс на столбце, а <code>UNIQUE</code> - некластерный. Другим отличием является то, что <code>PRIMARY</code> не разрешает <code>NULL</code> записей, в то время как <code>UNIQUE</code> разрешает одну (а в некоторых СУБД несколько) <code>NULL</code> запись.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="foreign-key-null"><a name="Может-ли-значение-в-столбце-на-который-наложено-ограничение-foreign-key-равняться-null"></a>Может ли значение в столбце, на который наложено ограничение <code>FOREIGN KEY</code>, равняться <code>NULL</code>?</h3>
+<p>Может, если на данный столбец не наложено ограничение <code>NOT NULL</code>. </p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="_3"><a name="Как-создать-индекс"></a>Как создать индекс?</h3>
+<p>Индекс можно создать либо с помощью выражения <code>CREATE INDEX</code>: </p>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">INDEX</span> <span class="n">index_name</span> <span class="k">ON</span> <span class="k">table_name</span> <span class="p">(</span><span class="k">column_name</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>либо указав ограничение целостности в виде уникального <code>UNIQUE</code> или первичного <code>PRIMARY</code> ключа в операторе создания таблицы <code>CREATE TABLE</code>.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="merge"><a name="Что-делает-оператор-merge"></a>Что делает оператор <code>MERGE</code>?</h3>
+<p><code>MERGE</code> позволяет осуществить слияние данных одной таблицы с данными другой таблицы. При слиянии таблиц проверяется условие, и если оно истинно, то выполняется <code>UPDATE</code>, а если нет - <code>INSERT</code>. При этом изменять поля таблицы в секции <code>UPDATE</code>, по которым идет связывание двух таблиц, нельзя.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="delete-truncate"><a name="В-чем-отличие-между-операторами-delete-и-truncate"></a>В чем отличие между операторами <code>DELETE</code> и <code>TRUNCATE</code>?</h3>
+<p><code>DELETE</code> - оператор DML, удаляет записи из таблицы, которые удовлетворяют критерию <code>WHERE</code> при этом задействуются триггеры, ограничения и т.д.</p>
+<p><code>TRUNCATE</code> - DDL оператор (удаляет таблицу и создает ее заново. Причем если на эту таблицу есть ссылки <code>FOREGIN KEY</code> или таблица используется в репликации, то пересоздать такую таблицу не получится).</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="_4"><a name="Что-такое-хранимая-процедура"></a>Что такое <em>«хранимая процедура»</em>?</h3>
+<p><strong>Хранимая процедура</strong> — объект базы данных, представляющий собой набор SQL-инструкций, который хранится на сервере. Хранимые процедуры очень похожи на обыкновенные процедуры языков высокого уровня, у них могут быть входные и выходные параметры и локальные переменные, в них могут производиться числовые вычисления и операции над символьными данными, результаты которых могут присваиваться переменным и параметрам. В хранимых процедурах могут выполняться стандартные операции с базами данных (как DDL, так и DML). Кроме того, в хранимых процедурах возможны циклы и ветвления, то есть в них могут использоваться инструкции управления процессом исполнения.</p>
+<p>Хранимые процедуры позволяют повысить производительность, расширяют возможности программирования и поддерживают функции безопасности данных. В большинстве СУБД при первом запуске хранимой процедуры она компилируется (выполняется синтаксический анализ и генерируется план доступа к данным) и в дальнейшем её обработка осуществляется быстрее.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="_5"><a name="Что-такое-триггер"></a>Что такое <em>«триггер»</em>?</h3>
+<p><strong>Триггер (trigger)</strong> — это хранимая процедура особого типа, которую пользователь не вызывает непосредственно, а исполнение которой обусловлено действием по модификации данных: добавлением, удалением или изменением данных в заданной таблице реляционной базы данных. Триггеры применяются для обеспечения целостности данных и реализации сложной бизнес-логики. Триггер запускается сервером автоматически и все производимые им модификации данных рассматриваются как выполняемые в транзакции, в которой выполнено действие, вызвавшее срабатывание триггера. Соответственно, в случае обнаружения ошибки или нарушения целостности данных может произойти откат этой транзакции.</p>
+<p>Момент запуска триггера определяется с помощью ключевых слов <code>BEFORE</code> (триггер запускается до выполнения связанного с ним события) или <code>AFTER</code> (после события). В случае, если триггер вызывается до события, он может внести изменения в модифицируемую событием запись. Кроме того, триггеры могут быть привязаны не к таблице, а к представлению (VIEW). В этом случае с их помощью реализуется механизм «обновляемого представления». В этом случае ключевые слова <code>BEFORE</code> и <code>AFTER</code> влияют лишь на последовательность вызова триггеров, так как собственно событие (удаление, вставка или обновление) не происходит.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="_6"><a name="Что-такое-курсор"></a>Что такое <em>«курсор»</em>?</h3>
+<p><strong>Курсор</strong> — это объект базы данных, который позволяет приложениям работать с записями «по-одной», а не сразу с множеством, как это делается в обычных SQL командах.</p>
+<p>Порядок работы с курсором такой:</p>
+<ul>
+<li>Определить курсор (<code>DECLARE</code>)</li>
+<li>Открыть курсор (<code>OPEN</code>)</li>
+<li>Получить запись из курсора (<code>FETCH</code>)</li>
+<li>Обработать запись...</li>
+<li>Закрыть курсор (<code>CLOSE</code>)</li>
+<li>Удалить ссылку курсора (<code>DEALLOCATE</code>). Когда удаляется последняя ссылка курсора, SQL освобождает структуры данных, составляющие курсор.</li>
+</ul>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="datetime-timestamp"><a name="Опишите-разницу-типов-данных-datetime-и-timestamp"></a>Опишите разницу типов данных <code>DATETIME</code> и <code>TIMESTAMP</code>.</h3>
+<p><code>DATETIME</code> предназначен для хранения целого числа: <code>YYYYMMDDHHMMSS</code>. И это время не зависит от временной зоны настроенной на сервере.
+Размер: 8 байт</p>
+<p><code>TIMESTAMP</code> хранит значение равное количеству секунд, прошедших с полуночи 1 января 1970 года по усреднённому времени Гринвича. При получении из базы отображается с учётом часового пояса. Размер: 4 байта</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="_7"><a name="Для-каких-числовых-типов-недопустимо-использовать-операции-сложениявычитания"></a>Для каких числовых типов недопустимо использовать операции сложения/вычитания?</h3>
+<p>В качестве операндов операций сложения и вычитания нельзя использовать числовой тип <code>BIT</code>.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="pivot-unpivot-transact-sql"><a name="Какое-назначение-у-операторов-pivot-и-unpivot-в-transact-sql"></a>Какое назначение у операторов <code>PIVOT</code> и <code>UNPIVOT</code> в Transact-SQL?</h3>
+<p><code>PIVOT</code> и <code>UNPIVOT</code> являются нестандартными реляционными операторами, которые поддерживаются Transact-SQL. </p>
+<p>Оператор <code>PIVOT</code> разворачивает возвращающее табличное значение выражение, преобразуя уникальные значения одного столбца выражения в несколько выходных столбцов, а также, в случае необходимости, объединяет оставшиеся повторяющиеся значения столбца и отображает их в выходных данных. Оператор <code>UNPIVOT</code> производит действия, обратные <code>PIVOT</code>, преобразуя столбцы возвращающего табличное значение выражения в значения столбца.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="transact-sql"><a name="Расскажите-об-основных-функциях-ранжирования-в-transact-sql"></a>Расскажите об основных функциях ранжирования в Transact-SQL.</h3>
+<p>Ранжирующие функции - это функции, которые возвращают значение для каждой записи группы в результирующем наборе данных. На практике они могут быть использованы, например, для простой нумерации списка, составления рейтинга или постраничной навигации.</p>
+<p><code>ROW_NUMBER</code> – функция нумерации в Transact-SQL, которая возвращает просто номер записи.</p>
+<p><code>RANK</code> возвращает ранг каждой записи. В данном случае, в отличие от <code>ROW_NUMBER</code>, идет уже анализ значений и в случае нахождения одинаковых возвращает одинаковый ранг с пропуском следующего.</p>
+<p><code>DENSE_RANK</code> так же возвращает ранг каждой записи, но в отличие от <code>RANK</code> в случае нахождения одинаковых значений возвращает ранг без пропуска следующего.</p>
+<p><code>NTILE</code> – функция Transact-SQL, которая делит результирующий набор на группы по определенному столбцу. </p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="intersect-except-transact-sql"><a name="Для-чего-используются-операторы-intersect-except-в-transact-sql"></a>Для чего используются операторы <code>INTERSECT</code>, <code>EXCEPT</code> в Transact-SQL?</h3>
+<p>Оператор <code>EXCEPT</code> возвращает уникальные записи из левого входного запроса, которые не выводятся правым входным запросом.</p>
+<p>Оператор <code>INTERSECT</code> возвращает уникальные записи, выводимые левым и правым входными запросами.</p>
+<p><a href="#sql">к оглавлению</a></p>
+<h3 id="_8"><a name="Напишите-запрос"></a>Напишите запрос...</h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">table</span> <span class="p">(</span> 
+  <span class="n">id</span> <span class="nb">BIGINT</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span> 
+  <span class="n">created</span> <span class="k">TIMESTAMP</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> 
+<span class="p">);</span>
+</code></pre></div>
+
+
+<p>Требуется написать запрос который вернет максимальное значение <code>id</code> и значение <code>created</code> для этого <code>id</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">created</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">where</span> <span class="n">id</span> <span class="o">=</span> <span class="p">(</span><span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">FROM</span> <span class="k">table</span><span class="p">);</span>
+</code></pre></div>
+
+
+<hr>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">track_downloads</span> <span class="p">(</span> 
+  <span class="n">download_id</span> <span class="nb">BIGINT</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span> 
+  <span class="n">track_id</span> <span class="nb">INT</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span> 
+  <span class="n">user_id</span> <span class="nb">BIGINT</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span> 
+  <span class="n">download_time</span> <span class="k">TIMESTAMP</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">,</span> 
+  <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="n">download_id</span><span class="p">)</span> 
+<span class="p">);</span>
+</code></pre></div>
+
+
+<p>Напишите SQL-запрос, возвращающий все пары <code>(download_count, user_count)</code>, удовлетворяющие следующему условию: <code>user_count</code> — общее ненулевое число пользователей, сделавших ровно <code>download_count</code> скачиваний <code>19 ноября 2010 года</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span> <span class="k">DISTINCT</span> <span class="n">download_count</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">user_count</span> 
+<span class="k">FROM</span> <span class="p">(</span> 
+    <span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">download_count</span>  
+    <span class="k">FROM</span> <span class="n">track_downloads</span> <span class="k">WHERE</span> <span class="n">download_time</span><span class="o">=</span><span class="ss">&quot;2010-11-19&quot;</span> 
+    <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">user_id</span><span class="p">)</span>  
+<span class="k">AS</span> <span class="n">download_count</span>
+<span class="k">GROUP</span> <span class="k">BY</span> <span class="n">download_count</span><span class="p">;</span> 
+</code></pre></div>
+
+
+<p><a href="#sql">к оглавлению</a></p>
+<h1 id="_9">Источники</h1>
+<ul>
+<li><a href="https://ru.wikipedia.org/wiki/SQL">Википедия</a></li>
+<li><a href="http://www.quizful.net/interview/sql">Quizful</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

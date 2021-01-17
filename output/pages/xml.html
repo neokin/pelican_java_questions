@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; XML</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="xml">XML</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="xml"></a>_</h3>
+<ul>
+<li><a href="#Что-такое-xml">Что такое <em>XML</em>?</a></li>
+<li><a href="#Что-такое-dtd">Что такое <em>DTD</em>?</a></li>
+<li><a href="#Чем-well-formed-xml-отличается-от-valid-xml">Чем <em>well-formed XML</em> отличается от <em>valid XML</em>?</a></li>
+<li><a href="#Что-такое-пространство-имен-в-xml">Что такое «<em>пространство имен</em>» в XML?</a></li>
+<li><a href="#Что-такое-xsd-В-чём-его-преимущества-перед-xml-dtd">Что такое XSD? В чём его преимущества перед XML DTD?</a></li>
+<li><a href="#Какие-типы-существуют-в-xsd">Какие типы существуют в XSD?</a></li>
+<li><a href="#Какие-вы-знаете-методы-чтения-xml-Опишите-сильные-и-слабые-стороны-каждого-метода">Какие вы знаете методы чтения XML? Опишите сильные и слабые стороны каждого метода.</a></li>
+<li><a href="#Когда-следует-использовать-dom-а-когда-sax-stax-анализаторы">Когда следует использовать <em>DOM</em>, а когда <em>SAX</em>, <em>StAX</em> анализаторы?</a>? </li>
+<li><a href="#Какие-вы-знаете-способы-записи-xml">Какие вы знаете способы записи XML?</a></li>
+<li><a href="#Что-такое-jaxp">Что такое <em>JAXP</em>?</a></li>
+<li><a href="#Что-такое-xslt">Что такое <em>XSLT</em>?</a></li>
+</ul>
+<h3 id="xml"><a name="Что-такое-xml"></a>Что такое <em>XML</em>?</h3>
+<p><strong>XML, eXtensible Markup Language (расширяемый язык разметки)</strong> - язык с простым формальным синтаксисом, хорошо приспособленный для создания и обработки документов программами и одновременно удобный для чтения и создания документов человеком. </p>
+<p>XML расширяем, он не фиксирует разметку, используемую в документах и разработчик волен создавать разметку в соответствии с потребностями конкретной области, будучи ограниченным лишь синтаксическими правилами языка.</p>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="dtd"><a name="Что-такое-dtd"></a>Что такое <em>DTD</em>?</h3>
+<p><strong>DTD, Document Type Definition (определение типа документа)</strong> — это заранее определённый свод правил, задающий связи между элементами и атрибутами. </p>
+<blockquote>
+<p>Например, DTD для HTML гласит, что тэг <code>DIV</code> должен быть внутри тэга <code>BODY</code> и может встречаться многократно, <code>TITLE</code> — в <code>HEAD</code> и всего один раз, а <code>SCRIPT</code> – и там, и там сколь угодно раз.</p>
+</blockquote>
+<p>DTD обычно описывается непосредственно в документе в виде строки-формулировки, начинающейся с <code>&lt;!DOCTYPE ... &gt;</code> или отдельном файле.</p>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="well-formed-xml-valid-xml"><a name="Чем-well-formed-xml-отличается-от-valid-xml"></a>Чем <em>well-formed XML</em> отличается от <em>valid XML</em>?</h3>
+<p>В зависимости от уровня соответствия стандартам документ может быть «well-formed» («правильно построенный»), либо «valid» («действительный»). </p>
+<p>Основные признаки <em>well-formed XML</em> следуют из формального описания стандарта:</p>
+<ul>
+<li>Документ имеет ровно один корневой элемент, в котором лежат все остальные. То есть, <code>&lt;document&gt;...&lt;/document&gt;&lt;appendix&gt;...&lt;/appendix&gt;</code> - это не XML-документ.</li>
+<li>Все открытые теги обязаны быть закрыты. HTML, например, допускает не закрывать многие теги (<code>&lt;p&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;td&gt;</code> и многие другие). В XML так делать нельзя.</li>
+<li>Для одиночных тегов (типа <code>&lt;br&gt;</code>) , чтобы отличать их от открывающих, предусмотрена специальная запись: <code>&lt;br/&gt;</code>. Но можно написать и полностью <code>&lt;br&gt;&lt;/br&gt;</code>.</li>
+<li>Имена тегов регистрозависимые. Если вы открываете тег <code>&lt;SiteDescription&gt;</code>, то его надо закрывать именно таким же, <code>&lt;/sitedescription&gt;</code> не допускается.</li>
+<li>Теги не могут нарушать вложенность. Вот такого не должно быть: <code>&lt;em&gt;&lt;b&gt;...&lt;/em&gt;&lt;/b&gt;</code>.</li>
+<li>Все атрибуты тегов обязаны быть заключены в двойные кавычки (<code>"</code>).</li>
+<li>Есть три символа - <code>&lt;</code>, <code>&gt;</code> и <code>&amp;</code>, которые обязаны быть экранированы везде с помощью <code>&amp;lt;</code>, <code>&amp;gt;</code> и <code>&amp;amp;</code>. Внутри атрибутов надо экранировать еще и двойную кавычку с помощью <code>&amp;quot;</code>.</li>
+<li>Все символы в документе обязаны соответствовать заявленной кодировке.</li>
+</ul>
+<p>Документ является <em>valid</em>, если он сформирован с соблюдением всех синтаксических правил корректности конкретного XML, т.е. соответствует <em>DTD</em>.</p>
+<p><strong><em>well-formed XML</em> - корректен синтаксически (может быть разобран парсером), а <em>valid XML</em> - корректен как синтаксически так и семантически (удовлетворяет правилам заранее описанных словаря и грамматики (DTD)).</strong></p>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="xml_1"><a name="Что-такое-пространство-имен-в-xml"></a>Что такое «<em>пространство имен</em>» в XML?</h3>
+<p><strong>Пространство имён XML (XML namespace)</strong> - это идентифицируемая с помощью ссылки URI коллекция имен, используемых в XML документах для обозначения типов элементов и именования атрибутов. Пространство имен XML отличается от тех «пространств имен», которые обычно используются в компьютерных дисциплинах, тем, что в варианте для XML оно имеет внутреннюю структуру, и, с математической точки зрения, набором не является.</p>
+<blockquote>
+<p>Пространства имён объявляются с помощью XML атрибута <code>xmlns</code>, значением которого должен быть <em>URI</em> и префикса, однозначно идентифицирующего пространство имён каждого элемента.</p>
+</blockquote>
+<p>Все имена элементов в пределах пространства имён должны быть уникальны.</p>
+<p>В общем случае пространство имён XML не требует, чтобы был определён его словарь.</p>
+<p>XML-документ может содержать имена элементов и атрибутов из нескольких словарей XML. В каждом словаре задано своё пространство имён — так разрешается проблема неоднозначности имён элементов и атрибутов.</p>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="xsd-xml-dtd"><a name="Что-такое-xsd-В-чём-его-преимущества-перед-xml-dtd"></a>Что такое XSD? В чём его преимущества перед XML DTD?</h3>
+<p><strong>XSD, XML Schema Definition, XML Schema (XML схема)</strong> — язык описания структуры XML-документа. В частности, XML Schema описывает:</p>
+<ul>
+<li><em>словарь</em> - имена элементов и атрибутов;</li>
+<li><em>модель содержания</em> - взаимосвязи между элементами и атрибутами, а также их </li>
+<li><em>структуру</em> документа;</li>
+<li>используемые <em>типы данных</em>.</li>
+</ul>
+<p><strong>Преимущества XSD перед DTD</strong> заключаются в следующем:</p>
+<ul>
+<li>
+<p>DTD, в отличии от XSD, не является XML и имеет свой собственный синтаксис. В связи с этим могут возникать разнообразные проблемы с кодировкой и верификацией XML-документов. </p>
+</li>
+<li>
+<p>При использовании XSD XML-парсер может проверить не только правильность синтаксиса XML документа, но также его структуру, модель содержания и типы данных. В XML DTD существует лишь один тип данных – строка и если, например, в числовом поле будет текст, то документ всё же сможет пройти верификацию, так как XML DTD не сможет проверить тип данных.</p>
+</li>
+<li>
+<p>Нельзя поставить в соответствие одному XML документу больше одного DTD. А следовательно и верифицировать документ можно лишь одним DTD описанием. XSD расширяем, и позволяет подключать несколько словарей для описания типовых задач.</p>
+</li>
+<li>
+<p>XSD обладает встроенными средствами документирования, позволяющими создавать самодостаточные документы, не требующие дополнительного описания.</p>
+</li>
+</ul>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="xsd"><a name="Какие-типы-существуют-в-xsd"></a>Какие типы существуют в XSD?</h3>
+<p><strong>Простой тип</strong> - это определение типа для значения, которое может использоваться в качестве содержимого элемента или атрибута. Этот тип данных не может содержать элементы или иметь атрибуты.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&#39;price&#39;</span> <span class="na">type=</span><span class="s">&#39;xsd:decimal&#39;</span><span class="nt">/&gt;</span>
+...
+<span class="nt">&lt;price&gt;</span>45.50<span class="nt">&lt;/price&gt;</span>
+</code></pre></div>
+
+
+<p><strong>Сложный тип</strong> - это определение типа для элементов, которые могут содержать атрибуты и другие элементы.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;xsd:element</span> <span class="na">name=</span><span class="s">&#39;price&#39;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;xsd:complexType</span> <span class="na">base=</span><span class="s">&#39;xsd:decimal&#39;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;xsd:attribute</span> <span class="na">name=</span><span class="s">&#39;currency&#39;</span> <span class="na">type=</span><span class="s">&#39;xsd:string&#39;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xsd:complexType&gt;</span>
+<span class="nt">&lt;/xsd:element&gt;</span>
+...
+<span class="nt">&lt;price</span> <span class="na">currency=</span><span class="s">&#39;US&#39;</span><span class="nt">&gt;</span>45.50<span class="nt">&lt;/price&gt;</span>
+</code></pre></div>
+
+
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="xml_2"><a name="Какие-вы-знаете-методы-чтения-xml-Опишите-сильные-и-слабые-стороны-каждого-метода"></a>Какие вы знаете методы чтения XML? Опишите сильные и слабые стороны каждого метода.</h3>
+<p><strong>DOM (Document Object Model)</strong> - <em>объектный</em> - считывает XML, воссоздавая его в памяти в виде объектной структуры при этом XML документ представляется в виде набора тегов – узлов. Каждый узел может иметь неограниченное количество дочерних узлов. Каждый дочерний тоже может содержать несколько уровней потомков или не содержать их вовсе. Таким образом в итоге получается некое дерево.</p>
+<blockquote>
+<p>➖ Низкая скорость работы. </p>
+<p>➖ Расходует много памяти.</p>
+<p>➕ Прост в программировании.</p>
+<p>➕ Если в XML много объектов с перекрёстными ссылками друг на друга, достаточно дважды пройтись по документу: первый раз создать объекты без ссылок и заполнить словарь «название-объект», второй раз — восстановить ссылки.</p>
+<p>➕ При ошибке в XML в памяти остаётся полусозданная структура XML, которая будет автоматически уничтожена.</p>
+<p>➕ Пригоден как для чтения так и для записи.</p>
+</blockquote>
+<p><strong>SAX (Simple API for XML)</strong> <em>событийный</em> - читает XML документ, реагируя на появляющиеся события (открывающий или закрывающий тег, строку, атрибут) вызовом предоставляемых приложением обработчиков событий. При этом, в отличии от DOM, не сохраняет документ в памяти.</p>
+<blockquote>
+<p>➕ Высокая скорость работы </p>
+<p>➕ Расходует мало памяти.</p>
+<p>➗ Довольно сложен в программировании.</p>
+<p>➖ Если в XML много объектов с перекрёстными ссылками друг на друга, надо организовать временное хранение строковых ссылок, чтобы потом, когда документ будет считан, преобразовать в указатели.</p>
+<p>➖ При ошибке в XML в памяти остаётся полусозданная структура предметной отрасли; программист должен своими руками корректно уничтожить её.</p>
+<p>➖ Пригоден только для чтения.</p>
+</blockquote>
+<p><strong>StAX (Stream API for XML)</strong> <em>потоковый</em> - состоящий из двух наборов API для обработки XML, которые обеспечивают разные уровни абстракции. API с использованием курсора позволяет приложениям работать с XML как с потоком лексем (или событий); приложение может проверить статус анализатора и получить информацию о последней проанализированной лексеме, а затем перейти к следующей. Второй, высокоуровневый API, использующий итераторы событий, позволяет приложению обрабатывать XML как серию объектов событий, каждый из которых взаимодействует с фрагментом XML-структуры приложения. Всё, что требуется от приложения - это определить тип синтаксически разобранного события, отнести его к соответствующему конкретному типу и использовать соответствующие методы для получения информации, относящейся к событию.</p>
+<blockquote>
+<p>➗ Сохраняет преимущества, которые есть в SAX по сравнению с DOM.</p>
+<p>➕ Не основан на обратных вызовах обработчиков, приложению не придется обслуживать эмулированное состояние анализатора, как это происходит при использовании SAX.</p>
+<p>➖ Пригоден только для чтения.</p>
+</blockquote>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="dom-sax-stax"><a name="Когда-следует-использовать-dom-а-когда-sax-stax-анализаторы"></a>Когда следует использовать <em>DOM</em>, а когда <em>SAX</em>, <em>StAX</em> анализаторы?</h3>
+<p>DOM - естественный выбор, когда объектом предметной области является сам XML: когда нужно знать и иметь возможность изменять структуру документа, а также в случае многократного использования информации из документа.</p>
+<p>Для быстрого одноразового чтения оптимальным является использование SAX или StAX.</p>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="xml_3"><a name="Какие-вы-знаете-способы-записи-xml"></a>Какие вы знаете способы записи XML?</h3>
+<p><strong>Прямая запись</strong> - пишет XML тег за тегом, атрибут за атрибутом.</p>
+<blockquote>
+<p>➕ Высокая скорость работы.</p>
+<p>➕ Экономия памяти: при использовании не создаётся промежуточных объектов.</p>
+<p>➖ Пригоден только для записи.</p>
+</blockquote>
+<p><strong>Запись DOM (Document Object Model)</strong> - создаёт полную структуру XML и только потом записывает её.</p>
+<blockquote>
+<p>➖ Низкая скорость работы.</p>
+<p>➖ Не оптимальный расход памяти.</p>
+<p>➕ Пригоден как для записи так и для чтения.</p>
+</blockquote>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="jaxp"><a name="Что-такое-jaxp"></a>Что такое <em>JAXP</em>?</h3>
+<p><strong>JAXP, The Java API for XML Processing (Java API для обработки XML)</strong> — набор API, упрощающих обработку XML данных в программах написанных на Java. Содержит реализации  DOM, SAX и StAX парсеров, поддерживает XSLT и возможность работать с DTD.</p>
+<p><a href="#xml">к оглавлению</a></p>
+<h3 id="xslt"><a name="Что-такое-xslt"></a>Что такое <em>XSLT</em>?</h3>
+<p><strong>XSLT, eXtensible Stylesheet Language Transformations</strong> — язык преобразования XML-документов. </p>
+<p>XSLT создавался для применения в <em>XSL (eXtensible Stylesheet Language)</em> - языке стилей для XML. Во время XSL-преобразования XSLT-процессор считывает XML-документ и таблицу(ы) стилей XSLT. На основе инструкций, которые процессор находит в таблице(ах) стилей XSLT, он вырабатывает новый XML-документ или его фрагмент.</p>
+<p><a href="#xml">к оглавлению</a></p>
+<h1 id="_1">Источники</h1>
+<ul>
+<li><a href="https://ru.wikipedia.org/wiki/XML">Википедия</a></li>
+<li><a href="http://citforum.ru/internet/xnamsps/index.shtml#ns-decl">CIT Forum</a></li>
+<li><a href="http://www.quizful.net/interview/java/xml-and-parsers">Quizful</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

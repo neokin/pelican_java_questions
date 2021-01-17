@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; Тестирование</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="testirovanie">Тестирование</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="Тестирование"></a>_</h3>
+<ul>
+<li><a href="#Что-такое-модульное-тестирование">Что такое <em>«модульное тестирование»</em>?</a></li>
+<li><a href="#Что-такое-интеграционное-тестирование">Что такое <em>«интеграционное тестирование»</em>?</a></li>
+<li><a href="#Чем-интеграционное-тестирование-отличается-от-модульного">Чем интеграционное тестирование отличается от модульного?</a></li>
+<li><a href="#Какие-существуют-виды-тестовых-объектов">Какие существуют виды тестовых объектов?</a></li>
+<li><a href="#Чем-stub-отличается-от-mock">Чем <em>stub</em> отличается от <em>mock</em>?</a></li>
+<li><a href="#Что-такое-фикстуры">Что такое <em>«фикстуры»</em>?</a></li>
+<li><a href="#Какие-аннотации-фикстур-существуют-в-junit">Какие аннотации фикстур существуют в JUnit?</a></li>
+<li><a href="#Для-чего-в-junit-используется-аннотация-ignore">Для чего в JUnit используется аннотация <code>@Ignore</code>?</a></li>
+</ul>
+<h3 id="_1"><a name="Что-такое-модульное-тестирование"></a>Что такое <em>«модульное тестирование»</em>?</h3>
+<p><strong>Модульное/компонентное тестирование (unit testing)</strong> - процесс в программировании, позволяющий проверить на корректность отдельные модули исходного кода программы. Идея состоит в том, чтобы писать тесты для каждой нетривиальной функции или метода. Это позволяет достаточно быстро проверить, не привело ли очередное изменение кода к регрессии, то есть к появлению ошибок в уже оттестированных местах программы, а также облегчает обнаружение и устранение таких ошибок.</p>
+<p>Модульные тесты можно условно поделить на две группы: </p>
+<ul>
+<li>
+<p><em>тесты состояния (state based)</em>, проверяющие что вызываемый метод объекта отработал корректно, проверяя состояние тестируемого объекта после вызова метода.</p>
+</li>
+<li>
+<p><em>тесты взаимодействия (interaction tests)</em>, в которых тестируемый объект производит манипуляции с другими объектами. Применяются, когда требуется удостовериться, что тестируемый объект корректно взаимодействует с другими объектами.</p>
+</li>
+</ul>
+<p><a href="#Тестирование">к оглавлению</a></p>
+<h3 id="_2"><a name="Что-такое-интеграционное-тестирование"></a>Что такое <em>«интеграционное тестирование»</em>?</h3>
+<p><strong>Интеграционное тестирование (integration testing)</strong> — это тестирование, проверяющие работоспособность двух или более модулей системы в совокупности — то есть нескольких объектов как единого блока. В тестах взаимодействия же тестируется конкретный, определенный объект и то, как именно он взаимодействует с внешними зависимостями.</p>
+<p><a href="#Тестирование">к оглавлению</a></p>
+<h3 id="_3"><a name="Чем-интеграционное-тестирование-отличается-от-модульного"></a>Чем интеграционное тестирование отличается от модульного?</h3>
+<p>С технологической точки зрения интеграционное тестирование является количественным развитием модульного, поскольку так же, как и модульное тестирование, оперирует интерфейсами модулей и подсистем и требует создания тестового окружения, включая заглушки на месте отсутствующих модулей. Основная разница между модульным и интеграционным тестированием состоит в целях, то есть в типах обнаруживаемых дефектов, которые, в свою очередь, определяют стратегию выбора входных данных и методов анализа.</p>
+<blockquote>
+<p>Допустим, есть класс, который при определенных условиях взаимодействует с web-сервисом через зависимый объект. И нам надо проверить, что определенный метод зависимого объекта действительно вызывается. Если в качестве зависимого класса передать:</p>
+<ul>
+<li>
+<p>реальный класс, работающий с web-сервисом, то это будет интеграционное тестирование.</p>
+</li>
+<li>
+<p>заглушку, то это будет тестирование состояния.</p>
+</li>
+<li>
+<p>шпиона, а в конце теста проверить, что определенный метод зависимого объекта действительно был вызван, то это будет тест взаимодействия.</p>
+</li>
+</ul>
+</blockquote>
+<p><a href="#Тестирование">к оглавлению</a></p>
+<h3 id="_4"><a name="Какие-существуют-виды-тестовых-объектов"></a>Какие существуют виды тестовых объектов?</h3>
+<p><strong>пустышка (dummy)</strong> - объект, который обычно передается в тестируемый класс в качестве параметра, но не имеет поведения: с ним ничего не происходит и никакие его методы не вызываются.</p>
+<blockquote>
+<p>Примером dummy-объектов являются new object(), null, «Ignored String» и т.д.</p>
+</blockquote>
+<p><strong>фальшивка (fake object)</strong> применяется в основном для ускорения запуска ресурсоёмких тестов и является заменой тяжеловесного внешнего зависимого объекта его легковесной реализацией. </p>
+<blockquote>
+<p>Основные примеры — эмулятор базы данных (fake database) или фальшивый web-сервис.</p>
+</blockquote>
+<p><strong>заглушка (test stub)</strong> используется для получения данных из внешней зависимости, подменяя её. При этом заглушка игнорирует все данные поступающие из тестируемого объекта, возвращая заранее определённый результат.</p>
+<blockquote>
+<p>Тестируемый объект использует чтение из конфигурационного файла? Тогда передаем ему заглушку <code>ConfigFileStub</code> возвращающую тестовые строки конфигурации без обращения к файловой системе.</p>
+</blockquote>
+<p><strong>шпион (test spy)</strong> - разновидность заглушки, которая умеет протоколировать сделанные к ней обращения из тестируемой системы, чтобы проверить их правильность в конце теста. При этом фиксируется количество, состав и содержание параметров вызовов.</p>
+<blockquote>
+<p>Если существует необходимость проверки, что определённый метод тестируемого класса вызывался ровно 1 раз, то шпион - имменно то, что нам нужно. </p>
+</blockquote>
+<p><strong>фикция (mock object)</strong> похож на <em>шпиона</em>, но обладает расширенной функциональностью, заранее заданными поведением и реакцией на вызовы.</p>
+<p><a href="#Тестирование">к оглавлению</a></p>
+<h3 id="stub-mock"><a name="Чем-stub-отличается-от-mock"></a>Чем <em>stub</em> отличается от <em>mock</em>?</h3>
+<p><em>stub</em> используется как заглушка сервисов, методов, классов и т.д. с заранее запрограммированным ответом на вызовы.</p>
+<p><em>mock</em> использует подмену результатов вызова, проверяет сам факт взаимодействия, протоколирует и контролирует его.</p>
+<p><a href="#Тестирование">к оглавлению</a></p>
+<h3 id="_5"><a name="Что-такое-фикстуры"></a>Что такое <em>«фикстуры»</em>?</h3>
+<p><strong>Фикстуры (fixtures)</strong> - состояние среды тестирования, которое требуется для успешного выполнения теста. Основная задача фикстур заключается в подготовке тестового окружения с заранее фиксированным/известным состоянием, чтобы гарантировать повторяемость процесса тестирования.</p>
+<p><a href="#Тестирование">к оглавлению</a></p>
+<h3 id="junit"><a name="Какие-аннотации-фикстур-существуют-в-junit"></a>Какие аннотации фикстур существуют в JUnit?</h3>
+<ul>
+<li><code>@BeforeClass</code> - определяет код, который должен единожды выполниться перед запуском набора тестовых методов.</li>
+<li><code>@AfterClass</code> - код, выполняемый один раз после исполнения набора тестовых методов.</li>
+<li><code>@Before</code> - определяет код, который должен выполняться каждый раз перд запуском любого тестовым методом.</li>
+<li><code>@After</code> - код, выполняемый каждый раз после исполнения любого тестового метода.</li>
+</ul>
+<p><a href="#Тестирование">к оглавлению</a></p>
+<h3 id="junit-ignore"><a name="Для-чего-в-junit-используется-аннотация-ignore"></a>Для чего в JUnit используется аннотация <code>@Ignore</code>?</h3>
+<p><code>@Ignore</code> указывает JUnit на необходимость пропустить данный тестовый метод.</p>
+<p><a href="#Тестирование">к оглавлению</a></p>
+<h1 id="_6">Источники</h1>
+<ul>
+<li><a href="https://ru.wikipedia.org/wiki/Тестирование_программного_обеспечения">Википедия</a></li>
+<li><a href="https://habrahabr.ru/post/116372/">Хабрахабр</a></li>
+<li><a href="http://www.intuit.ru/department/se/testing/5/2.html">Интуит</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

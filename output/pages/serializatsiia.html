@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; Сериализация</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="serializatsiia">Сериализация</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="Сериализация"></a>_</h3>
+<ul>
+<li><a href="#Что-такое-сериализация">Что такое <em>«сериализация»</em>?</a></li>
+<li><a href="#Опишите-процесс-сериализациидесериализации-с-использованием-serializable">Опишите процесс сериализации/десериализации с использованием <code>Serializable</code>.</a></li>
+<li><a href="#Как-изменить-стандартное-поведение-сериализациидесериализации">Как изменить стандартное поведение сериализации/десериализации?</a></li>
+<li><a href="#Как-исключить-поля-из-сериализации">Как исключить поля из сериализации?</a></li>
+<li><a href="#Что-обозначает-ключевое-слово-transient">Что обозначает ключевое слово <code>transient</code>?</a></li>
+<li><a href="#Какое-влияние-оказывают-на-сериализуемость-модификаторы-полей-static-и-final">Какое влияние оказывают на сериализуемость модификаторы полей <code>static</code> и <code>final</code></a></li>
+<li><a href="#Как-не-допустить-сериализацию">Как не допустить сериализацию?</a></li>
+<li><a href="#Как-создать-собственный-протокол-сериализации">Как создать собственный протокол сериализации?</a></li>
+<li><a href="#Какая-роль-поля-serialversionuid-в-сериализации">Какая роль поля <code>serialVersionUID</code> в сериализации?</a></li>
+<li><a href="#Когда-стоит-изменять-значение-поля-serialversionuid">Когда стоит изменять значение поля <code>serialVersionUID</code>?</a></li>
+<li><a href="#В-чем-проблема-сериализации-singleton">В чем проблема сериализации Singleton?</a></li>
+<li><a href="#Какие-существуют-способы-контроля-за-значениями-десериализованного-объекта">Какие существуют способы контроля за значениями десериализованного объекта</a></li>
+</ul>
+<h3 id="_1"><a name="Что-такое-сериализация"></a>Что такое <em>«сериализация»</em>?</h3>
+<p><strong>Сериализация (Serialization)</strong> - процесс преобразования структуры данных в линейную последовательность байтов для дальнейшей передачи или сохранения. Сериализованные объекты можно затем восстановить (десериализовать).</p>
+<p>В Java, согласно спецификации Java Object Serialization существует два стандартных способа сериализации: стандартная сериализация, через использование интерфейса <code>java.io.Serializable</code> и «расширенная» сериализация - <code>java.io.Externalizable</code>.</p>
+<p>Сериализация позволяет в определенных пределах изменять класс. Вот наиболее важные изменения, с которыми спецификация Java Object Serialization может справляться автоматически:</p>
+<ul>
+<li>добавление в класс новых полей;</li>
+<li>изменение полей из статических в нестатические;</li>
+<li>изменение полей из транзитных в нетранзитные.</li>
+</ul>
+<p>Обратные изменения (из нестатических полей в статические и из нетранзитных в транзитные) или удаление полей требуют определенной дополнительной обработки в зависимости от того, какая степень обратной совместимости необходима.</p>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="serializable"><a name="Опишите-процесс-сериализациидесериализации-с-использованием-serializable"></a>Опишите процесс сериализации/десериализации с использованием <code>Serializable</code>.</h3>
+<p>При использовании Serializable применяется алгоритм сериализации, который с помощью рефлексии (Reflection API) выполняет:</p>
+<ul>
+<li>запись в поток метаданных о классе, ассоциированном с объектом (имя класса, идентификатор <code>SerialVersionUID</code>, идентификаторы полей класса);</li>
+<li>рекурсивную запись в поток описания суперклассов до класса <code>java.lang.Object</code> (не включительно);</li>
+<li>запись примитивных значений полей сериализуемого экземпляра, начиная с полей самого верхнего суперкласса;</li>
+<li>рекурсивную запись объектов, которые являются полями сериализуемого объекта.</li>
+</ul>
+<p>При этом ранее сериализованные объекты повторно не сериализуются, что позволяет алгоритму корректно работать с циклическими ссылками.</p>
+<p>Для выполнения десериализации под объект выделяется память, после чего его поля заполняются значениями из потока. Конструктор объекта при этом не вызывается. Однако при десериализации будет вызван конструктор без параметров родительского несериализуемого класса, а его отсутствие повлечёт ошибку десериализации.</p>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="_2"><a name="Как-изменить-стандартное-поведение-сериализациидесериализации"></a>Как изменить стандартное поведение сериализации/десериализации?</h3>
+<ul>
+<li>Реализовать интерфейс <code>java.io.Externalizable</code>, который позволяет применение пользовательской логики сериализации. Способ сериализации и десериализации описывается в методах <code>writeExternal()</code> и <code>readExternal()</code>. Во время десериализации вызывается конструктор без параметров, а потом уже на созданном объекте вызывается метод <code>readExternal</code>.</li>
+<li>Если у сериализуемого объекта реализован один из следующих методов, то механизм сериализации будет использовать его, а не метод по умолчанию :<ul>
+<li><code>writeObject()</code> - запись объекта в поток;</li>
+<li><code>readObject()</code> - чтение объекта из потока;</li>
+<li><code>writeReplace()</code> - позволяет заменить себя экземпляром другого класса перед записью;</li>
+<li><code>readResolve()</code> - позволяет заменить на себя другой объект после чтения.</li>
+</ul>
+</li>
+</ul>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="_3"><a name="Как-исключить-поля-из-сериализации"></a>Как исключить поля из сериализации?</h3>
+<p>Для управления сериализацией при определении полей можно использовать ключевое слово <code>transient</code>, таким образом исключив поля из общего процесса сериализации.</p>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="transient"><a name="Что-обозначает-ключевое-слово-transient"></a>Что обозначает ключевое слово <code>transient</code>?</h3>
+<p>Поля класса, помеченные модификатором <code>transient</code>, не сериализуются.</p>
+<p>Обычно в таких полях хранится промежуточное состояние объекта, которое, к примеру, проще вычислить. Другой пример такого поля - ссылка на экземпляр объекта, который не требует сериализации или не может быть сериализован.</p>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="static-final"><a name="Какое-влияние-оказывают-на-сериализуемость-модификаторы-полей-static-и-final"></a>Какое влияние оказывают на сериализуемость модификаторы полей <code>static</code> и <code>final</code></h3>
+<p>При стандартной сериализации поля, имеющие модификатор static, не сериализуются. Соответственно, после десериализации это поле значения не меняет. При использовании реализации <code>Externalizable</code> сериализовать и десериализовать статическое поле можно, но не рекомендуется этого делать, т.к. это может сопровождаться трудноуловимыми ошибками.</p>
+<p>Поля с модификатором <code>final</code> сериализуются как и обычные. За одним исключением – их невозможно десериализовать при использовании <code>Externalizable</code>, поскольку <code>final</code> поля должны быть инициализированы в конструкторе, а после этого в <code>readExternal()</code> изменить значение этого поля будет невозможно. Соответственно, если необходимо сериализовать объект с <code>final</code> полем необходимо использовать только стандартную сериализацию.</p>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="_4"><a name="Как-не-допустить-сериализацию"></a>Как не допустить сериализацию?</h3>
+<p>Чтобы не допустить автоматическую сериализацию можно переопределить <code>private</code> методы для создания исключительной ситуации <code>NotSerializableException</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">writeObject</span><span class="p">(</span><span class="n">ObjectOutputStream</span> <span class="n">out</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NotSerializableException</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">readObject</span><span class="p">(</span><span class="n">ObjectInputStream</span> <span class="n">in</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="n">NotSerializableException</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Любая попытка записать или прочитать этот объект теперь приведет к возникновению исключительной ситуации.</p>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="_5"><a name="Как-создать-собственный-протокол-сериализации"></a>Как создать собственный протокол сериализации?</h3>
+<p>Для создания собственного протокола сериализации достаточно реализовать интерфейс <code>Externalizable</code>, который содержит два метода:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">writeExternal</span><span class="p">(</span><span class="n">ObjectOutput</span> <span class="n">out</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">readExternal</span><span class="p">(</span><span class="n">ObjectInput</span> <span class="n">in</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="p">,</span> <span class="n">ClassNotFoundException</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="serialversionuid"><a name="Какая-роль-поля-serialversionuid-в-сериализации"></a>Какая роль поля <code>serialVersionUID</code> в сериализации?</h3>
+<p><code>serialVersionUID</code> используется для указании версии сериализованных данных. </p>
+<p>Когда мы не объявляем <code>serialVersionUID</code> в нашем классе явно, среда выполнения Java делает это за нас, но этот процесс чувствителен ко многим метаданным класса включая количество полей, тип полей, модификаторы доступа полей, интерфейсов, которые реализованы в классе и пр. </p>
+<p>Рекомендуется явно объявлять <code>serialVersionUID</code> т.к. при добавлении, удалении атрибутов класса динамически сгенерированное значение может измениться и в момент выполнения будет выброшено исключение <code>InvalidClassException</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">20161013L</span><span class="p">;</span>
+</code></pre></div>
+
+
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="serialversionuid_1"><a name="Когда-стоит-изменять-значение-поля-serialversionuid"></a>Когда стоит изменять значение поля <code>serialVersionUID</code>?</h3>
+<p><code>serialVersionUID</code> нужно изменять при внесении в класс несовместимых изменений, например при удалении какого-либо его атрибута.</p>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="singleton"><a name="В-чем-проблема-сериализации-singleton"></a>В чем проблема сериализации Singleton?</h3>
+<p>Проблема в том что после десериализации мы получим другой объект. Таким образом, сериализация дает возможность создать Singleton еще раз, что недопустимо. Существует два способа избежать этого:</p>
+<ul>
+<li>явный запрет сериализации.</li>
+<li>определение метода с сигнатурой <code>(default/public/private/protected/) Object readResolve() throws ObjectStreamException</code>, назначением которого станет возврат замещающего объекта вместо объекта, на котором он вызван.</li>
+</ul>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h3 id="_6"><a name="Какие-существуют-способы-контроля-за-значениями-десериализованного-объекта"></a>Какие существуют способы контроля за значениями десериализованного объекта</h3>
+<p>Если есть необходимость выполнения контроля за значениями десериализованного объекта, то можно использовать интерфейс <code>ObjectInputValidation</code> с переопределением метода <code>validateObject()</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Если вызвать метод validateObject() после десериализации объекта, то будет вызвано исключение InvalidObjectException при значении возраста за пределами 39...60.</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="kd">implements</span> <span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">Serializable</span><span class="p">,</span>
+                               <span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">ObjectInputValidation</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">validateObject</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">InvalidObjectException</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">((</span><span class="n">age</span> <span class="o">&lt;</span> <span class="mi">39</span><span class="p">)</span> <span class="o">||</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">))</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="n">InvalidObjectException</span><span class="p">(</span><span class="s">&quot;Invalid age&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p>Так же существуют способы подписывания и шифрования, позволяющие убедиться, что данные не были изменены:</p>
+<ul>
+<li>
+<p>с помощью описания логики в <code>writeObject()</code> и <code>readObject()</code>.</p>
+</li>
+<li>
+<p>поместить в оберточный класс <code>javax.crypto.SealedObject</code> и/или <code>java.security.SignedObject</code>. Данные классы являются сериализуемыми, поэтому при оборачивании объекта в <code>SealedObject</code> создается подобие «подарочной упаковки» вокруг исходного объекта. Для шифрования необходимо создать симметричный ключ, управление которым должно осуществляться отдельно. Аналогично, для проверки данных можно использовать класс <code>SignedObject</code>, для работы с которым также нужен симметричный ключ, управляемый отдельно.</p>
+</li>
+</ul>
+<p><a href="#Сериализация">к оглавлению</a></p>
+<h1 id="_7">Источники</h1>
+<ul>
+<li><a href="https://www.ibm.com/developerworks/ru/library/j-5things1/">IBM developerWorks</a></li>
+<li><a href="http://java-online.ru/blog-serialization.xhtml">Java-online.ru</a></li>
+<li><a href="http://ccfit.nsu.ru/~deviv/courses/oop/java_ser_rus.html">Изучите секреты Java Serialization API</a></li>
+<li><a href="http://bit.ly/1xwRA2D">JavaRush</a></li>
+<li><a href="http://www.skipy.ru/technics/serialization.html">Записки трезвого практика</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

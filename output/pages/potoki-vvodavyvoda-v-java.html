@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; Потоки ввода/вывода в Java</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="potoki-vvodavyvoda-v-java">Потоки ввода/вывода в Java</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="Потоки-вводавывода-в-java"></a>_</h3>
+<ul>
+<li><a href="#В-чём-заключается-разница-между-io-и-nio">В чём заключается разница между IO и NIO?</a></li>
+<li><a href="#Какие-особенности-nio-вы-знаете">Какие особенности NIO вы знаете?</a></li>
+<li><a href="#Что-такое-каналы">Что такое <em>«каналы»</em>?</a></li>
+<li><a href="#Какие-существуют-виды-потоков-вводавывода">Какие существуют виды потоков ввода/вывода?</a></li>
+<li><a href="#Назовите-основные-классы-потоков-вводавывода">Назовите основные классы потоков ввода/вывода.</a></li>
+<li><a href="#В-каких-пакетах-расположены-классы-потоков-вводавывода">В каких пакетах расположены классы потоков ввода/вывода?</a></li>
+<li><a href="#Какие-подклассы-класса-inputstream-вы-знаете-для-чего-они-предназначены">Какие подклассы класса <code>InputStream</code> вы знаете, для чего они предназначены?</a></li>
+<li><a href="#Для-чего-используется-pushbackinputstream">Для чего используется <code>PushbackInputStream</code>?</a></li>
+<li><a href="#Для-чего-используется-sequenceinputstream">Для чего используется <code>SequenceInputStream</code>?</a></li>
+<li><a href="#Какой-класс-позволяет-читать-данные-из-входного-байтового-потока-в-формате-примитивных-типов-данных">Какой класс позволяет читать данные из входного байтового потока в формате примитивных типов данных?</a></li>
+<li><a href="#Какие-подклассы-класса-outputstream-вы-знаете-для-чего-они-предназначены">Какие подклассы класса <code>OutputStream</code> вы знаете, для чего они предназначены?</a></li>
+<li><a href="#Какие-подклассы-класса-reader-вы-знаете-для-чего-они-предназначены">Какие подклассы класса <code>Reader</code> вы знаете, для чего они предназначены?</a></li>
+<li><a href="#Какие-подклассы-класса-writer-вы-знаете-для-чего-они-предназначены">Какие подклассы класса <code>Writer</code> вы знаете, для чего они предназначены?</a></li>
+<li><a href="#В-чем-отличие-класса-printwriter-от-printstream">В чем отличие класса <code>PrintWriter</code> от <code>PrintStream</code>?</a></li>
+<li><a href="#Чем-отличаются-и-что-общего-у-inputstream-outputstream-reader-writer">Чем отличаются и что общего у <code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code>, <code>Writer</code>?</a></li>
+<li><a href="#Какие-классы-позволяют-преобразовать-байтовые-потоки-в-символьные-и-обратно">Какие классы позволяют преобразовать байтовые потоки в символьные и обратно?</a></li>
+<li><a href="#Какие-классы-позволяют-ускорить-чтениезапись-за-счет-использования-буфера">Какие классы позволяют ускорить чтение/запись за счет использования буфера?</a></li>
+<li><a href="#Какой-класс-предназначен-для-работы-с-элементами-файловой-системы">Какой класс предназначен для работы с элементами файловой системы?</a></li>
+<li><a href="#Какие-методы-класса-file-вы-знаете">Какие методы класса <code>File</code> вы знаете?</a></li>
+<li><a href="#Что-вы-знаете-об-интерфейсе-filefilter">Что вы знаете об интерфейсе <code>FileFilter</code>?</a></li>
+<li><a href="#Как-выбрать-все-элементы-определенного-каталога-по-критерию-например-с-определенным-расширением">Как выбрать все элементы определенного каталога по критерию (например, с определенным расширением)?</a></li>
+<li><a href="#Что-вы-знаете-о-randomaccessfile">Что вы знаете о <code>RandomAccessFile</code>?</a></li>
+<li><a href="#Какие-режимы-доступа-к-файлу-есть-у-randomaccessfile">Какие режимы доступа к файлу есть у <code>RandomAccessFile</code>?</a></li>
+<li><a href="#Какие-классы-поддерживают-чтение-и-запись-потоков-в-компрессированном-формате">Какие классы поддерживают чтение и запись потоков в компрессированном формате?</a></li>
+<li><a href="#Существует-ли-возможность-перенаправить-потоки-стандартного-вводавывода">Существует ли возможность перенаправить потоки стандартного ввода/вывода?</a></li>
+<li><a href="#Какой-символ-является-разделителем-при-указании-пути-в-файловой-системе">Какой символ является разделителем при указании пути в файловой системе?</a></li>
+<li><a href="#Что-такое-абсолютный-путь-и-относительный-путь">Что такое <em>«абсолютный путь»</em> и <em>«относительный путь»</em>?</a></li>
+<li><a href="#Что-такое-символьная-ссылка">Что такое <em>«символьная ссылка»</em>?</a></li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="io-nio"><a name="В-чём-заключается-разница-между-io-и-nio"></a>В чём заключается разница между IO и NIO?</h3>
+<ul>
+<li>Java IO (input-output) является потокоориентированным, а Java NIO (new/non-blocking io) – буфер-ориентированным. Потокоориентированный ввод/вывод подразумевает чтение/запись из потока/в поток одного или нескольких байт в единицу времени поочередно. Данная информация нигде не кэшируются. Таким образом, невозможно произвольно двигаться по потоку данных вперед или назад. В Java NIO данные сначала считываются в буфер, что дает больше гибкости при обработке данных.</li>
+<li>Потоки ввода/вывода в Java IO являются блокирующими. Это значит, что когда в потоке выполнения вызывается <code>read()</code> или <code>write()</code> метод любого класса из пакета <code>java.io.*</code>, происходит блокировка до тех пор, пока данные не будут считаны или записаны. Поток выполнения в данный момент не может делать ничего другого. Неблокирующий режим Java NIO позволяет запрашивать считанные данные из канала (channel) и получать только то, что доступно на данный момент, или вообще ничего, если доступных данных пока нет. Вместо того, чтобы оставаться заблокированным пока данные не станут доступными для считывания, поток выполнения может заняться чем-то другим. Тоже самое справедливо и для неблокирующего вывода. Поток выполнения может запросить запись в канал некоторых данных, но не дожидаться при этом пока они не будут полностью записаны.</li>
+<li>В Java NIO имеются селекторы, которые позволяют одному потоку выполнения мониторить несколько каналов ввода. Т.е. существует возможность зарегистрировать несколько каналов с селектором, а потом использовать один поток выполнения для обслуживания каналов, имеющих доступные для обработки данные, или для выбора каналов, готовых для записи.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="nio"><a name="Какие-особенности-nio-вы-знаете"></a>Какие особенности NIO вы знаете?</h3>
+<ul>
+<li><strong>Каналы и селекторы</strong>: NIO поддерживает различные типы каналов. Канал является абстракцией объектов более низкого уровня файловой системы (например, отображенные в памяти файлы и блокировки файлов), что позволяет передавать данные с более высокой скоростью. Каналы не блокируются и поэтому Java предоставляет еще такие инструменты, как селектор, который позволяет выбрать готовый канал для передачи данных, и сокет, который является инструментом для блокировки.</li>
+<li><strong>Буферы</strong>: имеет буферизация для всех классов-обёрток примитивов (кроме Boolean). Появился абстрактный класс Buffer, который предоставляет такие операции, как clear, flip, mark и т.д. Его подклассы предоставляют методы для получения и установки данных.</li>
+<li><strong>Кодировки</strong>: появились кодеры и декодеры для отображения байт и символов Unicode.
+<a href="#Потоки-вводавывода-в-java">к оглавлению</a></li>
+</ul>
+<h3 id="_1"><a name="Что-такое-каналы"></a>Что такое <em>«каналы»</em>?</h3>
+<p>Каналы (channels) – это логические (не физические) порталы, абстракции объектов более низкого уровня файловой системы (например, отображенные в памяти файлы и блокировки файлов), через которые осуществляется ввод/вывод данных, а буферы являются источниками или приёмниками этих переданных данных. При организации вывода, данные, которые необходимо отправить, помещаются в буфер, который затем передается в канал. При вводе, данные из канала помещаются в заранее предоставленный буфер.</p>
+<p>Каналы напоминают трубопроводы, по которым эффективно транспортируются данные между буферами байтов и сущностями по ту сторону каналов. Каналы – это шлюзы, которые позволяют получить доступ к сервисам ввода/вывода операционной системы с минимальными накладными расходами, а буферы – внутренние конечные точки этих шлюзов, используемые для передачи и приема данных.</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_2"><a name="Какие-существуют-виды-потоков-вводавывода"></a>Какие существуют виды потоков ввода/вывода?</h3>
+<h3 id="_3"><a name="Назовите-основные-классы-потоков-вводавывода"></a>Назовите основные классы потоков ввода/вывода.</h3>
+<p>Разделяют два вида потоков ввода/вывода: </p>
+<ul>
+<li><strong>байтовые</strong> - <code>java.io.InputStream</code>, <code>java.io.OutputStream</code>;</li>
+<li><strong>символьные</strong> - <code>java.io.Reader</code>, <code>java.io.Writer</code>.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_4"><a name="В-каких-пакетах-расположены-классы-потоков-вводавывода"></a>В каких пакетах расположены классы потоков ввода/вывода?</h3>
+<p><code>java.io</code>, <code>java.nio</code>. Для работы с потоками компрессированных данных используются классы из пакета <code>java.util.zip</code></p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="inputstream"><a name="Какие-подклассы-класса-inputstream-вы-знаете-для-чего-они-предназначены"></a>Какие подклассы класса <code>InputStream</code> вы знаете, для чего они предназначены?</h3>
+<ul>
+<li><code>InputStream</code> - абстрактный класс, описывающий поток ввода;</li>
+<li><code>BufferedInputStream</code> - буферизованный входной поток;</li>
+<li><code>ByteArrayInputStream</code> позволяет использовать буфер в памяти (массив байтов) в качестве источника данных для входного потока;</li>
+<li><code>DataInputStream</code> - входной поток для байтовых данных, включающий методы для чтения стандартных типов данных Java;</li>
+<li><code>FileInputStream</code> - входной поток для чтения информации из файла;</li>
+<li><code>FilterInputStream</code> - абстрактный класс, предоставляющий интерфейс для классов-надстроек, которые добавляют к существующим потокам полезные свойства;</li>
+<li><code>ObjectInputStream</code> - входной поток для объектов;</li>
+<li><code>StringBufferInputStream</code> превращает строку (<code>String</code>) во входной поток данных <code>InputStream</code>;</li>
+<li><code>PipedInputStream</code> реализует понятие входного канала;</li>
+<li><code>PushbackInputStream</code> - разновидность буферизации, обеспечивающая чтение байта с последующим его возвратом в поток, позволяет «заглянуть» во входной поток и увидеть, что оттуда поступит в следующий момент, не извлекая информации.</li>
+<li><code>SequenceInputStream</code> используется для слияния двух или более потоков <code>InputStream</code> в единый.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="pushbackinputstream"><a name="Для-чего-используется-pushbackinputstream"></a>Для чего используется <code>PushbackInputStream</code>?</h3>
+<p>Разновидность буферизации, обеспечивающая чтение байта с последующим его возвратом в поток. Класс <code>PushbackInputStream</code> представляет механизм «заглянуть» во входной поток и увидеть, что оттуда поступит в следующий момент, не извлекая информации.</p>
+<p>У класса есть дополнительный метод unread().</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="sequenceinputstream"><a name="Для-чего-используется-sequenceinputstream"></a>Для чего используется <code>SequenceInputStream</code>?</h3>
+<p>Класс <code>SequenceInputStream</code> позволяет сливать вместе несколько экземпляров класса <code>InputStream</code>. Конструктор принимает в качестве аргумента либо пару объектов класса <code>InputStream</code>, либо интерфейс <code>Enumeration</code>.</p>
+<p>Во время работы класс выполняет запросы на чтение из первого объекта класса <code>InputStream</code> и до конца, а затем переключается на второй. При использовании интерфейса работа продолжится по всем объектам класса <code>InputStream</code>. По достижении конца, связанный с ним поток закрывается. Закрытие потока, созданного объектом класса <code>SequenceInputStream</code>, приводит к закрытию всех открытых потоков.</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_5"><a name="Какой-класс-позволяет-читать-данные-из-входного-байтового-потока-в-формате-примитивных-типов-данных"></a>Какой класс позволяет читать данные из входного байтового потока в формате примитивных типов данных?</h3>
+<p>Класс <code>DataInputStream</code> представляет поток ввода и предназначен для записи данных примитивных типов, таких, как <code>int</code>, <code>double</code> и т.д. Для каждого примитивного типа определен свой метод для считывания:</p>
+<ul>
+<li><code>boolean readBoolean()</code>: считывает из потока булевое однобайтовое значение</li>
+<li><code>byte readByte()</code>: считывает из потока 1 байт</li>
+<li><code>char readChar()</code>: считывает из потока значение <code>char</code></li>
+<li><code>double readDouble()</code>: считывает из потока 8-байтовое значение <code>double</code></li>
+<li><code>float readFloat()</code>: считывает из потока 4-байтовое значение <code>float</code></li>
+<li><code>int readInt()</code>: считывает из потока целочисленное значение <code>int</code></li>
+<li><code>long readLong()</code>: считывает из потока значение <code>long</code></li>
+<li><code>short readShort()</code>: считывает значение <code>short</code></li>
+<li><code>String readUTF()</code>: считывает из потока строку в кодировке UTF-8</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="outputstream"><a name="Какие-подклассы-класса-outputstream-вы-знаете-для-чего-они-предназначены"></a>Какие подклассы класса <code>OutputStream</code> вы знаете, для чего они предназначены?</h3>
+<ul>
+<li><code>OutputStream</code> - это абстрактный класс, определяющий потоковый байтовый вывод;</li>
+<li><code>BufferedOutputStream</code> - буферизированный выходной поток;</li>
+<li><code>ByteArrayOutputStream</code> - все данные, посылаемые в этот поток, размещаются в предварительно созданном буфере;</li>
+<li><code>DataOutputStream</code> - выходной поток байт, включающий методы для записи стандартных типов данных Java;</li>
+<li><code>FileOutputStream</code> - запись данных в файл на физическом носителе;</li>
+<li><code>FilterOutputStream</code> - абстрактный класс, предоставляющий интерфейс для классов-надстроек, которые добавляют к существующим потокам полезные свойства;</li>
+<li><code>PrintStream</code> - выходной поток, включающий методы <code>print()</code> и <code>println()</code>;</li>
+<li><code>ObjectOutputStream</code> - выходной поток для записи объектов;</li>
+<li><code>PipedOutputStream</code> реализует понятие выходного канала.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="reader"><a name="Какие-подклассы-класса-reader-вы-знаете-для-чего-они-предназначены"></a>Какие подклассы класса <code>Reader</code> вы знаете, для чего они предназначены?</h3>
+<ul>
+<li><code>Reader</code> - абстрактный класс, описывающий символьный ввод;</li>
+<li><code>BufferedReader</code> - буферизованный входной символьный поток;</li>
+<li><code>CharArrayReader</code> - входной поток, который читает из символьного массива;</li>
+<li><code>FileReader</code> - входной поток, читающий файл;</li>
+<li><code>FilterReader</code> - абстрактный класс, предоставляющий интерфейс для классов-надстроек;</li>
+<li><code>InputStreamReader</code>- входной поток, транслирующий байты в символы;</li>
+<li><code>LineNumberReader</code> - входной поток, подсчитывающий строки;</li>
+<li><code>PipedReader</code> - входной канал;</li>
+<li><code>PushbackReader</code> - входной поток, позволяющий возвращать символы обратно в поток;</li>
+<li><code>StringReader</code> - входной поток, читающий из строки.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="writer"><a name="Какие-подклассы-класса-writer-вы-знаете-для-чего-они-предназначены"></a>Какие подклассы класса <code>Writer</code> вы знаете, для чего они предназначены?</h3>
+<ul>
+<li><code>Writer</code> - абстрактный класс, описывающий символьный вывод;</li>
+<li><code>BufferedWriter</code> - буферизованный выходной символьный поток;</li>
+<li><code>CharArrayWriter</code> - выходной поток, который пишет в символьный массив;</li>
+<li><code>FileWriter</code> - выходной поток, пишущий в файл;</li>
+<li><code>FilterWriter</code> - абстрактный класс, предоставляющий интерфейс для классов-надстроек;</li>
+<li><code>OutputStreamWriter</code> - выходной поток, транслирующий байты в символы;</li>
+<li><code>PipedWriter</code> - выходной канал;</li>
+<li><code>PrintWriter</code> - выходной поток символов, включающий методы <code>print()</code> и <code>println()</code>;</li>
+<li><code>StringWriter</code> - выходной поток, пишущий в строку;</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="printwriter-printstream"><a name="В-чем-отличие-класса-printwriter-от-printstream"></a>В чем отличие класса <code>PrintWriter</code> от <code>PrintStream</code>?</h3>
+<p>Прежде всего, в классе <code>PrintWriter</code> применен усовершенствованный способ работы с символами Unicode и другой механизм буферизации вывода: в классе PrintStream буфер вывода сбрасывался всякий раз, когда вызывался метод <code>print()</code> или <code>println()</code>, а при использовании класса <code>PrintWriter</code> существует возможность отказаться от автоматического сброса буферов, выполняя его явным образом при помощи метода <code>flush()</code>.</p>
+<p>Кроме того, методы класса <code>PrintWriter</code> никогда не создают исключений. Для проверки ошибок необходимо явно вызвать метод <code>checkError()</code>.</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="inputstream-outputstream-reader-writer"><a name="Чем-отличаются-и-что-общего-у-inputstream-outputstream-reader-writer"></a>Чем отличаются и что общего у <code>InputStream</code>, <code>OutputStream</code>, <code>Reader</code>, <code>Writer</code>?</h3>
+<ul>
+<li><code>InputStream</code> и его наследники - совокупность для получения байтовых данных из различных источников;</li>
+<li><code>OutputStream</code> и его наследники - набор классов определяющих потоковый байтовый вывод;</li>
+<li><code>Reader</code> и его наследники определяют потоковый ввод символов Unicode;</li>
+<li><code>Writer</code> и его наследники определяют потоковый вывод символов Unicode.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_6"><a name="Какие-классы-позволяют-преобразовать-байтовые-потоки-в-символьные-и-обратно"></a>Какие классы позволяют преобразовать байтовые потоки в символьные и обратно?</h3>
+<ul>
+<li><code>OutputStreamWriter</code> — «мост» между классом <code>OutputStream</code> и классом <code>Writer</code>. Символы, записанные в поток, преобразовываются в байты.</li>
+<li><code>InputStreamReader</code> — аналог для чтения. При помощи методов класса <code>Reader</code> читаются байты из потока <code>InputStream</code> и далее преобразуются в символы.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_7"><a name="Какие-классы-позволяют-ускорить-чтениезапись-за-счет-использования-буфера"></a>Какие классы позволяют ускорить чтение/запись за счет использования буфера?</h3>
+<ul>
+<li><code>BufferedInputStream(InputStream in)</code>/<code>BufferedInputStream(InputStream in, int size)</code>,</li>
+<li><code>BufferedOutputStream(OutputStream out)</code>/<code>BufferedOutputStream(OutputStream out, int size)</code>,</li>
+<li><code>BufferedReader(Reader r)</code>/<code>BufferedReader(Reader in, int sz)</code>,</li>
+<li><code>BufferedWriter(Writer out)</code>/<code>BufferedWriter(Writer out, int sz)</code></li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_8"><a name="Какой-класс-предназначен-для-работы-с-элементами-файловой-системы"></a>Какой класс предназначен для работы с элементами файловой системы?</h3>
+<p><code>File</code> работает непосредственно с файлами и каталогами. Данный класс позволяет создавать новые элементы и получать информацию существующих: размер, права доступа, время и дату создания, путь к родительскому каталогу.</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="file"><a name="Какие-методы-класса-file-вы-знаете"></a>Какие методы класса <code>File</code> вы знаете?</h3>
+<p>Наиболее используемые методы класса <code>File</code>:</p>
+<ul>
+<li><code>boolean createNewFile()</code>: делает попытку создать новый файл;</li>
+<li><code>boolean delete()</code>: делает попытку удалить каталог или файл;</li>
+<li><code>boolean mkdir()</code>: делает попытку создать новый каталог;</li>
+<li><code>boolean renameTo(File dest)</code>: делает попытку переименовать файл или каталог;</li>
+<li><code>boolean exists()</code>: проверяет, существует ли файл или каталог;</li>
+<li><code>String getAbsolutePath()</code>: возвращает абсолютный путь для пути, переданного в конструктор объекта;</li>
+<li><code>String getName()</code>: возвращает краткое имя файла или каталога;</li>
+<li><code>String getParent()</code>: возвращает имя родительского каталога;</li>
+<li><code>boolean isDirectory()</code>: возвращает значение <code>true</code>, если по указанному пути располагается каталог;</li>
+<li><code>boolean isFile()</code>: возвращает значение <code>true</code>, если по указанному пути находится файл;</li>
+<li><code>boolean isHidden()</code>: возвращает значение <code>true</code>, если каталог или файл являются скрытыми;</li>
+<li><code>long length()</code>: возвращает размер файла в байтах;</li>
+<li><code>long lastModified()</code>: возвращает время последнего изменения файла или каталога;</li>
+<li><code>String[] list()</code>: возвращает массив файлов и подкаталогов, которые находятся в определенном каталоге;</li>
+<li><code>File[] listFiles()</code>: возвращает массив файлов и подкаталогов, которые находятся в определенном каталоге.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="filefilter"><a name="Что-вы-знаете-об-интерфейсе-filefilter"></a>Что вы знаете об интерфейсе <code>FileFilter</code>?</h3>
+<p>Интерфейс <code>FileFilter</code> применяется для проверки, попадает ли объект <code>File</code> под некоторое условие. Этот интерфейс содержит единственный метод <code>boolean accept(File pathName)</code>. Этот метод необходимо переопределить и реализовать. Например:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">accept</span><span class="p">(</span><span class="kd">final</span> <span class="n">File</span> <span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">file</span><span class="p">.</span><span class="na">isExists</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">file</span><span class="p">.</span><span class="na">isDirectory</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_9"><a name="Как-выбрать-все-элементы-определенного-каталога-по-критерию-например-с-определенным-расширением"></a>Как выбрать все элементы определенного каталога по критерию (например, с определенным расширением)?</h3>
+<p>Метод <code>File.listFiles()</code> возвращает массив объектов <code>File</code>, содержащихся в каталоге. Метод может принимать в качестве параметра объект класса, реализующего <code>FileFilter</code>. Это позволяет включить в список только те элементы, для которых метод <code>accept</code> возвращает <code>true</code> (критерием может быть длина имени файла или его расширение).</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="randomaccessfile"><a name="Что-вы-знаете-о-randomaccessfile"></a>Что вы знаете о <code>RandomAccessFile</code>?</h3>
+<p>Класс <code>java.io.RandomAccessFile</code> обеспечивает чтение и запись данных в произвольном месте файла. Он не является частью иерархии <code>InputStream</code> или <code>OutputStream</code>. Это полностью отдельный класс, имеющий свои собственные (в большинстве своем <em>native</em>) методы. Объяснением этого может быть то, что <code>RandomAccessFile</code> имеет во многом отличающееся поведение по сравнению с остальными классами ввода/вывода так как позволяет, в пределах файла, перемещаться вперед и назад.</p>
+<p><code>RandomAccessFile</code> имеет такие специфические методы как:</p>
+<ul>
+<li><code>getFilePointer()</code> для определения текущего местоположения в файле;</li>
+<li><code>seek()</code> для перемещения на новую позицию в файле;</li>
+<li><code>length()</code> для выяснения размера файла;</li>
+<li><code>setLength()</code> для установки размера файла;</li>
+<li><code>skipBytes()</code> для того, чтобы попытаться пропустить определённое число байт;</li>
+<li><code>getChannel()</code> для работы с уникальным файловым каналом, ассоциированным с заданным файлом;</li>
+<li>методы для выполнения обычного и форматированного вывода из файла (<code>read()</code>, <code>readInt()</code>, <code>readLine()</code>, <code>readUTF()</code> и т.п.);</li>
+<li>методы для обычной или форматированной записи в файл с прямым доступом (<code>write()</code>, <code>writeBoolean()</code>, <code>writeByte()</code> и т.п.).</li>
+</ul>
+<p>Так же следует отметить, что конструкторы <code>RandomAccessFile</code> требуют второй аргумент, указывающий необходимый режим доступа к файлу - только чтение (<code>"r"</code>), чтение и запись (<code>"rw"</code>) или иную их разновидность.</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="randomaccessfile_1"><a name="Какие-режимы-доступа-к-файлу-есть-у-randomaccessfile"></a>Какие режимы доступа к файлу есть у <code>RandomAccessFile</code>?</h3>
+<ul>
+<li><code>"r"</code> открывает файл только для чтения. Запуск любых методов записи данных приведет к выбросу исключения <code>IOException</code>.</li>
+<li><code>"rw"</code> открывает файл для чтения и записи. Если файл еще не создан, то осуществляется попытка создать его.</li>
+<li><code>"rws"</code> открывает файл для чтения и записи подобно <code>"rw"</code>, но требует от системы при каждом изменении содержимого файла или метаданных синхронно записывать эти изменения на физический носитель.</li>
+<li><code>"rwd"</code> открывает файл для чтения и записи подобно <code>"rws"</code>, но требует от системы синхронно записывать изменения на физический носитель только при каждом изменении содержимого файла. Если изменяются метаданные, синхронная запись не требуется.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_10"><a name="Какие-классы-поддерживают-чтение-и-запись-потоков-в-компрессированном-формате"></a>Какие классы поддерживают чтение и запись потоков в компрессированном формате?</h3>
+<ul>
+<li><code>DeflaterOutputStream</code> - компрессия данных в формате deflate.</li>
+<li><code>Deflater</code> - компрессия данных в формат ZLIB</li>
+<li><code>ZipOutputStream</code> - потомок <code>DeflaterOutputStream</code> для компрессии данных в формат Zip.</li>
+<li><code>GZIPOutputStream</code> - потомок <code>DeflaterOutputStream</code> для компрессии данных в формат GZIP.</li>
+<li><code>InflaterInputStream</code> - декомпрессия данных в формате deflate.</li>
+<li><code>Inflater</code> - декомпрессия данных в формате ZLIB</li>
+<li><code>ZipInputStream</code> - потомок <code>InflaterInputStream</code> для декомпрессии данных в формате Zip.</li>
+<li><code>GZIPInputStream</code> - потомок <code>InflaterInputStream</code> для декомпрессии данных в формате GZIP.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_11"><a name="Существует-ли-возможность-перенаправить-потоки-стандартного-вводавывода"></a>Существует ли возможность перенаправить потоки стандартного ввода/вывода?</h3>
+<p>Класс <code>System</code> позволяет вам перенаправлять стандартный ввод, вывод и поток вывода ошибок, используя простой вызов статического метода:</p>
+<ul>
+<li><code>setIn(InputStream)</code> - для ввода;</li>
+<li><code>setOut(PrintStream)</code> - для вывода;</li>
+<li><code>setErr(PrintStream)</code> - для вывода ошибок.</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_12"><a name="Какой-символ-является-разделителем-при-указании-пути-в-файловой-системе"></a>Какой символ является разделителем при указании пути в файловой системе?</h3>
+<p>Для различных операционных систем символ разделителя различается. Для Windows это <code>\</code>, для Linux - <code>/</code>. </p>
+<p>В Java получить разделитель для текущей операционной системы можно через обращение к статическому полю <code>File.separator</code>.</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_13"><a name="Что-такое-абсолютный-путь-и-относительный-путь"></a>Что такое <em>«абсолютный путь»</em> и <em>«относительный путь»</em>?</h3>
+<p><strong>Абсолютный (полный) путь</strong> — это путь, который указывает на одно и то же место в файловой системе, вне зависимости от текущей рабочей директории или других обстоятельств. Полный путь всегда начинается с корневого каталога. </p>
+<p><strong>Относительный путь</strong> представляет собой путь по отношению к текущему рабочему каталогу пользователя или активного приложения.</p>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h3 id="_14"><a name="Что-такое-символьная-ссылка"></a>Что такое <em>«символьная ссылка»</em>?</h3>
+<p><strong>Символьная (символическая) ссылка</strong> (также «симлинк», Symbolic link) — специальный файл в файловой системе, в котором, вместо пользовательских данных, содержится путь к файлу, который должен быть открыт при попытке обратиться к данной ссылке (файлу). Целью ссылки может быть любой объект: например, другая ссылка, файл, каталог или даже несуществующий файл (в последнем случае, при попытке открыть его, должно выдаваться сообщение об отсутствии файла).</p>
+<p>Символьные ссылки используются для более удобной организации структуры файлов на компьютере, так как:</p>
+<ul>
+<li>позволяют для одного файла или каталога иметь несколько имён и различных атрибутов;</li>
+<li>свободны от некоторых ограничений, присущих жёстким ссылкам (последние действуют только в пределах одной файловой системы (одного раздела) и не могут ссылаться на каталоги).</li>
+</ul>
+<p><a href="#Потоки-вводавывода-в-java">к оглавлению</a></p>
+<h1 id="_15">Источники</h1>
+<ul>
+<li><a href="http://www.quizful.net/post/java-nio-tutorial">Quizful</a></li>
+<li><a href="https://habrahabr.ru/post/235585/">Хабрахабр</a></li>
+<li><a href="http://developer.alexanderklimov.ru/android/java/io.php">Освой программирование играючи</a></li>
+<li><a href="http://metanit.com/java/tutorial/6.1.php">Metanit</a></li>
+<li><a href="http://javastudy.ru/interview/input-output/">javastudy.ru</a></li>
+<li><a href="http://iais.kemsu.ru/odocs/java/Chapter11.html">Bruce Eckel «Thinking in Java»</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

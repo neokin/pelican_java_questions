@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; Журналирование</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="zhurnalirovanie">Журналирование</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="Журналирование"></a>_</h3>
+<ul>
+<li><a href="#Какие-существуют-типы-логов">Какие существуют типы логов?</a>  </li>
+<li><a href="#Из-каких-частей-состоит-система-журналирования-log4j">Из каких частей состоит система журналирования log4j?</a></li>
+<li><a href="#Что-такое-logger-в-log4j">Что такое <em>Logger</em> в log4j?</a></li>
+<li><a href="#Что-такое-appender-в-log4j">Что такое <em>Appender</em> в log4j?</a></li>
+<li><a href="#Что-такое-layout-в-log4j">Что такое <em>Layout</em> в log4j?</a></li>
+<li><a href="#Перечислите-уровни-журналирования-в-log4j-Назовите-порядок-их-приоритетности">Перечислите уровни журналирования в log4j? Назовите порядок их приоритетности.</a></li>
+<li><a href="#Какие-существуют-способы-конфигурирования-log4j">Какие существуют способы конфигурирования log4j?</a></li>
+</ul>
+<h3 id="_1"><a name="Какие-существуют-типы-логов"></a>Какие существуют типы логов?</h3>
+<ul>
+<li>системы (System);</li>
+<li>безопасности (Security);</li>
+<li>приложения (Application, Buisness).</li>
+</ul>
+<blockquote>
+<p>Пользователь входит в приложение, проверяется пароль. Это действие относится к безопасности (Security). Дальше он запускает какой-нибудь модуль. Это событие уровня приложения (Application). Модуль при старте обращается к другому модулю за какими-то дополнительными данными, производит какие-либо еще вызовы – это уже системные действия (System).</p>
+</blockquote>
+<p><a href="#Журналирование">к оглавлению</a></p>
+<h3 id="log4j"><a name="Из-каких-частей-состоит-система-журналирования-log4j"></a>Из каких частей состоит система журналирования log4j?</h3>
+<p>Система журналирования состоит из трёх основных частей:</p>
+<ul>
+<li>управляющей журналированием - <strong>logger</strong>;</li>
+<li>добавляющей в журнал - <strong>appender</strong>;</li>
+<li>определяющей формат добавления - <strong>layout</strong>.</li>
+</ul>
+<p><a href="#Журналирование">к оглавлению</a></p>
+<h3 id="logger-log4j"><a name="Что-такое-logger-в-log4j"></a>Что такое <em>Logger</em> в log4j?</h3>
+<p><strong>Logger</strong> представляет собой объект класса <code>org.apache.log4j.Logger</code>, который используется как управляющий интерфейс для журналирования сообщений с возможностью задавать уровень детализации. Именно logger проверяет нужно ли обрабатывать сообщение и если журналирование необходимо, то сообщение передаётся в appender, если нет - система завершает обработку данного сообщения.</p>
+<p><a href="#Журналирование">к оглавлению</a></p>
+<h3 id="appender-log4j"><a name="Что-такое-appender-в-log4j"></a>Что такое <em>Appender</em> в log4j?</h3>
+<p><strong>Appender</strong> - это именованный объект журнала событий, реализующий интерфейс <code>org.apache.log4j.Appender</code> и добавляющий события в журнал. Appender вызывает разные вспомогательные инструменты - компоновщик, фильтр, обработчик ошибок (если они определены и необходимы). В ходе этой работы окончательно устанавливается необходимость записи сообщения, сообщению придаются окончательные содержание и форма.</p>
+<p>В log4j журнал может представлять:</p>
+<ul>
+<li>консоль;</li>
+<li>файл;</li>
+<li>сокет;</li>
+<li>объект класса реализующего <code>java.io.Writer</code> или <code>java.io.OutputStream</code>;</li>
+<li>JDBC хранилище;</li>
+<li>тему (topic) JMS;</li>
+<li>NT Event Log;</li>
+<li>SMTP;</li>
+<li>Syslog;</li>
+<li>Telnet.</li>
+</ul>
+<p>Наиболее часто используемые log4j appender-ы:</p>
+<ul>
+<li><code>org.apache.log4j.ConsoleAppender</code> - вывод в консоль;</li>
+<li><code>org.apache.log4j.FileAppender</code> - добавление в файл;</li>
+<li><code>org.apache.log4j.DailyRollingFileAppender</code> - добавление в файл с обновлением файла через заданный промежуток времени;</li>
+<li><code>org.apache.log4j.RollingFileAppender</code> - добавление в файл с обновлением файла по достижению определенного размера;</li>
+<li><code>org.apache.log4j.varia.ExternallyRolledFileAppender</code> - расширение <em>RollingFileAppender</em> обновляющее файл по команде принятой с заданного порта;</li>
+<li><code>org.apache.log4j.net.SMTPAppender</code> - сообщение по SMTP;</li>
+<li><code>org.apache.log4j.AsyncAppender</code> - позволяет, используя отдельный поток, организовать асинхронную работу, когда сообщения фиксируются лишь при достижении определенного уровня заполненности промежуточного буфера.</li>
+<li><code>org.apache.log4j.nt.NTEventLogAppender</code> - добавление в NT Event Log;</li>
+<li><code>org.apache.log4j.net.SyslogAppender</code> - добавление в Syslog;</li>
+<li><code>org.apache.log4j.jdbc.JDBCAppender</code> - запись в хранилище JDBC;</li>
+<li><code>org.apache.log4j.lf5.LF5Appender</code> - сообщение передаётся в специальный GUI интерфейс LogFactor5</li>
+<li><code>org.apache.log4j.net.SocketAppender</code> - трансляция сообщения по указанному адресу и порту;</li>
+<li><code>org.apache.log4j.net.SocketHubAppender</code> - рассылка сообщения сразу нескольким удалённым серверам соединённым по заданному порту;</li>
+<li><code>org.apache.log4j.net.TelnetAppender</code> - отсылка сообщения по протоколу Telenet;</li>
+<li><code>org.apache.log4j.net.JMSAppender</code> - добавление сообщения в JMS.</li>
+</ul>
+<p><a href="#Журналирование">к оглавлению</a></p>
+<h3 id="layout-log4j"><a name="Что-такое-layout-в-log4j"></a>Что такое <em>Layout</em> в log4j?</h3>
+<p><strong>Layout</strong> - наследник класса <code>org.apache.log4j.Layout</code> предоставляющий возможность форматирования сообщения перед добавлением в журнал.</p>
+<p>В log4j существуют следующие типы layout-ов:</p>
+<ul>
+<li><code>org.apache.log4j.SimpleLayout</code> - на выходе получается строка содержащая лишь уровень вывода и сообщение;</li>
+<li><code>org.apache.log4j.HTMLLayout</code> - форматирует сообщение в виде элемента HTML-таблицы;</li>
+<li><code>org.apache.log4j.xml.XMLLayout</code> - компанует сообщение в виде XML формате;</li>
+<li><code>org.apache.log4j.TTCCLayout</code> - на выходе сообщение дополняется информацией о времени, потоке, имени логгера и вложенном диагностическом контексте;</li>
+<li><code>org.apache.log4j.PatternLayout</code> / <code>org.apache.log4j.EnhancedPatternLayout</code> - настройка форматирования сообщения при помощи шаблона заданного пользователем.</li>
+</ul>
+<p><a href="#Журналирование">к оглавлению</a></p>
+<h3 id="log4j_1"><a name="Перечислите-уровни-журналирования-в-log4j-Назовите-порядок-их-приоритетности"></a>Перечислите уровни журналирования в log4j? Назовите порядок их приоритетности.</h3>
+<ul>
+<li><strong>OFF</strong> - отсутствие журналирования;</li>
+<li><strong>FATAL</strong> - фатальная ошибка;</li>
+<li><strong>ERROR</strong> - ошибка;</li>
+<li><strong>WARN</strong> - предупреждение;</li>
+<li><strong>INFO</strong> - информация;</li>
+<li><strong>DEBUG</strong> - детальная информация для отладки;</li>
+<li><strong>TRACE</strong> – трассировка всех сообщений.</li>
+</ul>
+<p>Между уровнями логирования установлен следующий порядок приоритетов:</p>
+<p><code>OFF &lt; TRACE &lt; DEBUG &lt; INFO &lt; WARN &lt; ERROR &lt; FATAL &lt; ALL</code></p>
+<p><a href="#Журналирование">к оглавлению</a></p>
+<h3 id="log4j_2"><a name="Какие-существуют-способы-конфигурирования-log4j"></a>Какие существуют способы конфигурирования log4j?</h3>
+<p>Для того, чтобы log4j начал работать нужно предоставить ему конфигурацию. Это можно сделать несколькими путями:</p>
+<ul>
+<li>Создать конфигурацию программно, т.е. получить logger, определить уровень журналирования, прикрепить appender и задать способ форматирования.</li>
+<li>Указать файл или URL как аргумент при запуске java-машины <code>-Dlog4j.configuration=путь/к/файлу/конфигурации</code>, а затем прочитать его в программе при помощи <code>PropertyConfigurator.configure(...)</code>/ <code>DOMConfigurator.configure(...)</code> для формата <code>.properties</code> или <code>XML</code> соответственно.</li>
+<li>Загрузить конфигурацию из файла в формате <code>XML</code> или <code>.properties</code>: log4j ищет файл конфигурации в classpath. Сначала ищется файл <code>log4j.xml</code> и, если таковой не найден, -  файл <code>log4j.properties</code>.</li>
+</ul>
+<p><a href="#Журналирование">к оглавлению</a></p>
+<h1 id="_2">Источники</h1>
+<ul>
+<li><a href="http://www.quizful.net/">Quizful</a></li>
+<li><a href="http://skipy.ru/useful/logging.html#log4j_concepts_logger">Skipy</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>

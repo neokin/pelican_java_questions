@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="/theme/pygments/github.min.css">
+
+    <script src="/theme/tipuesearch/jquery.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script src="/theme/tipuesearch/tipuesearch_set.min.js"></script>
+    <script src="/tipuesearch_content.js"></script>
+    <link rel="stylesheet" href="/theme/tipuesearch/tipuesearch.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="/theme/font-awesome/css/solid.css">
+
+
+    <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Java Interview Atom">
+
+
+
+  
+
+
+    <meta name="author" content="Кирилл" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Java Interview"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Java Interview"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=""/>
+
+
+
+  <title>Java Interview &ndash; JDBC</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href="">
+        <img src="/theme/img/profile.png" alt="" title="">
+      </a>
+
+      <h1>
+        <a href=""></a>
+      </h1>
+
+
+        <form class="navbar-search" action="/search.html" role="search">
+          <input type="text" name="q" id="tipue_search_input" placeholder="Search...">
+        </form>
+
+      <nav>
+        <ul class="list">
+
+
+              <li>
+                <a target="_self"
+                   href="/pages/java-core.html#java-core">
+                  Java Core
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-collections-framework.html#java-collections-framework">
+                  Java Collections Framework
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/java-8.html#java-8">
+                  Java 8
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/oop.html#oop">
+                  ООП
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/shablony-proektirovaniia.html#shablony-proektirovaniia">
+                  Шаблоны проектирования
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jvm.html#jvm">
+                  JVM
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/mnogopotochnost.html#mnogopotochnost">
+                  Многопоточность
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/serializatsiia.html#serializatsiia">
+                  Сериализация
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/bazy-dannykh.html#bazy-dannykh">
+                  Базы данных
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/sql.html#sql">
+                  SQL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/osnovy-web.html#osnovy-web">
+                  Основы Web
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/xml.html#xml">
+                  XML
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/servlets-jsp-jstl.html#servlets-jsp-jstl">
+                  Servlets, JSP, JSTL
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/zhurnalirovanie.html#zhurnalirovanie">
+                  Журналирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/testirovanie.html#testirovanie">
+                  Тестирование
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/jdbc.html#jdbc">
+                  JDBC
+                </a>
+              </li>
+              <li>
+                <a target="_self"
+                   href="/pages/potoki-vvodavyvoda-v-java.html#potoki-vvodavyvoda-v-java">
+                  Потоки ввода/вывода в Java
+                </a>
+              </li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    
+    <h1 id="jdbc">JDBC</h1>
+  </header>
+  <div>
+<h3 id="_"><a name="jdbc"></a>_</h3>
+<ul>
+<li><a href="#Что-такое-jdbc">Что такое <em>JDBC</em>?</a></li>
+<li><a href="#В-чем-заключаются-преимущества-использования-jdbc">В чем заключаются преимущества использования JDBC?</a></li>
+<li><a href="#Что-из-себя-представляет-jdbc-url">Что из себя представляет JDBC URL?</a></li>
+<li><a href="#Из-каких-частей-стоит-jdbc">Из каких частей стоит JDBC?</a></li>
+<li><a href="#Перечислите-основные-классы-и-интерфейсы-jdbc">Перечислите основные классы и интерфейсы JDBC.</a></li>
+<li><a href="#Перечислите-основные-типы-данных-используемых-в-jdbc">Перечислите основные типы данных используемые в JDBC. Как они связаны с типами Java?</a></li>
+<li><a href="#Опишите-основные-этапы-работы-с-базой-данных-при-использовании-jdbc">Опишите основные этапы работы с базой данных с использованием JDBC.</a></li>
+<li><a href="#Как-зарегистрировать-драйвер-jdbc">Как зарегистрировать драйвер JDBC?</a></li>
+<li><a href="#Как-установить-соединение-с-базой-данных">Как установить соединение с базой данных?</a></li>
+<li><a href="#Какие-уровни-изоляции-транзакций-поддерживаются-в-jdbc">Какие уровни изоляции транзакций поддерживаются в JDBC?</a></li>
+<li><a href="#При-помощи-чего-формируются-запросы-к-базе-данных">При помощи чего формируются запросы к базе данных?</a></li>
+<li><a href="#Чем-отличается-statement-от-preparedstatement">Чем отличается Statement от PreparedStatement?</a></li>
+<li><a href="#Как-осуществляется-запрос-к-базе-данных-и-обработка-результатов">Как осуществляется запрос к базе данных и обработка результатов?</a></li>
+<li><a href="#Как-вызвать-хранимую-процедуру">Как вызвать хранимую процедуру?</a></li>
+<li><a href="#Как-закрыть-соединение-с-базой-данных">Как закрыть соединение с базой данных?</a></li>
+</ul>
+<h3 id="jdbc"><a name="Что-такое-jdbc"></a>Что такое <em>JDBC</em>?</h3>
+<p><strong>JDBC, Java DataBase Connectivity (соединение с базами данных на Java)</strong> — промышленный стандарт взаимодействия Java-приложений с различными СУБД. Реализован в виде пакета <code>java.sql</code>, входящего в состав Java SE.</p>
+<p>JDBC основан на концепции драйверов, которые позволяют получать соединение с базой данных по специально описанному URL. При загрузке драйвер регистрирует себя в системе и в дальнейшем автоматически вызывается, когда программа требует URL, содержащий протокол, за который этот драйвер отвечает.</p>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="jdbc_1"><a name="В-чем-заключаются-преимущества-использования-jdbc"></a>В чем заключаются преимущества использования JDBC?</h3>
+<p>Преимуществами JDBC считают:</p>
+<ul>
+<li>Лёгкость разработки: разработчик может не знать специфики базы данных, с которой работает;</li>
+<li>Код практически не меняется, если компания переходит на другую базу данных (количество изменений зависит исключительно от различий между диалектами SQL);</li>
+<li>Не нужно дополнительно устанавливать клиентскую программу;</li>
+<li>К любой базе данных можно подсоединиться через легко описываемый URL.</li>
+</ul>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="jdbc-url"><a name="Что-из-себя-представляет-jdbc-url"></a>Что из себя представляет JDBC URL?</h3>
+<p><strong>JDBC URL</strong> состоит из:</p>
+<ul>
+<li><code>&lt;protocol&gt;:</code> (протокола) - всегда <code>jdbc:</code>.</li>
+<li><code>&lt;subprotocol&gt;:</code> (подпротокола) - это имя драйвера или имя механизма соединения с базой данных. Подпротокол может поддерживаться одним или несколькими драйверами. Лежащий на поверхности пример подпротокола - это "odbc", отведенный для URL, обозначающих имя источника данных ODBC. В случае необходимости использовать сервис имен (т.е. имя базы данных в JDBC URL не будет действительным именем базы данных), то подпротоколом может выступать сервис имен.</li>
+<li><code>&lt;subname&gt;</code> (подимени) - это идентификатор базы данных. Значение подимени может менятся в зависимости от подпротокола, и может также иметь под-подимя с синтаксисом, определяемым разработчиком драйвера. Назначение подимени - это предоставление всей информации, необходимой для поиска базы данных. Например, если база данных находится в Интернет, то в состав подимени JDBC URL должен быть включен сетевой адрес, подчиняющийся следующим соглашениям: <code>//&lt;hostname&gt;:&lt;port&gt;/&lt;subsubname</code>.</li>
+</ul>
+<p>Пример JDBC URL для подключения к MySQL базе данных «Test» расположенной по адресу localhost и ожидающей соединений по порту 3306: <code>jdbc:mysql://localhost:3306/Test</code></p>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="jdbc_2"><a name="Из-каких-частей-стоит-jdbc"></a>Из каких частей стоит JDBC?</h3>
+<p>JDBC состоит из двух частей:</p>
+<ul>
+<li><strong>JDBC API</strong>, который содержит набор классов и интерфейсов, определяющих доступ к базам данных. Эти классы и методы объявлены в двух пакетах - <code>java.sql</code> и <code>javax.sql</code>;</li>
+<li><strong>JDBC-драйвер</strong>, компонент, специфичный для каждой базы данных. </li>
+</ul>
+<p>JDBC превращает вызовы уровня API в «родные» команды того или иного сервера баз данных.</p>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="jdbc_3"><a name="Перечислите-основные-классы-и-интерфейсы-jdbc"></a>Перечислите основные классы и интерфейсы JDBC.</h3>
+<ul>
+<li>
+<p><code>java.sql.DriverManager</code> - позволяет загрузить и зарегистрировать необходимый JDBC-драйвер, а затем получить соединение с базой данных.</p>
+</li>
+<li>
+<p><code>javax.sql.DataSource</code> - решает те же задачи, что и <em>DriverManager</em>, но более удобным и универсальным образом. Существуют также <code>javax.sql.ConnectionPoolDataSource</code> и <code>javax.sq1.XADataSource</code> задача которых - обеспечение поддержки пула соединений.</p>
+</li>
+<li>
+<p><code>java.sql.Connection</code>  - обеспечивает формирование запросов к источнику данных и управление транзакциями. Также предусмотрены интерфейсы <code>javax.sql.PooledConnection</code> и <code>javax.sql.XAConnection</code>.</p>
+</li>
+<li>
+<p><code>java.sql.Statement</code> , <code>java.sql.PreparedStatement</code> и <code>java.sql.CallableStatement</code>  - эти интерфейсы позволяют отправить запрос к источнику данных.</p>
+</li>
+<li>
+<p><code>java.sql.ResultSet</code>  - объявляет методы, которые позволяют перемещаться по набору данных и считывать значения отдельных полей в текущей записи.</p>
+</li>
+<li>
+<p><code>java.sql.ResultSetMetaData</code>  - позволяет получить информацию о структуре набора данных.</p>
+</li>
+<li>
+<p><code>java.sql.DatabaseMetaData</code> - позволяет получить информацию о структуре источника данных.</p>
+</li>
+</ul>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="jdbc-java"><a name="Перечислите-основные-типы-данных-используемых-в-jdbc"></a>Перечислите основные типы данных используемые в JDBC. Как они связаны с типами Java?</h3>
+<table>
+<thead>
+<tr>
+<th align="right">JDBC Type</th>
+<th>Java Object Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right"><strong>CHAR</strong></td>
+<td><code>String</code></td>
+</tr>
+<tr>
+<td align="right"><strong>VARCHAR</strong></td>
+<td><code>String</code></td>
+</tr>
+<tr>
+<td align="right"><strong>LONGVARCHAR</strong></td>
+<td><code>String</code></td>
+</tr>
+<tr>
+<td align="right"><strong>NUMERIC</strong></td>
+<td><code>java.math.BigDecimal</code></td>
+</tr>
+<tr>
+<td align="right"><strong>DECIMAL</strong></td>
+<td><code>java.math.BigDecimal</code></td>
+</tr>
+<tr>
+<td align="right"><strong>BIT</strong></td>
+<td><code>Boolean</code></td>
+</tr>
+<tr>
+<td align="right"><strong>TINYINT</strong></td>
+<td><code>Integer</code></td>
+</tr>
+<tr>
+<td align="right"><strong>SMALLINT</strong></td>
+<td><code>Integer</code></td>
+</tr>
+<tr>
+<td align="right"><strong>INTEGER</strong></td>
+<td><code>Integer</code></td>
+</tr>
+<tr>
+<td align="right"><strong>BIGINT</strong></td>
+<td><code>Long</code></td>
+</tr>
+<tr>
+<td align="right"><strong>REAL</strong></td>
+<td><code>Float</code></td>
+</tr>
+<tr>
+<td align="right"><strong>FLOAT</strong></td>
+<td><code>Double</code></td>
+</tr>
+<tr>
+<td align="right"><strong>DOUBLE</strong></td>
+<td><code>Double</code></td>
+</tr>
+<tr>
+<td align="right"><strong>BINARY</strong></td>
+<td><code>byte[]</code></td>
+</tr>
+<tr>
+<td align="right"><strong>VARBINARY</strong></td>
+<td><code>byte[]</code></td>
+</tr>
+<tr>
+<td align="right"><strong>LONGVARBINARY</strong></td>
+<td><code>byte[]</code></td>
+</tr>
+<tr>
+<td align="right"><strong>DATE</strong></td>
+<td><code>java.sql.Date</code></td>
+</tr>
+<tr>
+<td align="right"><strong>TIME</strong></td>
+<td><code>java.sql.Time</code></td>
+</tr>
+<tr>
+<td align="right"><strong>TIMESTAMP</strong></td>
+<td><code>java.sql.Timestamp</code></td>
+</tr>
+<tr>
+<td align="right"><strong>CLOB</strong></td>
+<td><code>Clob</code></td>
+</tr>
+<tr>
+<td align="right"><strong>BLOB</strong></td>
+<td><code>Blob</code></td>
+</tr>
+<tr>
+<td align="right"><strong>ARRAY</strong></td>
+<td><code>Array</code></td>
+</tr>
+<tr>
+<td align="right"><strong>STRUCT</strong></td>
+<td><code>Struct</code></td>
+</tr>
+<tr>
+<td align="right"><strong>REF</strong></td>
+<td><code>Ref</code></td>
+</tr>
+<tr>
+<td align="right"><strong>DISTINCT</strong></td>
+<td>сопоставление базового типа</td>
+</tr>
+<tr>
+<td align="right"><strong>JAVA_OBJECT</strong></td>
+<td>базовый класс Java</td>
+</tr>
+</tbody>
+</table>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="jdbc_4"><a name="Опишите-основные-этапы-работы-с-базой-данных-при-использовании-jdbc"></a>Опишите основные этапы работы с базой данных при использовании JDBC.</h3>
+<ul>
+<li>Регистрация драйверов;</li>
+<li>Установление соединения с базой данных;</li>
+<li>Создание запроса(ов) к базе данных;</li>
+<li>Выполнение запроса(ов) к базе данных;</li>
+<li>Обработка результата(ов);</li>
+<li>Закрытие соединения с базой данных.</li>
+</ul>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="jdbc_5"><a name="Как-зарегистрировать-драйвер-jdbc"></a>Как зарегистрировать драйвер JDBC?</h3>
+<p>Регистрацию драйвера можно осуществить несколькими способами:</p>
+<ul>
+<li>
+<p><code>java.sql.DriverManager.registerDriver(%объект класса драйвера%)</code>.  </p>
+</li>
+<li>
+<p><code>Class.forName(«полное имя класса драйвера»).newInstance()</code>.</p>
+</li>
+<li>
+<p><code>Class.forName(«полное имя класса драйвера»)</code>;</p>
+</li>
+</ul>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="_1"><a name="Как-установить-соединение-с-базой-данных"></a>Как установить соединение с базой данных?</h3>
+<p>Для установки соединения с базой данных используется статический вызов <code>java.sql.DriverManager.getConnection(...)</code> .</p>
+<p>В качестве параметра может передаваться:</p>
+<ul>
+<li>URL базы данных</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">static</span> <span class="n">Connection</span> <span class="nf">getConnection</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="p">)</span>
+</code></pre></div>
+
+
+<ul>
+<li>URL базы данных и набор свойств для инициализации</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">static</span> <span class="n">Connection</span> <span class="nf">getConnection</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="p">,</span> <span class="n">Properties</span> <span class="n">info</span><span class="p">)</span>
+</code></pre></div>
+
+
+<ul>
+<li>URL базы данных, имя пользователя и пароль</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">static</span> <span class="n">Connection</span> <span class="nf">getConnection</span><span class="p">(</span><span class="n">String</span> <span class="n">url</span><span class="p">,</span> <span class="n">String</span> <span class="n">user</span><span class="p">,</span> <span class="n">String</span> <span class="n">password</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>В результате вызова будет установлено соединение с базой данных и создан объект класса <code>java.sql.Connection</code> - своеобразная «сессия», внутри контекста которой и будет происходить дальнейшая работа с базой данных.</p>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="jdbc_6"><a name="Какие-уровни-изоляции-транзакций-поддерживаются-в-jdbc"></a>Какие уровни изоляции транзакций поддерживаются в JDBC?</h3>
+<p><strong>Уровень изолированности транзакций</strong> — значение, определяющее уровень, при котором в транзакции допускаются несогласованные данные, то есть степень изолированности одной транзакции от другой. Более высокий уровень изолированности повышает точность данных, но при этом может снижаться количество параллельно выполняемых транзакций. С другой стороны, более низкий уровень изолированности позволяет выполнять больше параллельных транзакций, но снижает точность данных.</p>
+<p>Во время использования транзакций, для обеспечения целостности данных, СУБД использует блокировки, чтобы заблокировать доступ других обращений к данным, участвующим в транзакции. Такие блокировки необходимы, чтобы предотвратить:</p>
+<ul>
+<li>
+<p><em>«грязное» чтение (dirty read)</em> — чтение данных, добавленных или изменённых транзакцией, которая впоследствии не подтвердится (откатится);</p>
+</li>
+<li>
+<p><em>неповторяющееся чтение (non-repeatable read)</em> — при повторном чтении в рамках одной транзакции ранее прочитанные данные оказываются изменёнными;</p>
+</li>
+<li>
+<p><em>фантомное чтение (phantom reads)</em> — ситуация, когда при повторном чтении в рамках одной транзакции одна и та же выборка дает разные множества строк.</p>
+</li>
+</ul>
+<p>Уровни изоляции транзакций определены в виде констант интерфейса <code>java.sql.Connection</code>:</p>
+<ul>
+<li>
+<p><code>TRANSACTION_NONE</code> – драйвер не поддерживает транзакции;</p>
+</li>
+<li>
+<p><code>TRANSACTION_READ_UNCOMMITTED</code> – позволяет транзакциям видеть несохраненные изменения данных: разрешает грязное, непроверяющееся и фантомное чтения;</p>
+</li>
+<li>
+<p><code>TRANSACTION_READ_COMMITTED</code> – любое изменение, сделанное в транзакции, не видно вне неё, пока она не сохранена: предотвращает грязное чтение, но разрешает непроверяющееся и фантомное;</p>
+</li>
+<li>
+<p><code>TRANSACTION_REPEATABLE_READ</code> – запрещает грязное и непроверяющееся, фантомное чтение разрешено;</p>
+</li>
+<li>
+<p><code>TRANSACTION_SERIALIZABLE</code> – грязное, непроверяющееся и фантомное чтения запрещены.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>NB!</strong> Сервер базы данных может не поддерживать все уровни изоляции. Интерфейс <code>java.sql.DatabaseMetaData</code> предоставляет информацию об уровнях изолированности транзакций, которые поддерживаются данной СУБД.</p>
+</blockquote>
+<p>Уровень изоляции транзакции используемый СУБД можно задать с помощью метода <code>setTransactionIsolation()</code> объекта <code>java.sql.Connection</code>. Получить информацию о применяемом уровне изоляции поможет метод <code>getTransactionIsolation()</code>.</p>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="_2"><a name="При-помощи-чего-формируются-запросы-к-базе-данных"></a>При помощи чего формируются запросы к базе данных?</h3>
+<p>Для выполнения запросов к базе данных в Java используются три интерфейса:</p>
+<ul>
+<li><code>java.sql.Statement</code> - для операторов SQL без параметров;</li>
+<li><code>java.sql.PreparedStatement</code> - для операторов SQL с параметрами и часто выполняемых операторов;</li>
+<li><code>java.sql.CallableStatement</code> -  для исполнения хранимых в базе процедур.</li>
+</ul>
+<p>Объекты-носители интерфейсов создаются при помощи методов объекта <code>java.sql.Connection</code>:</p>
+<ul>
+<li><code>java.sql.createStatement()</code> возвращает объект <em>Statement</em>;</li>
+<li><code>java.sql.prepareStatement()</code> возвращает объект <em>PreparedStatement</em>;</li>
+<li><code>java.sql.prepareCall()</code> возвращает объект <em>CallableStatement</em>;</li>
+</ul>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="statement-preparedstatement"><a name="Чем-отличается-statement-от-preparedstatement"></a>Чем отличается Statement от PreparedStatement?</h3>
+<ul>
+<li><strong>Statement</strong>: используется для простых случаев запроса без параметров.</li>
+<li><strong>PreparedStatement</strong>: предварительно компилирует запрос, который может содержать входные параметры и выполняться несколько раз с разным набором этих параметров.</li>
+</ul>
+<p>Перед выполнением СУБД разбирает каждый запрос, оптимизирует его и создает «план» (query plan) его выполнения. Если один и тот же запрос выполняется несколько раз, то СУБД в состоянии кэшировать план его выполнения и не производить этапов разборки и оптимизации повторно. Благодаря этому запрос выполняется быстрее.</p>
+<p>Суммируя: <em>PreparedStatement</em> выгодно отличается от <em>Statement</em> тем, что при повторном использовании с одним или несколькими наборами параметров позволяет получить преимущества заранее прекомпилированного и кэшированного запроса, помогая при этом избежать SQL Injection.</p>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="_3"><a name="Как-осуществляется-запрос-к-базе-данных-и-обработка-результатов"></a>Как осуществляется запрос к базе данных и обработка результатов?</h3>
+<p>Выполнение запросов осуществляется при помощи вызова методов объекта, реализующего интерфейс <code>java.sql.Statement</code>:</p>
+<ul>
+<li>
+<p><strong><code>executeQuery()</code></strong> -  для запросов, результатом которых является один набор значений, например запросов <code>SELECT</code>. Результатом выполнения является объект класса <code>java.sql.ResultSet</code>;</p>
+</li>
+<li>
+<p><strong><code>executeUpdate()</code></strong> - для выполнения операторов <code>INSERT</code>, <code>UPDATE</code> или <code>DELETE</code>, а также для операторов <em>DDL (Data Definition Language)</em>. Метод возвращает целое число, показывающее, сколько записей было модифицировано;</p>
+</li>
+<li>
+<p><strong><code>execute()</code></strong> – исполняет SQL-команды, которые могут возвращать различные результаты. Например, может использоваться для операции <code>CREATE TABLE</code>. Возвращает <code>true</code>, если первый результат содержит <em>ResultSet</em> и <code>false</code>, если первый результат - это количество модифицированных записей или результат отсутствует. Чтобы получить первый результат необходимо вызвать метод <code>getResultSet()</code> или <code>getUpdateCount()</code>. Остальные результаты доступны через вызов <code>getMoreResults()</code>, который при необходимости может быть произведён многократно.</p>
+</li>
+</ul>
+<p>Объект с интерфейсом <code>java.sql.ResultSet</code> хранит в себе результат запроса к базе данных - некий набор данных, внутри которого есть курсор, указывающий на один из элементов набора данных - текущую запись.</p>
+<p>Используя курсор можно перемещаться по набору данных при помощи метода <code>next()</code>.</p>
+<blockquote>
+<p><strong>NB!</strong> Сразу после получения набора данных его курсор находится перед первой записью и чтобы сделать её текущей необходимо вызвать метод <code>next()</code>.</p>
+</blockquote>
+<p>Содержание полей текущей записи доступно через вызовы методов <code>getInt()</code>, <code>getFloat()</code>, <code>getString()</code>, <code>getDate()</code> и им подобных.</p>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="_4"><a name="Как-вызвать-хранимую-процедуру"></a>Как вызвать хранимую процедуру?</h3>
+<p><strong>Хранимые процедуры</strong> – это именованный набор операторов SQL хранящийся на сервере. Такую процедуру можно вызвать из Java-класса с помощью вызова методов объекта реализующего интерфейс <code>java.sql.Statement</code>.</p>
+<p>Выбор объекта зависит от характеристик хранимой процедуры:</p>
+<ul>
+<li>без параметров → <code>Statement</code></li>
+<li>с входными параметрами → <code>PreparedStatement</code></li>
+<li>с входными и выходными параметрами → <code>CallableStatement</code></li>
+</ul>
+<blockquote>
+<p>Если неизвестно, как была определена хранимая процедура, для получения информации о хранимой процедуре (например, имен и типов параметров) можно использовать методы <code>java.sql.DatabaseMetaData</code> позволяющие получить информацию о структуре источника данных.</p>
+</blockquote>
+<p>Пример вызова хранимой процедуры с входными и выходными параметрами:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="n">vois</span> <span class="nf">runStoredProcedure</span><span class="p">(</span><span class="kd">final</span> <span class="n">Connection</span> <span class="n">connection</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+    <span class="c1">// описываем хранимую процедуру</span>
+    <span class="n">String</span> <span class="n">procedure</span> <span class="o">=</span> <span class="s">&quot;{ call procedureExample(?, ?, ?) }&quot;</span><span class="p">;</span>
+
+    <span class="c1">// подготавливаем запрос</span>
+    <span class="n">CallableStatement</span> <span class="n">cs</span> <span class="o">=</span> <span class="n">connection</span><span class="p">.</span><span class="na">prepareCall</span><span class="p">(</span><span class="n">procedure</span><span class="p">);</span>
+
+    <span class="c1">// устанавливаем входные параметры</span>
+    <span class="n">cs</span><span class="p">.</span><span class="na">setString</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;abcd&quot;</span><span class="p">);</span>
+    <span class="n">cs</span><span class="p">.</span><span class="na">setBoolean</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="n">cs</span><span class="p">.</span><span class="na">setInt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+    <span class="c1">// описываем выходные параметры</span>
+    <span class="n">cs</span><span class="p">.</span><span class="na">registerOutParameter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">java</span><span class="p">.</span><span class="na">sql</span><span class="p">.</span><span class="na">Types</span><span class="p">.</span><span class="na">VARCHAR</span><span class="p">);</span>
+    <span class="n">cs</span><span class="p">.</span><span class="na">registerOutParameter</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">java</span><span class="p">.</span><span class="na">sql</span><span class="p">.</span><span class="na">Types</span><span class="p">.</span><span class="na">INTEGER</span><span class="p">);</span>
+
+    <span class="c1">// запускаем выполнение хранимой процедуры</span>
+    <span class="n">cs</span><span class="p">.</span><span class="na">execute</span><span class="p">();</span>
+
+    <span class="c1">// получаем результаты</span>
+    <span class="n">String</span> <span class="n">parameter1</span> <span class="o">=</span> <span class="n">cs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">parameter2</span> <span class="o">=</span> <span class="n">cs</span><span class="p">.</span><span class="na">getInt</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="c1">// заканчиваем работу с запросом</span>
+    <span class="n">cs</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<p><a href="#jdbc">к оглавлению</a></p>
+<h3 id="_5"><a name="Как-закрыть-соединение-с-базой-данных"></a>Как закрыть соединение с базой данных?</h3>
+<p>Соединение с базой данной закрывается вызовом метода <code>close()</code> у соответствующего объекта <code>java.sql.Connection</code> или посредством использования механизма try-with-resources при создании такого объекта, появившегося в Java 7.</p>
+<blockquote>
+<p><strong>NB!</strong> Предварительно необходимо закрыть все запросы созданные этим соединением.</p>
+</blockquote>
+<p><a href="#jdbc">к оглавлению</a></p>
+<h1 id="_6">Источники</h1>
+<ul>
+<li><a href="https://ru.wikipedia.org/wiki/Java_Database_Connectivity">Википедия - JDBC</a></li>
+<li><a href="http://www.ibm.com/developerworks/ru/library/dm-1209storedprocedures/">IBM developerWorks®</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/sql/package-summary.html">Документация к пакету java.sql</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/Уровень_изолированности_транзакций">Википедия - Уровень изолированности транзакции</a></li>
+</ul>
+<p><a href="README.md">Вопросы для собеседования</a></p>  </div>
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Java Interview ",
+  "url" : "",
+  "image": "",
+  "description": ""
+}
+</script>
+
+    <script>
+      $(document).ready(function() {
+        $('#tipue_search_input').tipuesearch();
+      });
+    </script>
+
+</body>
+</html>
